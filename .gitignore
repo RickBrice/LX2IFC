@@ -39,3 +39,9 @@
 
 # debug information files
 *.dwo
+/.vs/LX2IFC
+/LX2IFC/x64/Debug
+*.log
+*.ifc
+/LX2IFC.vcxproj.filters
+/LX2IFC.vcxproj.user

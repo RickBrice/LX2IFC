@@ -1,0 +1,2389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LandXML xmlns="http://www.inframodel.fi/inframodel" xmlns:im="http://www.im.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.inframodel.fi/inframodel https://buildingsmart.fi/infra/schema/4.0.3/inframodel.xsd http://im.inframodel.fi https://buildingsmart.fi/infra/schema/4.0.3/im.xsd" date="2018-12-04" time="14:13:32" version="1.2" language="finnish" readOnly="false">
+	<FeatureDictionary name="inframodel" version="4.0.3">
+		<DocFileRef name="Inframodel extensions" location="https://buildingsmart.fi/infra/inframodel/pages/extensions.html"/>
+	</FeatureDictionary>
+	<Units>
+		<Metric areaUnit="squareMeter" linearUnit="meter" volumeUnit="cubicMeter" temperatureUnit="celsius" pressureUnit="HPA" diameterUnit="meter" widthUnit="meter" heightUnit="meter" velocityUnit="kilometersPerHour" angularUnit="grads" directionUnit="grads" elevationUnit="meter"/>
+	</Units>
+	<CoordinateSystem name="ETRS-GK23" rotationAngle="0" verticalCoordinateSystemName="N2000" epsgCode="3877"/>
+	<Project name="BTurku asema ratasuunnitelma 2020-06-03_XML" desc="LandXML ohjaus tiedostosta BTurku asema ratasuunni">
+		<Feature code="IM_codings" source="inframodel" name="classcodings">
+			<Property label="terrainCoding" value="InfraBIM"/>
+			<Property label="infraCoding" value="InfraBIM"/>
+		</Feature>
+	</Project>
+	<Application name="Laskentakirjasto" desc="Ratasovellus_Intel_64.dll/Rata ICT Palvelu" manufacturer="Sweco Infra + Rail Oy" manufacturerURL="http://www.sweco.fi" version="12.03.20.1">
+		<Author createdBy="Pasi Holtta" createdByEmail="pasi.holtta@sweco.fi" company="Sweco Infra + Rail Oy" companyURL="www.sweco.fi" timeStamp="2020-06-06T00:26:33"/>
+	</Application>
+	<Alignments name="Tku" desc="Suunniteltu tilanne" state="proposed">
+		<Alignment name="702" desc="702" oID="1" state="proposed" staStart="0.000000" length="2118.970690">
+			<CoordGeom>
+				<Line dir="318.417349" length="226.008436" staStart="0.000000" name="SN22" oID="1">
+					<Start>6705573.507460 23460533.965128</Start>
+					<End>6705637.983252 23460317.348680</End>
+				</Line>
+				<Spiral staStart="226.008436" length="75.000000" radiusStart="INF" radiusEnd="346.000000" rot="ccw" spiType="clothoid" constant="161.090037" dirStart="318.417349" dirEnd="311.517568" name="CN23" oID="2">
+					<Start>6705637.983252 23460317.348680</Start>
+					<PI>6705652.256062 23460269.396957</PI>
+					<End>6705656.759406 23460244.777437</End>
+				</Spiral>
+				<Curve rot="ccw" length="228.089300" radius="346.000000" chord="223.981665" staStart="301.008436" name="KN24" oID="3">
+					<Start>6705656.759406 23460244.777437</Start>
+					<Center>6705316.406468 23460182.520891</Center>
+					<End>6705623.577871 23460023.267229</End>
+				</Curve>
+				<Spiral staStart="529.097737" length="75.000000" radiusStart="346.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="161.090037" dirStart="269.550470" dirEnd="262.650690" name="CN25" oID="4">
+					<Start>6705623.577871 23460023.267229</Start>
+					<PI>6705612.058215 23460001.047904</PI>
+					<End>6705584.361136 23459959.383138</End>
+				</Spiral>
+				<Spiral staStart="604.097737" length="30.000000" radiusStart="INF" radiusEnd="2700.000000" rot="cw" spiType="clothoid" constant="284.604989" dirStart="262.650690" dirEnd="263.004367" name="C101" oID="5">
+					<Start>6705584.361136 23459959.383138</Start>
+					<PI>6705573.289109 23459942.727468</PI>
+					<End>6705567.799436 23459934.368990</End>
+				</Spiral>
+				<Curve rot="cw" length="19.231618" radius="2700.000000" chord="19.231577" staStart="634.097737" name="K102" oID="6">
+					<Start>6705567.799436 23459934.368990</Start>
+					<Center>6707824.580999 23458452.162196</Center>
+					<End>6705557.299280 23459918.256875</End>
+				</Curve>
+				<Spiral staStart="653.329354" length="30.000000" radiusStart="2700.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="284.604989" dirStart="263.457820" dirEnd="263.811498" name="C103" oID="7">
+					<Start>6705557.299280 23459918.256875</Start>
+					<PI>6705551.869285 23459909.859513</PI>
+					<End>6705541.102776 23459893.004730</End>
+				</Spiral>
+				<Line dir="263.811498" length="8.786339" staStart="683.329354" name="S" oID="8">
+					<Start>6705541.102776 23459893.004730</Start>
+					<End>6705536.372875 23459885.600152</End>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="692.115693" name="V715" oID="9">
+					<Start>6705536.372875 23459885.600152</Start>
+					<End>6705526.772396 23459870.570768</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="709.949693" name="V715" oID="10">
+					<Start>6705526.772396 23459870.570768</Start>
+					<End>6705512.178958 23459847.724993</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="168.593000" staStart="737.058693" name="S" oID="11">
+					<Start>6705512.178958 23459847.724993</Start>
+					<End>6705421.421218 23459705.645324</End>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="905.651693" name="V725" oID="12">
+					<Start>6705421.421218 23459705.645324</Start>
+					<End>6705406.827779 23459682.799549</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="932.760693" name="V725" oID="13">
+					<Start>6705406.827779 23459682.799549</Start>
+					<End>6705397.227300 23459667.770166</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="15.000000" staStart="950.594693" name="S" oID="14">
+					<Start>6705397.227300 23459667.770166</Start>
+					<End>6705389.152433 23459655.129101</End>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="965.594693" name="V731" oID="15">
+					<Start>6705389.152433 23459655.129101</Start>
+					<End>6705379.551954 23459640.099718</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="983.428693" name="V731" oID="16">
+					<Start>6705379.551954 23459640.099718</Start>
+					<End>6705364.958516 23459617.253943</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="7.000000" staStart="1010.537693" name="S" oID="17">
+					<Start>6705364.958516 23459617.253943</Start>
+					<End>6705361.190244 23459611.354780</End>
+				</Line>
+				<Curve rot="ccw" length="87.531434" radius="2500.000000" chord="87.526963" staStart="1017.537693" name="K108" oID="18">
+					<Start>6705361.190244 23459611.354780</Start>
+					<Center>6703254.346116 23460957.165992</Center>
+					<End>6705312.788319 23459538.428632</End>
+				</Curve>
+				<Line dir="261.582528" length="30.000000" staStart="1105.069127" name="S109" oID="19">
+					<Start>6705312.788319 23459538.428632</Start>
+					<End>6705295.763471 23459513.727326</End>
+				</Line>
+				<Curve rot="cw" length="38.387004" radius="2500.000000" chord="38.386627" staStart="1135.069127" name="K110" oID="20">
+					<Start>6705295.763471 23459513.727326</Start>
+					<Center>6707354.205674 23458094.989966</Center>
+					<End>6705274.222551 23459481.954351</End>
+				</Curve>
+				<Line dir="262.560045" length="391.064444" staStart="1173.456132" name="S" oID="21">
+					<Start>6705274.222551 23459481.954351</Start>
+					<End>6705057.265568 23459156.591373</End>
+				</Line>
+				<Curve rot="cw" length="72.789570" radius="800.000000" chord="72.764465" staStart="1564.520576" name="K112" oID="22">
+					<Start>6705057.265568 23459156.591373</Start>
+					<Center>6705722.860168 23458712.762770</Center>
+					<End>6705019.691852 23459094.278588</End>
+				</Curve>
+				<Line dir="268.352455" length="82.697353" staStart="1637.310146" name="S" oID="23">
+					<Start>6705019.691852 23459094.278588</Start>
+					<End>6704980.253916 23459021.590890</End>
+				</Line>
+				<Line dir="268.352455" length="17.815000" staStart="1720.007500" name="V748" oID="24">
+					<Start>6704980.253916 23459021.590890</Start>
+					<End>6704971.758036 23459005.932211</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="268.352455" length="16.615000" staStart="1737.822500" name="V748" oID="25">
+					<Start>6704971.758036 23459005.932211</Start>
+					<End>6704963.834429 23458991.328284</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="268.352455" length="10.000000" staStart="1754.437500" name="S" oID="26">
+					<Start>6704963.834429 23458991.328284</Start>
+					<End>6704959.065482 23458982.538680</End>
+				</Line>
+				<Line dir="268.352455" length="9.275000" staStart="1764.437500" name="V746" oID="27">
+					<Start>6704959.065482 23458982.538680</Start>
+					<End>6704954.642283 23458974.386322</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="35.652885" radius="499.988118" chord="35.645332" staStart="1773.712500" name="V746" oID="28">
+					<Start>6704954.642283 23458974.386322</Start>
+					<Center>6704515.172529 23459212.828042</Center>
+					<End>6704936.537189 23458943.681350</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+				<Line dir="263.812881" length="309.605306" staStart="1809.365385" name="S214" oID="29">
+					<Start>6704936.537189 23458943.681350</Start>
+					<End>6704769.874741 23458682.761681</End>
+				</Line>
+			</CoordGeom>
+			<StaEquation staBack="NaN" staAhead="-797.437000" staInternal="-797.437000" desc="197">
+      </StaEquation>
+			<StaEquation staBack="1000.497611" staAhead="203.060611" staInternal="203.060611" desc="198">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6705634.790000"/>
+					<Property label="kmPostE" value="23460340.341000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="999.500027" staAhead="1202.560638" staInternal="1202.560638" desc="199">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6705254.404000"/>
+					<Property label="kmPostE" value="23459460.188000"/>
+				</Feature>
+			</StaEquation>
+			<Cant name="702" desc="702" gauge="1.524" rotationPoint="insideRail">
+				<CantStation station="226.008436" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="301.008436" appliedCant="0.125000" curvature="ccw"/>
+				<CantStation station="529.097737" appliedCant="0.125000" curvature="ccw"/>
+			</Cant>
+			<Profile>
+				<ProfAlign name="702_profAlign">
+					<PVI desc="702_profAlign/2">0.000000 11.190000</PVI>
+					<CircCurve desc="702_profAlign/3" length="146.824975" radius="25000.000000">412.060611 11.190000</CircCurve>
+					<CircCurve desc="702_profAlign/6" length="53.446208" radius="-3500.000000">664.060611 12.670000</CircCurve>
+					<CircCurve desc="702_profAlign/9" length="253.208008" radius="26000.000000">1001.060611 9.503000</CircCurve>
+					<CircCurve desc="702_profAlign/12" length="34.827762" radius="30000.000000">1402.560638 9.640000</CircCurve>
+					<CircCurve desc="702_profAlign/15" length="71.978325" radius="-20000.000000">1868.560638 10.340000</CircCurve>
+					<CircCurve desc="702_profAlign/18" length="62.903203" radius="30000.000000">1992.560638 10.080000</CircCurve>
+					<PVI desc="702_profAlign/19">2118.970690 10.080000</PVI>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="702_profAlign/3"/>
+						<Property label="PVIKmStation" value="198+209.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="702_profAlign/6"/>
+						<Property label="PVIKmStation" value="198+461.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="702_profAlign/9"/>
+						<Property label="PVIKmStation" value="198+798.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="702_profAlign/12"/>
+						<Property label="PVIKmStation" value="199+200.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="702_profAlign/15"/>
+						<Property label="PVIKmStation" value="199+666.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="702_profAlign/18"/>
+						<Property label="PVIKmStation" value="199+790.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="702_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="702_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="0.000000"/>
+					<Property label="ProfAlignGroupEndingGradient" value="0.000000"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="111"/>
+				<Property label="terrainCodingDesc" value="Pituusmittausraide"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="703" desc="703" oID="2" state="proposed" staStart="36.303058" length="1779.470621">
+			<CoordGeom>
+				<Line dir="318.417349" length="173.504245" staStart="36.303058" name="S215" oID="30">
+					<Start>6705596.323787 23460502.879323</Start>
+					<End>6705645.821159 23460336.585207</End>
+				</Line>
+				<Spiral staStart="209.807303" length="75.000000" radiusStart="INF" radiusEnd="370.000000" rot="ccw" spiType="clothoid" constant="166.583312" dirStart="318.417349" dirEnd="311.965122" name="C201" oID="31">
+					<Start>6705645.821159 23460336.585207</Start>
+					<PI>6705660.092864 23460288.637192</PI>
+					<End>6705664.768517 23460264.053396</End>
+				</Spiral>
+				<Curve rot="ccw" length="249.223442" radius="370.000000" chord="244.538669" staStart="283.994298" name="K202" oID="32">
+					<Start>6705664.768517 23460264.053396</Start>
+					<Center>6705301.284304 23460194.921441</Center>
+					<End>6705628.505439 23460022.218432</End>
+				</Curve>
+				<Spiral staStart="527.779336" length="75.000000" radiusStart="370.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="166.583312" dirStart="269.083886" dirEnd="262.631659" name="C203" oID="33">
+					<Start>6705628.505439 23460022.218433</Start>
+					<PI>6705616.824889 23460000.087244</PI>
+					<End>6705589.117499 23459958.433982</End>
+				</Spiral>
+				<Spiral staStart="602.255346" length="30.000000" radiusStart="INF" radiusEnd="2700.000000" rot="cw" spiType="clothoid" constant="284.604989" dirStart="262.631659" dirEnd="262.985336" name="C204" oID="34">
+					<Start>6705589.117499 23459958.433982</Start>
+					<PI>6705578.040489 23459941.781615</PI>
+					<End>6705572.548322 23459933.424785</End>
+				</Spiral>
+				<Curve rot="cw" length="20.038747" radius="2700.000000" chord="20.038701" staStart="632.277041" name="K205" oID="35">
+					<Start>6705572.548322 23459933.424785</Start>
+					<Center>6707828.886697 23458450.543422</Center>
+					<End>6705561.604978 23459916.638101</End>
+				</Curve>
+				<Spiral staStart="652.349076" length="30.000000" radiusStart="2700.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="284.604989" dirStart="263.457820" dirEnd="263.811498" name="C206" oID="36">
+					<Start>6705561.604978 23459916.638101</Start>
+					<PI>6705556.174984 23459908.240739</PI>
+					<End>6705545.408475 23459891.385956</End>
+				</Spiral>
+				<Line dir="263.811498" length="11.322000" staStart="682.375667" name="S" oID="37">
+					<Start>6705545.408475 23459891.385956</Start>
+					<End>6705539.313565 23459881.844480</End>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="693.697693" name="V713" oID="38">
+					<Start>6705539.313565 23459881.844480</Start>
+					<End>6705524.720127 23459858.998705</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="720.806693" name="V713" oID="39">
+					<Start>6705524.720127 23459858.998705</Start>
+					<End>6705515.119648 23459843.969322</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="7.200000" staStart="738.640693" name="S" oID="40">
+					<Start>6705515.119648 23459843.969322</Start>
+					<End>6705511.243711 23459837.901611</End>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="745.840693" name="V717" oID="41">
+					<Start>6705511.243711 23459837.901611</Start>
+					<End>6705496.650273 23459815.055836</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="772.949693" name="V717" oID="42">
+					<Start>6705496.650273 23459815.055836</Start>
+					<End>6705487.049794 23459800.026453</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="9.000000" staStart="790.783693" name="S" oID="43">
+					<Start>6705487.049794 23459800.026453</Start>
+					<End>6705482.204874 23459792.441814</End>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="799.783693" name="V719" oID="44">
+					<Start>6705482.204874 23459792.441814</Start>
+					<End>6705472.604395 23459777.412431</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="817.617693" name="V719" oID="45">
+					<Start>6705472.604395 23459777.412431</Start>
+					<End>6705458.010956 23459754.566656</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="7.200000" staStart="844.726693" name="S" oID="46">
+					<Start>6705458.010956 23459754.566656</Start>
+					<End>6705454.135020 23459748.498945</End>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="851.926693" name="V723" oID="47">
+					<Start>6705454.135020 23459748.498945</Start>
+					<End>6705444.534541 23459733.469561</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="869.760693" name="V723" oID="48">
+					<Start>6705444.534541 23459733.469561</Start>
+					<End>6705429.941103 23459710.623786</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="128.859616" staStart="896.869693" name="S" oID="49">
+					<Start>6705429.941103 23459710.623786</Start>
+					<End>6705360.572816 23459602.028936</End>
+				</Line>
+				<Curve rot="ccw" length="78.631088" radius="4000.000000" chord="78.629822" staStart="1025.714561" name="K208" oID="50">
+					<Start>6705360.572816 23459602.028936</Start>
+					<Center>6701989.622211 23461755.326876</Center>
+					<End>6705317.595209 23459536.183860</End>
+				</Curve>
+				<Line dir="262.560045" length="432.334146" staStart="1104.191373" name="S" oID="51">
+					<Start>6705317.595209 23459536.183860</Start>
+					<End>6705077.742383 23459176.484768</End>
+				</Line>
+				<Spiral staStart="1536.609160" length="30.000000" radiusStart="INF" radiusEnd="1000.000000" rot="cw" spiType="clothoid" constant="173.205081" dirStart="262.560045" dirEnd="263.514975" name="C210" oID="52">
+					<Start>6705077.742383 23459176.484768</Start>
+					<PI>6705066.646537 23459159.844707</PI>
+					<End>6705061.223982 23459151.442316</End>
+				</Spiral>
+				<Curve rot="cw" length="58.560917" radius="1000.000000" chord="58.552550" staStart="1566.624656" name="K211" oID="53">
+					<Start>6705061.223982 23459151.442316</Start>
+					<Center>6705901.445109 23458609.198405</Center>
+					<End>6705030.928136 23459101.336800</End>
+				</Curve>
+				<Spiral staStart="1625.653694" length="30.000000" radiusStart="1000.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="173.205081" dirStart="267.243079" dirEnd="268.198008" name="C212" oID="54">
+					<Start>6705030.928136 23459101.336800</Start>
+					<PI>6705026.006646 23459092.631443</PI>
+					<End>6705016.426018 23459075.075220</End>
+				</Spiral>
+				<Spiral staStart="1655.746606" length="30.000000" radiusStart="INF" radiusEnd="1000.000000" rot="ccw" spiType="clothoid" constant="173.205081" dirStart="268.198008" dirEnd="267.243079" name="C213" oID="55">
+					<Start>6705016.426018 23459075.075220</Start>
+					<PI>6705006.845390 23459057.518996</PI>
+					<End>6705001.923900 23459048.813640</End>
+				</Spiral>
+				<Curve rot="ccw" length="38.881419" radius="1000.000000" chord="38.878970" staStart="1685.745479" name="K214" oID="56">
+					<Start>6705001.923900 23459048.813640</Start>
+					<Center>6704131.406927 23459540.952035</Center>
+					<End>6704982.135757 23459015.347184</End>
+				</Curve>
+				<Spiral staStart="1724.598030" length="30.000000" radiusStart="1000.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="173.205081" dirStart="264.767811" dirEnd="263.812881" name="C215" oID="57">
+					<Start>6704982.135757 23459015.347184</Start>
+					<PI>6704976.879595 23459006.839713</PI>
+					<End>6704966.113345 23458989.984528</End>
+				</Spiral>
+				<Line dir="263.812881" length="10.000000" staStart="1754.531805" name="S" oID="58">
+					<Start>6704966.113345 23458989.984528</Start>
+					<End>6704960.730283 23458981.557034</End>
+				</Line>
+				<Line dir="263.812881" length="27.109000" staStart="1764.506392" name="V746" oID="59">
+					<Start>6704960.730283 23458981.557034</Start>
+					<End>6704946.137341 23458958.710942</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="263.812881" length="17.834000" staStart="1791.538942" name="V746" oID="60">
+					<Start>6704946.137341 23458958.710942</Start>
+					<End>6704936.537189 23458943.681350</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+			</CoordGeom>
+			<Cant name="703" desc="703" gauge="1.524" rotationPoint="insideRail">
+				<CantStation station="173.504245" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="248.504245" appliedCant="0.125000" curvature="ccw"/>
+				<CantStation station="497.727687" appliedCant="0.125000" curvature="ccw"/>
+				<CantStation station="1507.085285" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="1537.085285" appliedCant="0.030000" curvature="cw"/>
+				<CantStation station="1595.646202" appliedCant="0.030000" curvature="cw"/>
+				<CantStation station="1625.646202" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="1655.646202" appliedCant="0.030000" curvature="ccw"/>
+				<CantStation station="1694.527621" appliedCant="0.030000" curvature="ccw"/>
+				<CantStation station="1724.527621" appliedCant="0.000000" curvature="ccw"/>
+			</Cant>
+			<Profile>
+				<ProfAlign name="703_profAlign">
+					<PVI desc="703_profAlign/2">36.303058 11.190000</PVI>
+					<CircCurve desc="703_profAlign/3" length="146.824975" radius="25000.000000">416.333274 11.190000</CircCurve>
+					<CircCurve desc="703_profAlign/6" length="53.446208" radius="-3500.000000">670.764722 12.670000</CircCurve>
+					<CircCurve desc="703_profAlign/9" length="253.208008" radius="26000.000000">1007.754411 9.503000</CircCurve>
+					<CircCurve desc="703_profAlign/12" length="34.827762" radius="30000.000000">1409.339821 9.640000</CircCurve>
+					<PVI desc="703_profAlign/19">1815.773679 10.251080</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="703_profAlign/3"/>
+						<Property label="RealLengthStation" value="380.030216"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="703_profAlign/6"/>
+						<Property label="RealLengthStation" value="634.461664"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="703_profAlign/9"/>
+						<Property label="RealLengthStation" value="971.451353"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="703_profAlign/12"/>
+						<Property label="RealLengthStation" value="1373.036763"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="703_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="2"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="701" desc="701" oID="3" state="proposed" staStart="965.594693" length="824.359357">
+			<CoordGeom>
+				<Curve rot="ccw" length="35.652885" radius="499.988118" chord="35.645332" staStart="965.594693" name="V731" oID="61">
+					<Start>6705389.152433 23459655.129101</Start>
+					<Center>6704967.793621 23459924.284948</Center>
+					<End>6705368.905074 23459625.792535</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="259.271924" length="9.275000" staStart="1001.217371" name="V731" oID="62">
+					<Start>6705368.905074 23459625.792535</Start>
+					<End>6705363.367908 23459618.351741</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="259.271924" length="13.200000" staStart="1010.468801" name="S" oID="63">
+					<Start>6705363.367908 23459618.351741</Start>
+					<End>6705355.487521 23459607.762146</End>
+				</Line>
+				<Line dir="259.271924" length="17.815000" staStart="1023.642256" name="V733" oID="64">
+					<Start>6705355.487521 23459607.762146</Start>
+					<End>6705344.851984 23459593.470206</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="259.271924" length="16.615000" staStart="1041.443855" name="V733" oID="65">
+					<Start>6705344.851984 23459593.470206</Start>
+					<End>6705334.932845 23459580.140956</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="259.271924" length="5.000000" staStart="1058.060529" name="S" oID="66">
+					<Start>6705334.932845 23459580.140956</Start>
+					<End>6705331.947850 23459576.129746</End>
+				</Line>
+				<Curve rot="ccw" length="42.440801" radius="1500.000000" chord="42.439386" staStart="1063.063486" name="K002" oID="67">
+					<Start>6705331.947850 23459576.129746</Start>
+					<Center>6704128.584894 23460471.628264</Center>
+					<End>6705306.132474 23459542.444915</End>
+				</Curve>
+				<Line dir="257.470680" length="30.000000" staStart="1105.539371" name="S003" oID="68">
+					<Start>6705306.132474 23459542.444915</Start>
+					<End>6705287.548807 23459518.893963</End>
+				</Line>
+				<Curve rot="cw" length="79.943560" radius="1000.000000" chord="79.922274" staStart="1135.475242" name="K004" oID="69">
+					<Start>6705287.548807 23459518.893963</Start>
+					<Center>6706072.580527 23458899.438397</Center>
+					<End>6705240.587278 23459454.224151</End>
+				</Curve>
+				<Line dir="262.560045" length="326.421319" staStart="1215.187841" name="S" oID="70">
+					<Start>6705240.587278 23459454.224151</Start>
+					<End>6705059.493380 23459182.643817</End>
+				</Line>
+				<Line dir="262.560045" length="16.615000" staStart="1541.609160" name="V750" oID="71">
+					<Start>6705059.493380 23459182.643817</Start>
+					<End>6705050.275615 23459168.820249</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="262.560045" length="17.815000" staStart="1558.224160" name="V750" oID="72">
+					<Start>6705050.275615 23459168.820249</Start>
+					<End>6705040.392107 23459153.998289</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="262.560045" length="31.112871" staStart="1575.859796" name="S" oID="73">
+					<Start>6705040.392107 23459153.998289</Start>
+					<End>6705023.131129 23459128.112591</End>
+				</Line>
+				<Curve rot="cw" length="30.000000" radius="1507.080903" chord="29.999505" staStart="1606.452554" name="KAU2" oID="74">
+					<Start>6705023.131129 23459128.112591</Start>
+					<Center>6706277.012267 23458292.005576</Center>
+					<End>6705006.737073 23459102.988794</End>
+				</Curve>
+				<Line dir="263.827303" length="152.452920" staStart="1635.860450" name="SAU3" oID="75">
+					<Start>6705006.737073 23459102.988794</Start>
+					<End>6704924.699832 23458974.490607</End>
+				</Line>
+			</CoordGeom>
+			<Cant name="701" desc="701" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="701_profAlign">
+					<PVI desc="701_profAlign/22">965.594693 9.996033</PVI>
+					<CircCurve desc="701_profAlign/28" length="162.070923" radius="26000.000000">1046.636849 9.518552</CircCurve>
+					<CircCurve desc="701_profAlign/32" length="34.823384" radius="30000.000000">1402.909737 9.640000</CircCurve>
+					<CircCurve desc="701_profAlign/35" length="30.029990" radius="-15000.000000">1603.538016 9.940400</CircCurve>
+					<PVI desc="701_profAlign/36">1789.954049 9.847338</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="701_profAlign/32"/>
+						<Property label="RealLengthStation" value="437.315044"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="701_profAlign/35"/>
+						<Property label="RealLengthStation" value="637.943323"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="701_profAlign/32"/>
+						<Property label="PVIKmStation" value="199+200.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="701_profAlign/35"/>
+						<Property label="PVIKmStation" value="199+400.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="701_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="2"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="701_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="0.000000"/>
+					<Property label="ProfAlignGroupEndingGradient" value="-0.000500"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="704" desc="704" oID="4" state="proposed" staStart="339.879378" length="1714.962612">
+			<CoordGeom>
+				<Line dir="261.896096" length="124.529988" staStart="339.879378" name="S301" oID="76">
+					<Start>6705764.627749 23460213.305386</Start>
+					<End>6705694.463505 23460110.423430</End>
+				</Line>
+				<Spiral staStart="428.807021" length="40.000000" radiusStart="INF" radiusEnd="3000.000000" rot="cw" spiType="clothoid" constant="346.410162" dirStart="261.896096" dirEnd="262.320510" name="C302" oID="77">
+					<Start>6705694.463505 23460110.423430</Start>
+					<PI>6705679.438601 23460088.392388</PI>
+					<End>6705671.999740 23460077.327011</End>
+				</Spiral>
+				<Curve rot="cw" length="50.261164" radius="3000.000000" chord="50.260576" staStart="463.123610" name="K303" oID="78">
+					<Start>6705671.999740 23460077.327011</Start>
+					<Center>6708161.699498 23458403.590139</Center>
+					<End>6705644.309136 23460035.382334</End>
+				</Curve>
+				<Spiral staStart="509.546707" length="40.000000" radiusStart="3000.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="346.410162" dirStart="263.387085" dirEnd="263.811498" name="C304" oID="79">
+					<Start>6705644.309136 23460035.382334</Start>
+					<PI>6705637.056695 23460024.193883</PI>
+					<End>6705622.701343 23460001.720828</End>
+				</Spiral>
+				<Line dir="263.811498" length="74.805940" staStart="548.174214" name="S" oID="80">
+					<Start>6705622.701343 23460001.720828</Start>
+					<End>6705582.431474 23459938.679046</End>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="622.428423" name="V711" oID="81">
+					<Start>6705582.431474 23459938.679046</Start>
+					<End>6705572.830995 23459923.649663</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="640.318517" name="V711" oID="82">
+					<Start>6705572.830995 23459923.649663</Start>
+					<End>6705558.237556 23459900.803888</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="7.700000" staStart="667.516840" name="S" oID="83">
+					<Start>6705558.237556 23459900.803888</Start>
+					<End>6705554.092458 23459894.314808</End>
+				</Line>
+				<Spiral staStart="675.228494" length="30.000000" radiusStart="INF" radiusEnd="3800.000000" rot="ccw" spiType="clothoid" constant="337.638860" dirStart="263.811498" dirEnd="263.560201" name="C306" oID="84">
+					<Start>6705554.092458 23459894.314808</Start>
+					<PI>6705543.325961 23459877.460043</PI>
+					<End>6705537.909483 23459869.053967</End>
+				</Spiral>
+				<Curve rot="ccw" length="25.309054" radius="3800.000000" chord="25.309007" staStart="705.232592" name="K307" oID="85">
+					<Start>6705537.909483 23459869.053967</Start>
+					<Center>6702343.606203 23461927.312105</Center>
+					<End>6705524.130165 23459847.824830</End>
+				</Curve>
+				<Spiral staStart="730.540929" length="30.000000" radiusStart="3800.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="337.638860" dirStart="263.136194" dirEnd="262.884897" name="C307" oID="86">
+					<Start>6705524.130165 23459847.824830</Start>
+					<PI>6705518.657823 23459839.455019</PI>
+					<End>6705507.647152 23459822.758737</End>
+				</Spiral>
+				<Spiral staStart="760.538279" length="30.000000" radiusStart="INF" radiusEnd="3800.000000" rot="cw" spiType="clothoid" constant="337.638860" dirStart="262.884897" dirEnd="263.136194" name="C308" oID="87">
+					<Start>6705507.647152 23459822.758737</Start>
+					<PI>6705496.636480 23459806.062455</PI>
+					<End>6705491.164138 23459797.692644</End>
+				</Spiral>
+				<Curve rot="cw" length="25.309054" radius="3800.000000" chord="25.309007" staStart="790.535629" name="K309" oID="88">
+					<Start>6705491.164138 23459797.692644</Start>
+					<Center>6708671.688100 23457718.205370</Center>
+					<End>6705477.384821 23459776.463507</End>
+				</Curve>
+				<Spiral staStart="815.843966" length="30.000000" radiusStart="3800.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="337.638860" dirStart="263.560201" dirEnd="263.811498" name="C310" oID="89">
+					<Start>6705477.384821 23459776.463507</Start>
+					<PI>6705471.968343 23459768.057431</PI>
+					<End>6705461.201845 23459751.202666</End>
+				</Spiral>
+				<Line dir="263.811498" length="7.664773" staStart="845.843920" name="S" oID="90">
+					<Start>6705461.201845 23459751.202666</Start>
+					<End>6705457.075710 23459744.743274</End>
+				</Line>
+				<Line dir="263.811498" length="27.109000" staStart="853.508693" name="V721" oID="91">
+					<Start>6705457.075710 23459744.743274</Start>
+					<End>6705442.482272 23459721.897498</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="17.834000" staStart="880.617693" name="V721" oID="92">
+					<Start>6705442.482272 23459721.897498</Start>
+					<End>6705432.881793 23459706.868115</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="6.000000" staStart="898.451693" name="S" oID="93">
+					<Start>6705432.881793 23459706.868115</Start>
+					<End>6705429.651846 23459701.811689</End>
+				</Line>
+				<Line dir="263.811498" length="16.615000" staStart="904.451693" name="V727" oID="94">
+					<Start>6705429.651846 23459701.811689</Start>
+					<End>6705420.707585 23459687.809603</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="17.815000" staStart="921.066693" name="V727" oID="95">
+					<Start>6705420.707585 23459687.809603</Start>
+					<End>6705411.117334 23459672.796232</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.811498" length="4.000000" staStart="938.881693" name="S" oID="96">
+					<Start>6705411.117334 23459672.796232</Start>
+					<End>6705408.964036 23459669.425281</End>
+				</Line>
+				<Spiral staStart="942.881693" length="30.000000" radiusStart="INF" radiusEnd="1000.000000" rot="cw" spiType="clothoid" constant="173.205081" dirStart="263.811498" dirEnd="264.766427" name="C312" oID="97">
+					<Start>6705408.964036 23459669.425281</Start>
+					<PI>6705398.197420 23459652.570331</PI>
+					<End>6705392.941074 23459644.062973</End>
+				</Spiral>
+				<Curve rot="cw" length="21.718288" radius="1000.000000" chord="21.717861" staStart="972.881018" name="K313" oID="98">
+					<Start>6705392.941074 23459644.062973</Start>
+					<Center>6706243.658483 23459118.439640</Center>
+					<End>6705381.726959 23459625.464341</End>
+				</Curve>
+				<Spiral staStart="994.591618" length="30.000000" radiusStart="1000.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="173.205081" dirStart="266.149057" dirEnd="267.103986" name="C314" oID="99">
+					<Start>6705381.726959 23459625.464341</Start>
+					<PI>6705376.656604 23459616.844842</PI>
+					<End>6705366.775703 23459599.455843</End>
+				</Spiral>
+				<Line dir="267.103986" length="5.000000" staStart="1024.527497" name="S" oID="100">
+					<Start>6705366.775703 23459599.455843</Start>
+					<End>6705364.305508 23459595.108645</End>
+				</Line>
+				<Line dir="267.103986" length="16.615000" staStart="1029.497410" name="V741" oID="101">
+					<Start>6705364.305508 23459595.108645</Start>
+					<End>6705356.097047 23459580.662905</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="267.103986" length="17.815000" staStart="1046.004190" name="V741" oID="102">
+					<Start>6705356.097047 23459580.662905</Start>
+					<End>6705347.295739 23459565.173838</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="267.103986" length="5.000000" staStart="1063.687827" name="S" oID="103">
+					<Start>6705347.295739 23459565.173838</Start>
+					<End>6705344.825543 23459560.826640</End>
+				</Line>
+				<Spiral staStart="1068.647876" length="30.000000" radiusStart="INF" radiusEnd="1000.000000" rot="ccw" spiType="clothoid" constant="173.205081" dirStart="267.103986" dirEnd="266.149057" name="C315" oID="104">
+					<Start>6705344.825543 23459560.826640</Start>
+					<PI>6705334.944643 23459543.437641</PI>
+					<End>6705329.874287 23459534.818142</End>
+				</Spiral>
+				<Curve rot="ccw" length="41.376060" radius="1000.000000" chord="41.373109" staStart="1098.388804" name="K316" oID="105">
+					<Start>6705329.874287 23459534.818142</Start>
+					<Center>6704467.942763 23460041.842843</Center>
+					<End>6705308.163889 23459499.598932</End>
+				</Curve>
+				<Spiral staStart="1139.698695" length="30.000000" radiusStart="1000.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="173.205081" dirStart="263.514975" dirEnd="262.560045" name="C317" oID="106">
+					<Start>6705308.163889 23459499.598932</Start>
+					<PI>6705302.741334 23459491.196541</PI>
+					<End>6705291.645488 23459474.556480</End>
+				</Spiral>
+				<Line dir="262.560045" length="407.849303" staStart="1169.918798" name="S" oID="107">
+					<Start>6705291.645488 23459474.556480</Start>
+					<End>6705065.376505 23459135.228613</End>
+				</Line>
+				<Curve rot="cw" length="98.397490" radius="5000.000000" chord="98.395902" staStart="1578.109072" name="K319" oID="108">
+					<Start>6705065.376505 23459135.228613</Start>
+					<Center>6709225.342753 23456361.299843</Center>
+					<End>6705011.596019 23459052.830720</End>
+				</Curve>
+				<Line dir="263.812881" length="331.295497" staStart="1677.602042" name="S320" oID="109">
+					<Start>6705011.596019 23459052.830720</Start>
+					<End>6704833.257607 23458773.631656</End>
+				</Line>
+			</CoordGeom>
+			<Cant name="704" desc="704" gauge="1.524" rotationPoint="insideRail">
+				<CantStation station="382.240092" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="412.240092" appliedCant="0.020000" curvature="ccw"/>
+				<CantStation station="437.549147" appliedCant="0.020000" curvature="ccw"/>
+				<CantStation station="467.549147" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="497.549147" appliedCant="0.020000" curvature="cw"/>
+				<CantStation station="522.858201" appliedCant="0.020000" curvature="cw"/>
+				<CantStation station="552.858201" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="649.895974" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="679.895974" appliedCant="0.030000" curvature="cw"/>
+				<CantStation station="701.614262" appliedCant="0.030000" curvature="cw"/>
+				<CantStation station="731.614262" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="776.044262" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="806.044262" appliedCant="0.030000" curvature="ccw"/>
+				<CantStation station="847.420322" appliedCant="0.030000" curvature="ccw"/>
+				<CantStation station="877.420322" appliedCant="0.000000" curvature="ccw"/>
+			</Cant>
+			<Profile>
+				<ProfAlign name="704_profAlign">
+					<PVI desc="704_profAlign/39">339.879378 11.258713</PVI>
+					<CircCurve desc="704_profAlign/40" length="40.242250" radius="12000.000000">360.003995 11.312189</CircCurve>
+					<CircCurve desc="704_profAlign/43" length="32.553540" radius="-3500.000000">650.125667 12.773000</CircCurve>
+					<CircCurve desc="704_profAlign/46" length="21.373029" radius="-3500.000000">726.948118 12.519600</CircCurve>
+					<CircCurve desc="704_profAlign/49" length="253.204932" radius="26000.000000">1047.967749 9.503000</CircCurve>
+					<CircCurve desc="704_profAlign/52" length="34.827762" radius="30000.000000">1449.915225 9.640000</CircCurve>
+					<CircCurve desc="704_profAlign/55" length="71.978325" radius="-20000.000000">1915.131937 10.340000</CircCurve>
+					<CircCurve desc="704_profAlign/58" length="47.161665" radius="30000.000000">2031.261133 10.096503</CircCurve>
+					<PVI desc="704_profAlign/59">2054.841989 10.084130</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/43"/>
+						<Property label="RealLengthStation" value="310.246289"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/46"/>
+						<Property label="RealLengthStation" value="387.068741"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/49"/>
+						<Property label="RealLengthStation" value="708.088371"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/52"/>
+						<Property label="RealLengthStation" value="1110.035847"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/55"/>
+						<Property label="RealLengthStation" value="1575.252560"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/58"/>
+						<Property label="RealLengthStation" value="1699.252560"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/43"/>
+						<Property label="PVIKmStation" value="198+400.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/46"/>
+						<Property label="PVIKmStation" value="198+477.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/49"/>
+						<Property label="PVIKmStation" value="198+798.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/52"/>
+						<Property label="PVIKmStation" value="199+200.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/55"/>
+						<Property label="PVIKmStation" value="199+666.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="704_profAlign/58"/>
+						<Property label="PVIKmStation" value="199+790.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="704_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="3"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="704_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="-0.006000"/>
+					<Property label="ProfAlignGroupEndingGradient" value="0.000000"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="705" desc="705" oID="5" state="proposed" staStart="1068.329137" length="1025.103202">
+			<CoordGeom>
+				<Curve rot="ccw" length="33.196085" radius="299.990224" chord="33.179150" staStart="1068.329137" name="V743" oID="110">
+					<Start>6705347.085032 23459559.703234</Start>
+					<Center>6705071.490186 23459678.200558</Center>
+					<End>6705332.313580 23459529.993636</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="267.103986" length="1.200000" staStart="1100.968050" name="V743" oID="111">
+					<Start>6705332.313580 23459529.993636</Start>
+					<End>6705331.720733 23459528.950308</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="267.103986" length="3.718527" staStart="1102.153763" name="S" oID="112">
+					<Start>6705331.720733 23459528.950308</Start>
+					<End>6705329.883635 23459525.717274</End>
+				</Line>
+				<Curve rot="ccw" length="29.977945" radius="420.000000" chord="29.971582" staStart="1105.833860" name="K403" oID="113">
+					<Start>6705329.883635 23459525.717274</Start>
+					<Center>6704964.718985 23459733.213727</Center>
+					<End>6705314.156149 23459500.203710</End>
+				</Curve>
+				<Line dir="262.560045" length="441.631935" staStart="1135.772830" name="S" oID="114">
+					<Start>6705314.156149 23459500.203710</Start>
+					<End>6705069.145043 23459132.768921</End>
+				</Line>
+				<Curve rot="cw" length="98.397489" radius="5000.000000" chord="98.395901" staStart="1578.142177" name="K405" oID="115">
+					<Start>6705069.145043 23459132.768921</Start>
+					<Center>6709229.111291 23456358.840151</Center>
+					<End>6705015.364557 23459050.371029</End>
+				</Curve>
+				<Line dir="263.812881" length="377.551222" staStart="1677.966816" name="S" oID="116">
+					<Start>6705015.364557 23459050.371029</Start>
+					<End>6704812.126403 23458732.189984</End>
+				</Line>
+				<Line dir="263.812881" length="17.815000" staStart="2054.570690" name="V730" oID="117">
+					<Start>6704812.126403 23458732.189984</Start>
+					<End>6704802.536478 23458717.176404</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="263.812881" length="16.615000" staStart="2072.385690" name="V730" oID="118">
+					<Start>6704802.536478 23458717.176404</Start>
+					<End>6704793.592521 23458703.174124</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.812881" length="5.000000" staStart="2089.000690" name="S407" oID="119">
+					<Start>6704793.592521 23458703.174124</Start>
+					<End>6704790.900990 23458698.960377</End>
+				</Line>
+			</CoordGeom>
+			<Cant name="705" desc="705" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="705_profAlign">
+					<PVI desc="705_profAlign/2">1068.329137 9.593661</PVI>
+					<CircCurve desc="705_profAlign/9" length="59.336479" radius="26000.000000">1098.026894 9.536087</CircCurve>
+					<CircCurve desc="705_profAlign/12" length="34.827762" radius="30000.000000">1402.864136 9.640000</CircCurve>
+					<CircCurve desc="705_profAlign/15" length="71.978325" radius="-20000.000000">1867.992287 10.340000</CircCurve>
+					<CircCurve desc="705_profAlign/18" length="62.903203" radius="30000.000000">1991.992287 10.080000</CircCurve>
+					<PVI desc="705_profAlign/19">2093.432339 10.080000</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="705_profAlign/12"/>
+						<Property label="RealLengthStation" value="334.534998"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="705_profAlign/15"/>
+						<Property label="RealLengthStation" value="799.663150"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="705_profAlign/18"/>
+						<Property label="RealLengthStation" value="923.663150"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="705_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="3"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="706" desc="706" oID="6" state="proposed" staStart="1029.497410" length="1060.785562">
+			<CoordGeom>
+				<Curve rot="cw" length="33.196085" radius="299.990224" chord="33.179150" staStart="1029.497410" name="V741" oID="120">
+					<Start>6705364.305508 23459595.108645</Start>
+					<Center>6705625.128901 23459446.901722</Center>
+					<End>6705349.534056 23459565.399047</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="274.148644" length="1.200000" staStart="1062.269441" name="V741" oID="121">
+					<Start>6705349.534056 23459565.399047</Start>
+					<End>6705349.060051 23459564.296631</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="274.148644" length="5.000000" staStart="1063.442706" name="S" oID="122">
+					<Start>6705349.060051 23459564.296631</Start>
+					<End>6705347.085032 23459559.703234</End>
+				</Line>
+				<Line dir="274.148644" length="16.615000" staStart="1068.329137" name="V743" oID="123">
+					<Start>6705347.085032 23459559.703234</Start>
+					<End>6705340.522041 23459544.439376</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="274.148644" length="17.815000" staStart="1084.541234" name="V743" oID="124">
+					<Start>6705340.522041 23459544.439376</Start>
+					<End>6705333.485045 23459528.073102</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="274.148644" length="31.006588" staStart="1101.879585" name="S" oID="125">
+					<Start>6705333.485045 23459528.073102</Start>
+					<End>6705321.237321 23459499.587988</End>
+				</Line>
+				<Curve rot="ccw" length="43.845980" radius="270.000000" chord="43.797818" staStart="1132.254850" name="K502" oID="126">
+					<Start>6705321.237321 23459499.587988</Start>
+					<Center>6705073.193877 23459606.239055</Center>
+					<End>6705300.730571 23459460.887574</End>
+				</Curve>
+				<Line dir="263.810415" length="70.232827" staStart="1176.277276" name="S" oID="127">
+					<Start>6705300.730571 23459460.887574</Start>
+					<End>6705262.921514 23459401.700369</End>
+				</Line>
+				<Curve rot="ccw" length="58.922288" radius="3000.000000" chord="58.921341" staStart="1246.496557" name="K504" oID="128">
+					<Start>6705262.921514 23459401.700369</Start>
+					<Center>6702734.736029 23461016.716826</Center>
+					<End>6705230.715778 23459352.359564</End>
+				</Curve>
+				<Line dir="262.560045" length="236.194103" staStart="1305.415057" name="S" oID="129">
+					<Start>6705230.715778 23459352.359564</Start>
+					<End>6705099.678654 23459155.847665</End>
+				</Line>
+				<Curve rot="ccw" length="64.833457" radius="1000.000000" chord="64.822102" staStart="1541.609160" name="K506" oID="130">
+					<Start>6705099.678654 23459155.847665</Start>
+					<Center>6704267.685405 23459710.633419</Center>
+					<End>6705061.987191 23459103.110026</End>
+				</Curve>
+				<Line dir="258.432619" length="30.000000" staStart="1608.189655" name="S" oID="131">
+					<Start>6705061.987191 23459103.110026</Start>
+					<End>6705043.761489 23459079.280973</End>
+				</Line>
+				<Curve rot="cw" length="84.512955" radius="1000.000000" chord="84.487806" staStart="1639.013772" name="K507" oID="132">
+					<Start>6705043.761489 23459079.280973</Start>
+					<Center>6705838.063275 23458471.757580</Center>
+					<End>6704995.313928 23459010.063756</End>
+				</Curve>
+				<Line dir="263.812881" length="288.019118" staStart="1722.957353" name="S" oID="133">
+					<Start>6704995.313928 23459010.063756</Start>
+					<End>6704840.271459 23458767.335832</End>
+				</Line>
+				<Curve rot="ccw" length="38.730027" radius="350.000000" chord="38.710270" staStart="2009.800892" name="K509" oID="134">
+					<Start>6704840.271459 23458767.335832</Start>
+					<Center>6704545.309187 23458955.742994</Center>
+					<End>6704817.661301 23458735.915047</End>
+				</Curve>
+				<Line dir="256.768223" length="6.266050" staStart="2048.451926" name="S" oID="135">
+					<Start>6704817.661301 23458735.915047</Start>
+					<End>6704813.725721 23458731.039127</End>
+				</Line>
+				<Line dir="256.768223" length="1.200000" staStart="2054.679652" name="V730" oID="136">
+					<Start>6704813.725721 23458731.039127</Start>
+					<End>6704812.972025 23458730.105348</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="cw" length="33.196085" radius="299.990224" chord="33.179150" staStart="2055.872312" name="V730" oID="137">
+					<Start>6704812.972025 23458730.105348</Start>
+					<Center>6705046.409087 23458541.687533</Center>
+					<End>6704793.592521 23458703.174124</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="706" desc="706" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="706_profAlign">
+					<PVI desc="706_profAlign/2">1029.497410 9.698030</PVI>
+					<CircCurve desc="706_profAlign/9" length="98.168205" radius="26000.000000">1078.597092 9.529457</CircCurve>
+					<CircCurve desc="706_profAlign/12" length="34.827762" radius="30000.000000">1404.476759 9.640000</CircCurve>
+					<CircCurve desc="706_profAlign/15" length="71.978325" radius="-20000.000000">1869.650556 10.340000</CircCurve>
+					<CircCurve desc="706_profAlign/18" length="62.903203" radius="30000.000000">1993.650556 10.080000</CircCurve>
+					<PVI desc="706_profAlign/19">2090.282972 10.080000</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="706_profAlign/12"/>
+						<Property label="RealLengthStation" value="374.979349"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="706_profAlign/15"/>
+						<Property label="RealLengthStation" value="840.153146"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="706_profAlign/18"/>
+						<Property label="RealLengthStation" value="964.153146"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="706_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="4"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="707" desc="707" oID="7" state="proposed" staStart="904.451693" length="1193.447902">
+			<CoordGeom>
+				<Curve rot="cw" length="33.196085" radius="299.990224" chord="33.179150" staStart="904.451693" name="V727" oID="138">
+					<Start>6705429.651846 23459701.811689</Start>
+					<Center>6705682.464903 23459540.319607</Center>
+					<End>6705413.364301 23459672.905429</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="270.856155" length="1.200000" staStart="937.580071" name="V727" oID="139">
+					<Start>6705413.364301 23459672.905429</Start>
+					<End>6705412.833940 23459671.828992</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="270.856155" length="5.119233" staStart="938.772731" name="S" oID="140">
+					<Start>6705412.833940 23459671.828992</Start>
+					<End>6705410.571407 23459667.236880</End>
+				</Line>
+				<Line dir="270.856155" length="17.815000" staStart="943.860654" name="V729" oID="141">
+					<Start>6705410.571407 23459667.236880</Start>
+					<End>6705402.697763 23459651.256268</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="270.856155" length="16.615000" staStart="961.566693" name="V729" oID="142">
+					<Start>6705402.697763 23459651.256268</Start>
+					<End>6705395.354478 23459636.352094</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="270.856155" length="10.800000" staStart="978.080071" name="S" oID="143">
+					<Start>6705395.354478 23459636.352094</Start>
+					<End>6705390.581233 23459626.664157</End>
+				</Line>
+				<Line dir="270.856155" length="11.077000" staStart="988.814015" name="V735" oID="144">
+					<Start>6705390.581233 23459626.664157</Start>
+					<End>6705385.685563 23459616.727742</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="270.856155" length="17.223000" staStart="999.823265" name="V735" oID="145">
+					<Start>6705385.685563 23459616.727742</Start>
+					<End>6705378.073563 23459601.278173</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="270.856155" length="28.073079" staStart="1016.940925" name="S" oID="146">
+					<Start>6705378.073563 23459601.278173</Start>
+					<End>6705365.666185 23459576.095744</End>
+				</Line>
+				<Curve rot="cw" length="30.878374" radius="1200.000000" chord="30.877523" staStart="1044.594983" name="K602" oID="147">
+					<Start>6705365.666185 23459576.095744</Start>
+					<Center>6706442.103671 23459045.735171</Center>
+					<End>6705352.376817 23459548.224359</End>
+				</Curve>
+				<Line dir="272.494304" length="20.000000" staStart="1074.865415" name="S" oID="148">
+					<Start>6705352.376817 23459548.224359</Start>
+					<End>6705344.001998 23459530.062245</End>
+				</Line>
+				<Curve rot="ccw" length="81.843725" radius="600.000000" chord="81.780289" staStart="1094.374532" name="K604" oID="149">
+					<Start>6705344.001998 23459530.062245</Start>
+					<Center>6704799.138571 23459781.306839</Center>
+					<End>6705304.775668 23459458.303548</End>
+				</Curve>
+				<Line dir="263.810415" length="680.998710" staStart="1176.183007" name="S" oID="150">
+					<Start>6705304.775668 23459458.303548</Start>
+					<End>6704938.167626 23458884.406530</End>
+				</Line>
+				<Curve rot="ccw" length="66.371091" radius="600.000000" chord="66.337257" staStart="1858.441527" name="K606" oID="151">
+					<Start>6704938.167626 23458884.406530</Start>
+					<Center>6704432.530529 23459207.409821</Center>
+					<End>6704899.419867 23458830.561912</End>
+				</Curve>
+				<Line dir="256.768223" length="57.618184" staStart="1924.677201" name="S" oID="152">
+					<Start>6704899.419867 23458830.561912</Start>
+					<End>6704863.231047 23458785.726386</End>
+				</Line>
+				<Line dir="256.768223" length="17.223000" staStart="1981.942977" name="V738" oID="153">
+					<Start>6704863.231047 23458785.726386</Start>
+					<End>6704852.413628 23458772.324328</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="256.768223" length="11.077000" staStart="1999.060636" name="V738" oID="154">
+					<Start>6704852.413628 23458772.324328</Start>
+					<End>6704845.456387 23458763.704772</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="256.768223" length="5.000000" staStart="2010.069886" name="S" oID="155">
+					<Start>6704845.456387 23458763.704772</Start>
+					<End>6704842.315988 23458759.814028</End>
+				</Line>
+				<Curve rot="cw" length="30.984022" radius="280.000000" chord="30.968216" staStart="2015.039305" name="K609" oID="156">
+					<Start>6704842.315988 23458759.814028</Start>
+					<Center>6705060.197679 23458583.951670</Center>
+					<End>6704824.227862 23458734.677399</End>
+				</Curve>
+				<Line dir="263.812881" length="10.735010" staStart="2045.960132" name="S" oID="157">
+					<Start>6704824.227862 23458734.677399</Start>
+					<End>6704818.449140 23458725.630477</End>
+				</Line>
+				<Line dir="263.812881" length="6.146000" staStart="2056.695142" name="V732" oID="158">
+					<Start>6704818.449140 23458725.630477</Start>
+					<End>6704815.140710 23458720.450939</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KV54-200-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="4"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="22.131389" radius="199.999501" chord="22.120099" staStart="2062.841142" name="V732" oID="159">
+					<Start>6704815.140710 23458720.450939</Start>
+					<Center>6704646.591261 23458828.111906</Center>
+					<End>6704802.220652 23458702.496250</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KV54-200-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+				<Line dir="256.768223" length="11.323000" staStart="2084.927392" name="V732" oID="160">
+					<Start>6704802.220652 23458702.496250</Start>
+					<End>6704795.108904 23458693.685270</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KV54-200-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+			</CoordGeom>
+			<Cant name="707" desc="707" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="707_profAlign">
+					<PVI desc="707_profAlign/62">904.451693 10.428195</PVI>
+					<CircCurve desc="707_profAlign/68" length="223.211199" radius="26000.000000">1016.059291 9.508115</CircCurve>
+					<CircCurve desc="707_profAlign/72" length="34.126813" radius="30000.000000">1781.598152 9.769500</CircCurve>
+					<CircCurve desc="707_profAlign/75" length="44.357135" radius="-30000.000000">1993.963176 10.080000</CircCurve>
+					<PVI desc="707_profAlign/76">2097.899595 10.080000</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="707_profAlign/72"/>
+						<Property label="RealLengthStation" value="877.146459"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="707_profAlign/75"/>
+						<Property label="RealLengthStation" value="1089.511483"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="707_profAlign/72"/>
+						<Property label="PVIKmStation" value="199+580.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="707_profAlign/75"/>
+						<Property label="PVIKmStation" value="199+790.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="707_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="4"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="707_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="0.000000"/>
+					<Property label="ProfAlignGroupEndingGradient" value="0.000000"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="708" desc="708" oID="8" state="proposed" staStart="1052.020751" length="1044.987722">
+			<CoordGeom>
+				<Curve rot="ccw" length="22.131389" radius="199.999501" chord="22.120099" staStart="1052.020751" name="V739" oID="161">
+					<Start>6705367.340774 23459566.021148</Start>
+					<Center>6705179.270870 23459634.061664</Center>
+					<End>6705358.676670 23459545.668456</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="270.856155" length="6.146000" staStart="1073.493638" name="V739" oID="162">
+					<Start>6705358.676670 23459545.668456</Start>
+					<End>6705355.960340 23459540.155302</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="270.856155" length="18.635920" staStart="1079.501940" name="S" oID="163">
+					<Start>6705355.960340 23459540.155302</Start>
+					<End>6705347.723876 23459523.438299</End>
+				</Line>
+				<Curve rot="ccw" length="66.404538" radius="600.000000" chord="66.370653" staStart="1097.696015" name="K702" oID="164">
+					<Start>6705347.723876 23459523.438299</Start>
+					<Center>6704809.505133 23459788.618586</Center>
+					<End>6705315.142229 23459465.615294</End>
+				</Curve>
+				<Line dir="263.810415" length="693.007006" staStart="1164.188697" name="S" oID="165">
+					<Start>6705315.142229 23459465.615294</Start>
+					<End>6704942.069657 23458881.598543</End>
+				</Line>
+				<Curve rot="ccw" length="66.371091" radius="600.000000" chord="66.337257" staStart="1858.707468" name="K704" oID="166">
+					<Start>6704942.069657 23458881.598543</Start>
+					<Center>6704436.432560 23459204.601835</Center>
+					<End>6704903.321897 23458827.753926</End>
+				</Curve>
+				<Line dir="256.768223" length="132.668778" staStart="1924.943143" name="S" oID="167">
+					<Start>6704903.321897 23458827.753926</Start>
+					<End>6704819.995312 23458724.517863</End>
+				</Line>
+				<Line dir="256.768223" length="28.546000" staStart="2056.800483" name="V732" oID="168">
+					<Start>6704819.995312 23458724.517863</Start>
+					<End>6704802.066144 23458702.304825</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KV54-200-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="256.768223" length="11.077000" staStart="2085.171888" name="V732" oID="169">
+					<Start>6704802.066144 23458702.304825</Start>
+					<End>6704795.108904 23458693.685270</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KV54-200-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+			</CoordGeom>
+			<Cant name="708" desc="708" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="708_profAlign">
+					<PVI desc="708_profAlign/62">1052.020751 9.630411</PVI>
+					<CircCurve desc="708_profAlign/69" length="75.642141" radius="26000.000000">1089.863771 9.533283</CircCurve>
+					<CircCurve desc="708_profAlign/72" length="34.126813" radius="30000.000000">1780.129336 9.769500</CircCurve>
+					<CircCurve desc="708_profAlign/75" length="44.357135" radius="-30000.000000">1992.750302 10.080000</CircCurve>
+					<PVI desc="708_profAlign/76">2097.008473 10.080000</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="708_profAlign/72"/>
+						<Property label="RealLengthStation" value="728.108585"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="708_profAlign/75"/>
+						<Property label="RealLengthStation" value="940.729552"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="708_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="4"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="4"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="709" desc="709" oID="9" state="proposed" staStart="988.814015" length="1068.228568">
+			<CoordGeom>
+				<Curve rot="cw" length="22.131389" radius="199.999501" chord="22.120099" staStart="988.814015" name="V735" oID="170">
+					<Start>6705390.581233 23459626.664157</Start>
+					<Center>6705569.987034 23459538.270948</Center>
+					<End>6705381.917130 23459606.311464</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="277.900813" length="6.146000" staStart="1010.630095" name="V735" oID="171">
+					<Start>6705381.917130 23459606.311464</Start>
+					<End>6705379.826240 23459600.532062</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="277.900813" length="4.200000" staStart="1016.626192" name="S" oID="172">
+					<Start>6705379.826240 23459600.532062</Start>
+					<End>6705378.397385 23459596.582584</End>
+				</Line>
+				<Line dir="277.900813" length="11.077000" staStart="1020.695391" name="V737" oID="173">
+					<Start>6705378.397385 23459596.582584</Start>
+					<End>6705374.628952 23459586.166306</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="277.900813" length="17.223000" staStart="1031.392529" name="V737" oID="174">
+					<Start>6705374.628952 23459586.166306</Start>
+					<End>6705368.769628 23459569.970626</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="277.900813" length="4.200000" staStart="1047.982896" name="S" oID="175">
+					<Start>6705368.769628 23459569.970626</Start>
+					<End>6705367.340774 23459566.021148</End>
+				</Line>
+				<Line dir="277.900813" length="11.077000" staStart="1052.020751" name="V739" oID="176">
+					<Start>6705367.340774 23459566.021148</Start>
+					<End>6705363.572340 23459555.604871</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="277.900813" length="17.223000" staStart="1062.655092" name="V739" oID="177">
+					<Start>6705363.572340 23459555.604871</Start>
+					<End>6705357.713017 23459539.409190</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="277.900813" length="6.068954" staStart="1079.145951" name="S" oID="178">
+					<Start>6705357.713017 23459539.409190</Start>
+					<End>6705355.648338 23459533.702238</End>
+				</Line>
+				<Curve rot="ccw" length="66.399435" radius="300.000000" chord="66.263987" staStart="1084.944006" name="K803" oID="179">
+					<Start>6705355.648338 23459533.702238</Start>
+					<Center>6705073.542779 23459635.763267</Center>
+					<End>6705326.361327 23459474.261621</End>
+				</Curve>
+				<Line dir="263.810415" length="727.522296" staStart="1150.493576" name="S" oID="180">
+					<Start>6705326.361327 23459474.261621</Start>
+					<End>6704934.707833 23458861.157851</End>
+				</Line>
+				<Curve rot="ccw" length="98.051504" radius="600.000000" chord="97.942434" staStart="1879.896763" name="K805" oID="181">
+					<Start>6704934.707833 23458861.157851</Start>
+					<Center>6704429.070736 23459184.161143</Center>
+					<End>6704875.420818 23458783.197796</End>
+				</Curve>
+				<Line dir="253.406827" length="20.000000" staStart="1977.512115" name="S" oID="182">
+					<Start>6704875.420818 23458783.197796</Start>
+					<End>6704862.055373 23458768.319460</End>
+				</Line>
+				<Curve rot="cw" length="15.840206" radius="300.000000" chord="15.838366" staStart="1997.245525" name="K807" oID="183">
+					<Start>6704862.055373 23458768.319460</Start>
+					<Center>6705085.230413 23458567.837787</Center>
+					<End>6704851.785745 23458756.261742</End>
+				</Curve>
+				<Line dir="256.768223" length="12.791394" staStart="2012.935363" name="S" oID="184">
+					<Start>6704851.785745 23458756.261742</Start>
+					<End>6704843.751728 23458746.308132</End>
+				</Line>
+				<Line dir="256.768223" length="6.146000" staStart="2025.648522" name="V734" oID="185">
+					<Start>6704843.751728 23458746.308132</Start>
+					<End>6704839.891549 23458741.525629</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="22.131389" radius="199.999501" chord="22.120099" staStart="2031.756932" name="V734" oID="186">
+					<Start>6704839.891549 23458741.525629</Start>
+					<Center>6704684.262158 23458867.141286</Center>
+					<End>6704825.067750 23458725.107537</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="709" desc="709" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="709_profAlign">
+					<PVI desc="709_profAlign/62">988.814015 9.869574</PVI>
+					<CircCurve desc="709_profAlign/68" length="138.848876" radius="26000.000000">1058.247556 9.522501</CircCurve>
+					<CircCurve desc="709_profAlign/72" length="34.126813" radius="30000.000000">1782.418948 9.769500</CircCurve>
+					<CircCurve desc="709_profAlign/75" length="44.357135" radius="-30000.000000">1995.385417 10.080000</CircCurve>
+					<PVI desc="709_profAlign/76">2057.042583 10.080000</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="709_profAlign/72"/>
+						<Property label="RealLengthStation" value="793.604933"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="709_profAlign/75"/>
+						<Property label="RealLengthStation" value="1006.571401"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="709_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="4"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="5"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="710" desc="710" oID="10" state="proposed" staStart="1020.695391" length="1081.322311">
+			<CoordGeom>
+				<Curve rot="cw" length="22.131389" radius="199.999501" chord="22.120099" staStart="1020.695391" name="V737" oID="187">
+					<Start>6705378.397385 23459596.582584</Start>
+					<Center>6705566.467289 23459528.542068</Center>
+					<End>6705372.033853 23459575.397583</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="284.945470" length="6.146000" staStart="1041.726331" name="V737" oID="188">
+					<Start>6705372.033853 23459575.397583</Start>
+					<End>6705370.593979 23459569.422629</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="284.945470" length="10.627163" staStart="1047.446921" name="S" oID="189">
+					<Start>6705370.593979 23459569.422629</Start>
+					<End>6705368.104267 23459559.091224</End>
+				</Line>
+				<Curve rot="ccw" length="92.956828" radius="280.000000" chord="92.530525" staStart="1057.316391" name="K902" oID="190">
+					<Start>6705368.104267 23459559.091224</Start>
+					<Center>6705095.896777 23459624.689110</Center>
+					<End>6705331.860756 23459473.954241</End>
+				</Curve>
+				<Line dir="263.810415" length="730.757053" staStart="1147.594225" name="S" oID="191">
+					<Start>6705331.860756 23459473.954241</Start>
+					<End>6704938.465867 23458858.124449</End>
+				</Line>
+				<Curve rot="ccw" length="132.765424" radius="600.000000" chord="132.494732" staStart="1880.430188" name="K904" oID="192">
+					<Start>6704938.465867 23458858.124449</Start>
+					<Center>6704432.828770 23459181.127740</Center>
+					<End>6704855.246599 23458755.025431</End>
+				</Curve>
+				<Line dir="249.723566" length="14.195216" staStart="2012.114264" name="S" oID="193">
+					<Start>6704855.246599 23458755.025431</Start>
+					<End>6704845.165575 23458745.031578</End>
+				</Line>
+				<Line dir="249.723566" length="17.223000" staStart="2025.963255" name="V734" oID="194">
+					<Start>6704845.165575 23458745.031578</Start>
+					<End>6704832.934308 23458732.906074</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="249.723566" length="11.077000" staStart="2042.766182" name="V734" oID="195">
+					<Start>6704832.934308 23458732.906074</Start>
+					<End>6704825.067750 23458725.107537</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="249.723566" length="15.165849" staStart="2053.573011" name="S" oID="196">
+					<Start>6704825.067750 23458725.107537</Start>
+					<End>6704814.297411 23458714.430329</End>
+				</Line>
+				<Line dir="249.723566" length="6.146000" staStart="2068.368961" name="V732" oID="197">
+					<Start>6704814.297411 23458714.430329</Start>
+					<End>6704809.932703 23458710.103362</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KV54-200-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="cw" length="22.131389" radius="199.999501" chord="22.120099" staStart="2074.365058" name="V732" oID="198">
+					<Start>6704809.932703 23458710.103362</Start>
+					<Center>6704950.738295 23458568.069613</Center>
+					<End>6704795.108904 23458693.685270</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KV54-200-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="710" desc="710" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="710_profAlign">
+					<PVI desc="710_profAlign/62">1020.695391 9.729735</PVI>
+					<CircCurve desc="710_profAlign/69" length="106.967501" radius="26000.000000">1074.192937 9.527939</CircCurve>
+					<CircCurve desc="710_profAlign/72" length="34.126813" radius="30000.000000">1782.859679 9.769500</CircCurve>
+					<CircCurve desc="710_profAlign/75" length="44.357135" radius="-30000.000000">1996.107873 10.080000</CircCurve>
+					<PVI desc="710_profAlign/76">2102.017702 10.080000</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="710_profAlign/72"/>
+						<Property label="RealLengthStation" value="762.164287"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="710_profAlign/75"/>
+						<Property label="RealLengthStation" value="975.412482"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="710_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="4"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="6"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="757" desc="757" oID="11" state="proposed" staStart="647.667553" length="330.388310">
+			<CoordGeom>
+				<Line dir="263.811498" length="114.860344" staStart="647.667553" name="SV01" oID="199">
+					<Start>6705573.082583 23459914.755441</Start>
+					<End>6705511.250447 23459817.958304</End>
+				</Line>
+				<Curve rot="ccw" length="41.736070" radius="1000.000000" chord="41.733041" staStart="762.644043" name="KV02" oID="200">
+					<Start>6705511.250447 23459817.958304</Start>
+					<Center>6704668.512795 23460356.282789</Center>
+					<End>6705488.055545 23459783.264742</End>
+				</Curve>
+				<Curve rot="cw" length="41.736070" radius="1000.000000" chord="41.733041" staStart="804.367998" name="KV03" oID="201">
+					<Start>6705488.055545 23459783.264742</Start>
+					<Center>6706307.598294 23459210.246695</Center>
+					<End>6705464.860643 23459748.571179</End>
+				</Curve>
+				<Line dir="263.811498" length="97.659740" staStart="846.091953" name="S" oID="202">
+					<Start>6705464.860643 23459748.571179</Start>
+					<End>6705412.288013 23459666.269639</End>
+				</Line>
+				<Line dir="263.811498" length="1.200000" staStart="943.751693" name="V729" oID="203">
+					<Start>6705412.288013 23459666.269639</Start>
+					<End>6705411.642024 23459665.258354</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="cw" length="33.196085" radius="299.990224" chord="33.179150" staStart="944.951693" name="V729" oID="204">
+					<Start>6705411.642024 23459665.258354</Start>
+					<Center>6705664.455081 23459503.766271</Center>
+					<End>6705395.354478 23459636.352094</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="757" desc="757" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="757_profAlign">
+					<PVI desc="757_profAlign/79">647.667553 11.833700</PVI>
+					<CircCurve desc="757_profAlign/80" length="28.193744" radius="-3000.000000">752.944466 11.833700</CircCurve>
+					<CircCurve desc="757_profAlign/83" length="103.626250" radius="26000.000000">926.174267 10.205917</CircCurve>
+					<PVI desc="757_profAlign/84">978.055863 9.925478</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="757_profAlign/80"/>
+						<Property label="RealLengthStation" value="105.276913"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="757_profAlign/80"/>
+						<Property label="PVIKmStation" value="198+550.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="757_profAlign/83"/>
+						<Property label="PVIKmStation" value="198+798.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="757_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="5"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="757_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="0.000000"/>
+					<Property label="ProfAlignGroupEndingGradient" value="0.000341"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="767" desc="767" oID="12" state="proposed" staStart="1520.311233" length="445.433538">
+			<CoordGeom>
+				<Line dir="263.810415" length="336.632630" staStart="1520.311233" name="SP11" oID="205">
+					<Start>6705115.488008 23459170.904425</Start>
+					<End>6704934.265596 23458887.214515</End>
+				</Line>
+				<Curve rot="ccw" length="66.371091" radius="600.000000" chord="66.337257" staStart="1858.175586" name="KP12" oID="206">
+					<Start>6704934.265596 23458887.214515</Start>
+					<Center>6704428.628499 23459210.217807</Center>
+					<End>6704895.517837 23458833.369898</End>
+				</Curve>
+				<Line dir="256.768223" length="14.152428" staStart="1924.411260" name="S" oID="207">
+					<Start>6704895.517837 23458833.369898</Start>
+					<End>6704886.628982 23458822.357202</End>
+				</Line>
+				<Line dir="256.768223" length="6.146000" staStart="1938.477128" name="V740" oID="208">
+					<Start>6704886.628982 23458822.357202</Start>
+					<End>6704882.768803 23458817.574699</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="cw" length="22.131389" radius="199.999501" chord="22.120099" staStart="1944.585537" name="V740" oID="209">
+					<Start>6704882.768803 23458817.574699</Start>
+					<Center>6705038.398194 23458691.959042</Center>
+					<End>6704869.848745 23458799.620009</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="767" desc="767" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="767_profAlign">
+					<PVI desc="767_profAlign/62">1520.311233 9.680070</PVI>
+					<CircCurve desc="767_profAlign/72" length="34.126813" radius="30000.000000">1779.774636 9.769500</CircCurve>
+					<PVI desc="767_profAlign/76">1965.744772 10.041721</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="767_profAlign/72"/>
+						<Property label="RealLengthStation" value="259.463403"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="767_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="4"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="2"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="766" desc="766" oID="13" state="proposed" staStart="1621.014975" length="390.559888">
+			<CoordGeom>
+				<Line dir="263.810415" length="233.971506" staStart="1621.014975" name="SP21" oID="210">
+					<Start>6705058.652906 23459090.849712</Start>
+					<End>6704932.696962 23458893.675256</End>
+				</Line>
+				<Curve rot="ccw" length="37.410951" radius="600.000000" chord="37.404891" staStart="1853.575206" name="KP22" oID="211">
+					<Start>6704932.696962 23458893.675256</Start>
+					<Center>6704427.059865 23459216.678548</Center>
+					<End>6704911.587672 23458862.796076</End>
+				</Curve>
+				<Curve rot="cw" length="37.434193" radius="600.000000" chord="37.428121" staStart="1890.961876" name="KP24" oID="212">
+					<Start>6704911.587672 23458862.796076</Start>
+					<Center>6705396.115480 23458508.913604</Center>
+					<End>6704890.465872 23458831.897309</End>
+				</Curve>
+				<Line dir="263.812881" length="10.000000" staStart="1928.371787" name="S" oID="213">
+					<Start>6704890.465872 23458831.897309</Start>
+					<End>6704885.082810 23458823.469815</End>
+				</Line>
+				<Line dir="263.812881" length="17.223000" staStart="1938.371787" name="V740" oID="214">
+					<Start>6704885.082810 23458823.469815</Start>
+					<End>6704875.811563 23458808.955143</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="263.812881" length="11.077000" staStart="1955.594787" name="V740" oID="215">
+					<Start>6704875.811563 23458808.955143</Start>
+					<End>6704869.848745 23458799.620009</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="263.812881" length="15.165849" staStart="1966.671787" name="S" oID="216">
+					<Start>6704869.848745 23458799.620009</Start>
+					<End>6704861.684875 23458786.839000</End>
+				</Line>
+				<Line dir="263.812881" length="6.146000" staStart="1981.837636" name="V738" oID="217">
+					<Start>6704861.684875 23458786.839000</Start>
+					<End>6704858.376445 23458781.659462</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="22.131389" radius="199.999501" chord="22.120099" staStart="1987.983636" name="V738" oID="218">
+					<Start>6704858.376445 23458781.659462</Start>
+					<Center>6704689.826996 23458889.320429</Center>
+					<End>6704845.456387 23458763.704772</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV54-200(N)-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="766" desc="766" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="766_profAlign">
+					<PVI desc="766_profAlign/62">1621.014975 9.714411</PVI>
+					<CircCurve desc="766_profAlign/72" length="34.126813" radius="30000.000000">1782.675214 9.769500</CircCurve>
+					<CircCurve desc="766_profAlign/75" length="39.687819" radius="-30000.000000">1991.685851 10.076548</CircCurve>
+					<PVI desc="766_profAlign/76">2011.574863 10.079637</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="766_profAlign/72"/>
+						<Property label="RealLengthStation" value="161.660238"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="766_profAlign/75"/>
+						<Property label="RealLengthStation" value="373.005901"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="766_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="4"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="3"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="711713" desc="711713" oID="14" state="proposed" staStart="622.428423" length="116.225623">
+			<CoordGeom>
+				<Curve rot="ccw" length="35.652885" radius="499.988118" chord="35.645332" staStart="622.428423" name="V711" oID="219">
+					<Start>6705582.431474 23459938.679046</Start>
+					<Center>6705161.072661 23460207.834892</Center>
+					<End>6705562.184114 23459909.342480</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="259.271924" length="9.275000" staStart="658.177373" name="V711" oID="220">
+					<Start>6705562.184114 23459909.342480</Start>
+					<End>6705556.646949 23459901.901685</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="259.271924" length="26.369852" staStart="667.450822" name="S" oID="221">
+					<Start>6705556.646949 23459901.901685</Start>
+					<End>6705540.904173 23459880.746683</End>
+				</Line>
+				<Line dir="259.271924" length="9.275000" staStart="693.766585" name="V713" oID="222">
+					<Start>6705540.904173 23459880.746683</Start>
+					<End>6705535.367007 23459873.305889</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="cw" length="35.652885" radius="499.988118" chord="35.645332" staStart="703.018014" name="V713" oID="223">
+					<Start>6705535.367007 23459873.305889</Start>
+					<Center>6705936.478460 23459574.813476</Center>
+					<End>6705515.119648 23459843.969322</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="711713" desc="711713" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="711713_profAlign">
+					<PVI desc="711713_profAlign/39">622.428423 12.709262</PVI>
+					<CircCurve desc="711713_profAlign/46" length="21.373029" radius="-3500.000000">679.985757 12.519600</CircCurve>
+					<PVI desc="711713_profAlign/59">738.654046 11.969093</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="711713_profAlign/46"/>
+						<Property label="RealLengthStation" value="57.557334"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="711713_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="3"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="2"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="715717" desc="715717" oID="15" state="proposed" staStart="692.115693" length="98.798280">
+			<CoordGeom>
+				<Curve rot="cw" length="35.652885" radius="499.988118" chord="35.645332" staStart="692.115693" name="V715" oID="224">
+					<Start>6705536.372875 23459885.600152</Start>
+					<Center>6705957.731687 23459616.444305</Center>
+					<End>6705518.267114 23459854.895573</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="268.351072" length="9.275000" staStart="727.738371" name="V715" oID="225">
+					<Start>6705518.267114 23459854.895573</Start>
+					<End>6705513.843738 23459846.743312</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="268.351072" length="8.942510" staStart="736.989801" name="S" oID="226">
+					<Start>6705513.843738 23459846.743312</Start>
+					<End>6705509.578931 23459838.883292</End>
+				</Line>
+				<Line dir="268.351072" length="9.275000" staStart="745.909585" name="V717" oID="227">
+					<Start>6705509.578931 23459838.883292</Start>
+					<End>6705505.155555 23459830.731031</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="35.652885" radius="499.988118" chord="35.645332" staStart="755.161014" name="V717" oID="228">
+					<Start>6705505.155555 23459830.731031</Start>
+					<Center>6705065.690982 23460069.182299</Center>
+					<End>6705487.049794 23459800.026453</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="715717" desc="715717" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="715717_profAlign">
+					<PVI desc="715717_profAlign/2">692.115693 12.406349</PVI>
+					<PVI desc="715717_profAlign/19">790.913973 11.479104</PVI>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="715717_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="6"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="719721" desc="719721" oID="16" state="proposed" staStart="799.783693" length="98.798280">
+			<CoordGeom>
+				<Curve rot="cw" length="35.652885" radius="499.988118" chord="35.645332" staStart="799.783693" name="V719" oID="229">
+					<Start>6705482.204874 23459792.441814</Start>
+					<Center>6705903.563686 23459523.285968</Center>
+					<End>6705464.099113 23459761.737236</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="268.351072" length="9.275000" staStart="835.406371" name="V719" oID="230">
+					<Start>6705464.099113 23459761.737236</Start>
+					<End>6705459.675737 23459753.584974</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="268.351072" length="8.942510" staStart="844.657801" name="S" oID="231">
+					<Start>6705459.675737 23459753.584974</Start>
+					<End>6705455.410930 23459745.724955</End>
+				</Line>
+				<Line dir="268.351072" length="9.275000" staStart="853.577585" name="V721" oID="232">
+					<Start>6705455.410930 23459745.724955</Start>
+					<End>6705450.987554 23459737.572693</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="35.652885" radius="499.988118" chord="35.645332" staStart="862.829014" name="V721" oID="233">
+					<Start>6705450.987554 23459737.572693</Start>
+					<Center>6705011.522980 23459976.023961</Center>
+					<End>6705432.881793 23459706.868115</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="719721" desc="719721" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="719721_profAlign">
+					<PVI desc="719721_profAlign/2">799.783693 11.394525</PVI>
+					<CircCurve desc="719721_profAlign/9" length="23.996086" radius="26000.000000">886.582728 10.580034</CircCurve>
+					<PVI desc="719721_profAlign/19">898.581973 10.478354</PVI>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="719721_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="7"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="723725" desc="723725" oID="17" state="proposed" staStart="851.926693" length="98.798280">
+			<CoordGeom>
+				<Curve rot="ccw" length="35.652885" radius="499.988118" chord="35.645332" staStart="851.926693" name="V723" oID="234">
+					<Start>6705454.135020 23459748.498945</Start>
+					<Center>6705032.776208 23460017.654791</Center>
+					<End>6705433.887661 23459719.162378</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="259.271924" length="9.275000" staStart="887.549371" name="V723" oID="235">
+					<Start>6705433.887661 23459719.162378</Start>
+					<End>6705428.350495 23459711.721584</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="259.271924" length="8.942510" staStart="896.800801" name="S" oID="236">
+					<Start>6705428.350495 23459711.721584</Start>
+					<End>6705423.011826 23459704.547527</End>
+				</Line>
+				<Line dir="259.271924" length="9.275000" staStart="905.720585" name="V725" oID="237">
+					<Start>6705423.011826 23459704.547527</Start>
+					<End>6705417.474660 23459697.106733</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="cw" length="35.652885" radius="499.988118" chord="35.645332" staStart="914.972014" name="V725" oID="238">
+					<Start>6705417.474660 23459697.106733</Start>
+					<Center>6705818.586113 23459398.614320</Center>
+					<End>6705397.227300 23459667.770166</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-500-1:14"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="723725" desc="723725" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="723725_profAlign">
+					<PVI desc="723725_profAlign/2">851.926693 10.904505</PVI>
+					<CircCurve desc="723725_profAlign/9" length="76.139086" radius="26000.000000">912.618546 10.335027</CircCurve>
+					<PVI desc="723725_profAlign/19">950.724973 10.088744</PVI>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="723725_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="8"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="750748" desc="750748" oID="18" state="proposed" staStart="1541.609160" length="214.115779">
+			<CoordGeom>
+				<Curve rot="cw" length="33.196085" radius="299.990224" chord="33.179150" staStart="1541.609160" name="V750" oID="239">
+					<Start>6705059.493380 23459182.643817</Start>
+					<Center>6705309.083222 23459016.213514</Center>
+					<End>6705042.640786 23459154.063298</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="269.604703" length="1.200000" staStart="1574.601346" name="V750" oID="240">
+					<Start>6705042.640786 23459154.063298</Start>
+					<End>6705042.089369 23459152.997494</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="269.604703" length="84.141855" staStart="1575.779801" name="S" oID="241">
+					<Start>6705042.089369 23459152.997494</Start>
+					<End>6705003.424987 23459078.265189</End>
+				</Line>
+				<Curve rot="cw" length="45.493482" radius="500.000000" chord="45.477791" staStart="1659.142873" name="K012" oID="242">
+					<Start>6705003.424987 23459078.265189</Start>
+					<Center>6705447.510185 23458848.508062</Center>
+					<End>6704984.385856 23459036.964572</End>
+				</Curve>
+				<Line dir="275.397113" length="15.688273" staStart="1704.524141" name="S" oID="243">
+					<Start>6704984.385856 23459036.964572</Start>
+					<End>6704978.472741 23459022.433330</End>
+				</Line>
+				<Line dir="275.397113" length="1.200000" staStart="1720.116461" name="V748" oID="244">
+					<Start>6704978.472741 23459022.433330</Start>
+					<End>6704978.020446 23459021.321832</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="33.196085" radius="299.990224" chord="33.179150" staStart="1721.309121" name="V748" oID="245">
+					<Start>6704978.020446 23459021.321832</Start>
+					<Center>6704700.154904 23459134.392053</Center>
+					<End>6704963.834429 23458991.328284</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="750748" desc="750748" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="750748_profAlign">
+					<PVI desc="750748_profAlign/2">1541.609160 9.848871</PVI>
+					<PVI desc="750748_profAlign/19">1755.724939 10.168570</PVI>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="750748_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="5"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="V733-P" desc="V733-P" oID="19" state="proposed" staStart="983.613388" length="74.396084">
+			<CoordGeom>
+				<Line dir="263.133482" length="10.000000" staStart="983.613388" name="ST01" oID="246">
+					<Start>6705374.993696 23459642.792284</Start>
+					<End>6705369.521004 23459634.422717</End>
+				</Line>
+				<Curve rot="cw" length="25.000000" radius="500.000000" chord="24.997396" staStart="993.612821" name="KT02" oID="247">
+					<Start>6705369.521004 23459634.422717</Start>
+					<Center>6705787.999343 23459360.788144</Center>
+					<End>6705356.367965 23459613.165546</End>
+				</Curve>
+				<Line dir="266.316581" length="5.000000" staStart="1018.609804" name="S" oID="248">
+					<Start>6705356.367965 23459613.165546</Start>
+					<End>6705353.844191 23459608.849232</End>
+				</Line>
+				<Line dir="266.316581" length="1.200000" staStart="1023.615532" name="V733" oID="249">
+					<Start>6705353.844191 23459608.849232</Start>
+					<End>6705353.238485 23459607.813317</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="33.196085" radius="299.990224" chord="33.179150" staStart="1024.816784" name="V733" oID="250">
+					<Start>6705353.238485 23459607.813317</Start>
+					<Center>6705094.268097 23459759.234823</Center>
+					<End>6705334.932845 23459580.140956</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="V733-P" desc="V733-P" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="V733-P_profAlign">
+					<PVI desc="V733-P_profAlign/22">983.613388 9.896105</PVI>
+					<CircCurve desc="V733-P_profAlign/28" length="74.447141" radius="26000.000000">1020.837693 9.702607</CircCurve>
+					<PVI desc="V733-P_profAlign/29">1058.009473 9.615620</PVI>
+				</ProfAlign>
+			</Profile>
+		</Alignment>
+	</Alignments>
+</LandXML>

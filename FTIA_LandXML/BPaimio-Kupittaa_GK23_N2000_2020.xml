@@ -1,0 +1,1716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LandXML xmlns="http://www.inframodel.fi/inframodel" xmlns:im="http://www.im.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.inframodel.fi/inframodel https://buildingsmart.fi/infra/schema/4.0.3/inframodel.xsd http://im.inframodel.fi https://buildingsmart.fi/infra/schema/4.0.3/im.xsd" date="2018-12-04" time="14:13:32" version="1.2" language="finnish" readOnly="false">
+	<FeatureDictionary name="inframodel" version="4.0.3">
+		<DocFileRef name="Inframodel extensions" location="https://buildingsmart.fi/infra/inframodel/pages/extensions.html"/>
+	</FeatureDictionary>
+	<Units>
+		<Metric areaUnit="squareMeter" linearUnit="meter" volumeUnit="cubicMeter" temperatureUnit="celsius" pressureUnit="HPA" diameterUnit="meter" widthUnit="meter" heightUnit="meter" velocityUnit="kilometersPerHour" angularUnit="grads" directionUnit="grads" elevationUnit="meter"/>
+	</Units>
+	<CoordinateSystem name="ETRS89 / GK23FIN" rotationAngle="0" verticalCoordinateSystemName="N2000" epsgCode="3877"/>
+	<Project name="BPaimio-Kupittaa_GK23_N2000_2020_XML" desc="LandXML ohjaus tiedostosta BPaimio-Kupittaa_GK23_N">
+		<Feature code="IM_codings" source="inframodel" name="classcodings">
+			<Property label="terrainCoding" value="InfraBIM"/>
+			<Property label="infraCoding" value="InfraBIM"/>
+		</Feature>
+	</Project>
+	<Application name="Laskentakirjasto" desc="Ratasovellus_Intel_64.dll/Rata ICT Palvelu" manufacturer="Sweco Infra + Rail Oy" manufacturerURL="http://www.sweco.fi" version="12.03.20.1">
+		<Author createdBy="Pasi Holtta" createdByEmail="pasi.holtta@sweco.fi" company="Sweco Infra + Rail Oy" companyURL="www.sweco.fi" timeStamp="2020-09-29T23:54:02"/>
+	</Application>
+	<Alignments name="001" desc="Suunniteltu tilanne" state="proposed">
+		<Alignment name="001" desc="001" oID="1" state="proposed" staStart="0.000000" length="25620.630386">
+			<CoordGeom>
+				<Line dir="347.643815" length="284.055980" staStart="0.000000" name="S280" oID="1">
+					<Start>6704364.930733 23483975.625295</Start>
+					<End>6704558.218863 23483767.472711</End>
+				</Line>
+				<Spiral staStart="284.055980" length="135.000000" radiusStart="INF" radiusEnd="1112.000000" rot="cw" spiType="clothoid" constant="387.453223" dirStart="347.643815" dirEnd="351.508189" name="C281" oID="2">
+					<Start>6704558.218863 23483767.472711</Start>
+					<PI>6704619.471897 23483701.509130</PI>
+					<End>6704652.047964 23483670.441110</End>
+				</Spiral>
+				<Curve rot="cw" length="85.567403" radius="1112.000000" chord="85.546294" staStart="419.055980" name="K282" oID="3">
+					<Start>6704652.047964 23483670.441110</Start>
+					<Center>6705419.503837 23484475.149432</Center>
+					<End>6704716.179453 23483613.825560</End>
+				</Curve>
+				<Spiral staStart="504.623383" length="135.000000" radiusStart="1112.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="387.453223" dirStart="356.406921" dirEnd="360.271295" name="C283" oID="4">
+					<Start>6704716.179453 23483613.825560</Start>
+					<PI>6704751.047421 23483585.353701</PI>
+					<End>6704824.097826 23483532.753639</End>
+				</Spiral>
+				<Line dir="360.271295" length="17.150000" staStart="639.623383" name="S284" oID="5">
+					<Start>6704824.097826 23483532.753639</Start>
+					<End>6704838.015300 23483522.732340</End>
+				</Line>
+				<Line dir="360.271295" length="25.999000" staStart="656.773383" name="VPA1" oID="6">
+					<Start>6704838.015300 23483522.732340</Start>
+					<End>6704859.113865 23483507.540284</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="360.271295" length="33.701000" staStart="682.772383" name="VPA1" oID="7">
+					<Start>6704859.113865 23483507.540284</Start>
+					<End>6704886.462714 23483487.847701</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="360.271295" length="27.882472" staStart="716.473383" name="S285" oID="8">
+					<Start>6704886.462714 23483487.847701</Start>
+					<End>6704909.089744 23483471.555072</End>
+				</Line>
+				<Spiral staStart="744.355855" length="155.000000" radiusStart="INF" radiusEnd="800.000000" rot="ccw" spiType="clothoid" constant="352.136337" dirStart="360.271295" dirEnd="354.104041" name="C286" oID="9">
+					<Start>6704909.089744 23483471.555072</Start>
+					<PI>6704992.987500 23483411.144358</PI>
+					<End>6705031.833749 23483377.009449</End>
+				</Spiral>
+				<Curve rot="ccw" length="618.350980" radius="800.000000" chord="603.072854" staStart="899.355855" name="K287" oID="10">
+					<Start>6705031.833749 23483377.009449</Start>
+					<Center>6704503.765669 23482776.056787</Center>
+					<End>6705301.399819 23482837.536557</End>
+				</Curve>
+				<Spiral staStart="1517.706835" length="155.000000" radiusStart="800.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="352.136337" dirStart="304.897233" dirEnd="298.729979" name="C288" oID="11">
+					<Start>6705301.399819 23482837.536557</Start>
+					<PI>6705305.373940 23482785.976598</PI>
+					<End>6705303.311620 23482682.612994</End>
+				</Spiral>
+				<Line dir="298.729979" length="44.300000" staStart="1672.706835" name="S289" oID="12">
+					<Start>6705303.311620 23482682.612994</Start>
+					<End>6705302.427919 23482638.321809</End>
+				</Line>
+				<Line dir="298.729979" length="33.701000" staStart="1717.006835" name="VPA2" oID="13">
+					<Start>6705302.427919 23482638.321809</Start>
+					<End>6705301.755647 23482604.627515</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="298.729979" length="25.999000" staStart="1750.707835" name="VPA2" oID="14">
+					<Start>6705301.755647 23482604.627515</Start>
+					<End>6705301.237016 23482578.633688</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="298.729979" length="409.743613" staStart="1776.706835" name="S290" oID="15">
+					<Start>6705301.237016 23482578.633688</Start>
+					<End>6705293.063402 23482168.971608</End>
+				</Line>
+				<Spiral staStart="2186.450448" length="100.000000" radiusStart="INF" radiusEnd="1157.000000" rot="cw" spiType="clothoid" constant="340.147027" dirStart="298.729979" dirEnd="301.481145" name="C291" oID="16">
+					<Start>6705293.063402 23482168.971608</Start>
+					<PI>6705291.733398 23482102.311685</PI>
+					<End>6705292.508991 23482068.981445</End>
+				</Spiral>
+				<Curve rot="cw" length="145.375349" radius="1157.000000" chord="145.279738" staStart="2286.450448" name="K292" oID="17">
+					<Start>6705292.508991 23482068.981445</Start>
+					<Center>6706449.195866 23482095.897513</Center>
+					<End>6705305.000686 23481924.239745</End>
+				</Curve>
+				<Spiral staStart="2431.825797" length="100.000000" radiusStart="1157.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="340.147027" dirStart="309.480179" dirEnd="312.231345" name="C293" oID="18">
+					<Start>6705305.000686 23481924.239745</Start>
+					<PI>6705309.947050 23481891.269455</PI>
+					<End>6705322.678272 23481825.823064</End>
+				</Spiral>
+				<Line dir="312.231345" length="1440.112816" staStart="2531.825796" name="S101" oID="19">
+					<Start>6705322.678272 23481825.823064</Start>
+					<End>6705597.667318 23480412.208567</End>
+				</Line>
+				<Spiral staStart="3971.938612" length="180.000000" radiusStart="INF" radiusEnd="1200.000000" rot="ccw" spiType="clothoid" constant="464.758002" dirStart="312.231345" dirEnd="307.456696" name="C201" oID="20">
+					<Start>6705597.667318 23480412.208567</Start>
+					<PI>6705620.588032 23480294.381862</PI>
+					<End>6705627.603503 23480234.761030</End>
+				</Spiral>
+				<Curve rot="ccw" length="840.084557" radius="1200.000000" chord="823.034168" staStart="4151.938612" name="K202" oID="21">
+					<Start>6705627.603503 23480234.761030</Start>
+					<Center>6704435.825690 23480094.526782</Center>
+					<End>6705437.642477 23479433.948911</End>
+				</Curve>
+				<Spiral staStart="4992.023169" length="180.000000" radiusStart="1200.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="464.758002" dirStart="262.888826" dirEnd="258.114178" name="C203" oID="22">
+					<Start>6705437.642477 23479433.948911</Start>
+					<PI>6705404.595879 23479383.831222</PI>
+					<End>6705331.195577 23479288.852871</End>
+				</Spiral>
+				<Line dir="258.114178" length="2944.306553" staStart="5172.023169" name="S102" oID="23">
+					<Start>6705331.195577 23479288.852871</Start>
+					<End>6703530.784739 23476959.161498</End>
+				</Line>
+				<Spiral staStart="8116.329722" length="160.000000" radiusStart="INF" radiusEnd="1487.000000" rot="cw" spiType="clothoid" constant="487.770438" dirStart="258.114178" dirEnd="261.539167" name="C204" oID="24">
+					<Start>6703530.784739 23476959.161498</Start>
+					<PI>6703465.549362 23476874.748379</PI>
+					<End>6703435.244708 23476830.843468</End>
+				</Spiral>
+				<Curve rot="cw" length="208.815235" radius="1487.000000" chord="208.643703" staStart="8276.329722" name="K205" oID="25">
+					<Start>6703435.244708 23476830.843468</Start>
+					<Center>6704659.031074 23475986.144747</Center>
+					<End>6703329.062103 23476651.239879</End>
+				</Curve>
+				<Spiral staStart="8485.144958" length="160.000000" radiusStart="1487.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="487.770438" dirStart="270.479040" dirEnd="273.904028" name="C206" oID="26">
+					<Start>6703329.062103 23476651.239879</Start>
+					<PI>6703305.200959 23476603.525530</PI>
+					<End>6703262.684541 23476505.680840</End>
+				</Spiral>
+				<Line dir="273.904028" length="1008.141007" staStart="8645.144958" name="S103" oID="27">
+					<Start>6703262.684541 23476505.680840</Start>
+					<End>6702860.909125 23475581.059402</End>
+				</Line>
+				<Spiral staStart="9653.285964" length="175.000000" radiusStart="INF" radiusEnd="1182.000000" rot="ccw" spiType="clothoid" constant="454.807652" dirStart="273.904028" dirEnd="269.191318" name="C207" oID="28">
+					<Start>6702860.909125 23475581.059402</Start>
+					<PI>6702814.400491 23475474.027270</PI>
+					<End>6702787.245464 23475422.365514</End>
+				</Spiral>
+				<Curve rot="ccw" length="428.460534" radius="1182.000000" chord="426.118609" staStart="9828.285964" name="K208" oID="29">
+					<Start>6702787.245464 23475422.365514</Start>
+					<Center>6701740.977041 23475972.316773</Center>
+					<End>6702524.242881 23475087.094414</End>
+				</Curve>
+				<Spiral staStart="10256.746498" length="175.000000" radiusStart="1182.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="454.807652" dirStart="246.114631" dirEnd="241.401921" name="C209" oID="30">
+					<Start>6702524.242881 23475087.094414</Start>
+					<PI>6702480.533120 23475048.418977</PI>
+					<End>6702387.654011 23474977.762049</End>
+				</Spiral>
+				<Line dir="241.401921" length="639.337291" staStart="10431.746498" name="S104" oID="31">
+					<Start>6702387.654011 23474977.762049</Start>
+					<End>6701878.819477 23474590.670860</End>
+				</Line>
+				<Spiral staStart="11071.083788" length="175.000000" radiusStart="INF" radiusEnd="874.000000" rot="cw" spiType="biquadraticParabola" dirStart="241.401921" dirEnd="247.742989" name="Q210" oID="32">
+					<Start>6701878.819477 23474590.670860</Start>
+					<PI>6701780.236179 23474515.674523</PI>
+					<End>6701742.749377 23474480.755794</End>
+				</Spiral>
+				<Curve rot="cw" length="324.971005" radius="874.000000" chord="323.102264" staStart="11246.083788" name="K211" oID="33">
+					<Start>6701742.749377 23474480.755794</Start>
+					<Center>6702338.466558 23473841.227030</Center>
+					<End>6701551.107722 23474220.624003</End>
+				</Curve>
+				<Spiral staStart="11571.054793" length="185.000000" radiusStart="874.000000" radiusEnd="INF" rot="cw" spiType="biquadraticParabola" dirStart="271.413809" dirEnd="278.113239" name="Q212" oID="34">
+					<Start>6701551.107722 23474220.624003</Start>
+					<PI>6701527.587980 23474171.813713</PI>
+					<End>6701483.454789 23474048.541507</End>
+				</Spiral>
+				<Line dir="278.113239" length="241.334384" staStart="11756.054793" name="S105" oID="35">
+					<Start>6701483.454789 23474048.541506</Start>
+					<End>6701402.109708 23473821.329574</End>
+				</Line>
+				<Spiral staStart="11997.389177" length="145.000000" radiusStart="INF" radiusEnd="852.000000" rot="cw" spiType="clothoid" constant="351.482574" dirStart="278.113239" dirEnd="283.530485" name="C213" oID="36">
+					<Start>6701402.109708 23473821.329574</Start>
+					<PI>6701369.514509 23473730.285122</PI>
+					<End>6701357.141029 23473683.527944</End>
+				</Spiral>
+				<Curve rot="cw" length="71.439445" radius="852.000000" chord="71.418519" staStart="12142.389177" name="K214" oID="37">
+					<Start>6701357.141029 23473683.527944</Start>
+					<Center>6702180.788784 23473465.563783</Center>
+					<End>6701341.780038 23473613.780938</End>
+				</Curve>
+				<Spiral staStart="12213.828622" length="145.000000" radiusStart="852.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="351.482574" dirStart="288.868485" dirEnd="294.285731" name="C215" oID="38">
+					<Start>6701341.780038 23473613.780938</Start>
+					<PI>6701333.365985 23473566.151741</PI>
+					<End>6701324.697589 23473469.837682</End>
+				</Spiral>
+				<Line dir="294.285731" length="12.900000" staStart="12358.828622" name="S216" oID="39">
+					<Start>6701324.697589 23473469.837682</Start>
+					<End>6701323.541245 23473456.989613</End>
+				</Line>
+				<Line dir="294.285731" length="16.615000" staStart="12371.728622" name="VPI1" oID="40">
+					<Start>6701323.541245 23473456.989613</Start>
+					<End>6701322.051892 23473440.441500</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="294.285731" length="17.815000" staStart="12388.343622" name="VPI1" oID="41">
+					<Start>6701322.051892 23473440.441500</Start>
+					<End>6701320.454973 23473422.698217</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="294.285731" length="460.017649" staStart="12406.158622" name="S" oID="42">
+					<Start>6701320.454973 23473422.698217</Start>
+					<End>6701279.219429 23472964.532453</End>
+				</Line>
+				<Curve rot="ccw" length="35.535095" radius="30000.000000" chord="35.535093" staStart="12866.176272" name="K218" oID="43">
+					<Start>6701279.219429 23472964.532453</Start>
+					<Center>6671399.989900 23475653.703837</Center>
+					<End>6701276.013137 23472929.142305</End>
+				</Curve>
+				<Line dir="294.210323" length="15.769456" staStart="12901.711367" name="S" oID="44">
+					<Start>6701276.013137 23472929.142305</Start>
+					<End>6701274.580975 23472913.438017</End>
+				</Line>
+				<Line dir="294.210323" length="17.815000" staStart="12917.480823" name="VPI2" oID="45">
+					<Start>6701274.580975 23472913.438017</Start>
+					<End>6701272.963040 23472895.696639</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="294.210323" length="16.615000" staStart="12935.295823" name="VPI2" oID="46">
+					<Start>6701272.963040 23472895.696639</Start>
+					<End>6701271.454087 23472879.150301</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="294.210323" length="371.206231" staStart="12951.910823" name="S" oID="47">
+					<Start>6701271.454087 23472879.150301</Start>
+					<End>6701237.741613 23472509.478102</End>
+				</Line>
+				<Spiral staStart="13323.117054" length="155.000000" radiusStart="INF" radiusEnd="882.000000" rot="cw" spiType="clothoid" constant="369.743154" dirStart="294.210323" dirEnd="299.804204" name="C221" oID="48">
+					<Start>6701237.741613 23472509.478102</Start>
+					<PI>6701228.353214 23472406.530151</PI>
+					<End>6701228.194194 23472354.825707</End>
+				</Spiral>
+				<Curve rot="cw" length="353.995278" radius="882.000000" chord="351.624071" staStart="13478.117054" name="K222" oID="49">
+					<Start>6701228.194194 23472354.825707</Start>
+					<Center>6702110.190022 23472352.113077</Center>
+					<End>6701297.224542 23472010.044184</End>
+				</Curve>
+				<Spiral staStart="13832.112332" length="150.000000" radiusStart="882.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="363.730670" dirStart="325.355270" dirEnd="330.768703" name="C223" oID="50">
+					<Start>6701297.224542 23472010.044184</Start>
+					<PI>6701316.629567 23471963.925945</PI>
+					<End>6701363.118763 23471875.346396</End>
+				</Spiral>
+				<Line dir="330.768703" length="571.072434" staStart="13982.112332" name="S108" oID="51">
+					<Start>6701363.118763 23471875.346396</Start>
+					<End>6701628.505164 23471369.684668</End>
+				</Line>
+				<Spiral staStart="14553.184767" length="193.000000" radiusStart="INF" radiusEnd="948.000000" rot="cw" spiType="biquadraticParabola" dirStart="330.768703" dirEnd="337.215002" name="Q225" oID="52">
+					<Start>6701628.505164 23471369.684668</Start>
+					<PI>6701691.987487 23471248.726770</PI>
+					<End>6701723.170481 23471201.602793</End>
+				</Spiral>
+				<Curve rot="cw" length="105.601510" radius="948.000000" chord="105.546920" staStart="14746.184767" name="K226" oID="53">
+					<Start>6701723.170481 23471201.602793</Start>
+					<Center>6702513.753580 23471724.749392</Center>
+					<End>6701786.225382 23471116.961007</End>
+				</Curve>
+				<Spiral staStart="14851.786277" length="185.000000" radiusStart="948.000000" radiusEnd="INF" rot="cw" spiType="biquadraticParabola" dirStart="344.306564" dirEnd="350.488285" name="Q227" oID="54">
+					<Start>6701786.225382 23471116.961007</Start>
+					<PI>6701820.941229 23471075.405824</PI>
+					<End>6701914.244525 23470983.522928</End>
+				</Spiral>
+				<Line dir="350.488285" length="969.814904" staStart="15036.786277" name="S109" oID="55">
+					<Start>6701914.244525 23470983.522928</Start>
+					<End>6702605.246776 23470303.040131</End>
+				</Line>
+				<Spiral staStart="16006.601181" length="50.000000" radiusStart="INF" radiusEnd="4947.000000" rot="ccw" spiType="clothoid" constant="497.342940" dirStart="350.488285" dirEnd="350.166565" name="C229" oID="56">
+					<Start>6702605.246776 23470303.040131</Start>
+					<PI>6702628.997126 23470279.651343</PI>
+					<End>6702640.813057 23470267.897081</End>
+				</Spiral>
+				<Curve rot="ccw" length="133.497591" radius="4947.000000" chord="133.493541" staStart="16056.601181" name="K230" oID="57">
+					<Start>6702640.813057 23470267.897081</Start>
+					<Center>6699151.920093 23466760.699499</Center>
+					<End>6702734.175015 23470172.481829</End>
+				</Curve>
+				<Spiral staStart="16190.098773" length="50.000000" radiusStart="4947.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="497.342940" dirStart="348.448611" dirEnd="348.126891" name="C231" oID="58">
+					<Start>6702734.175015 23470172.481829</Start>
+					<PI>6702745.669495 23470160.413018</PI>
+					<End>6702768.536147 23470136.159564</End>
+				</Spiral>
+				<Line dir="348.126891" length="745.149573" staStart="16240.098773" name="S110" oID="59">
+					<Start>6702768.536147 23470136.159564</Start>
+					<End>6703279.707800 23469593.986689</End>
+				</Line>
+				<Spiral staStart="16985.248345" length="162.000000" radiusStart="INF" radiusEnd="1000.000000" rot="ccw" spiType="clothoid" constant="402.492236" dirStart="348.126891" dirEnd="342.970271" name="C233" oID="60">
+					<Start>6703279.707800 23469593.986689</Start>
+					<PI>6703353.821140 23469515.378570</PI>
+					<End>6703387.585659 23469473.193204</End>
+				</Spiral>
+				<Curve rot="ccw" length="558.540057" radius="1000.000000" chord="551.308064" staStart="17147.248345" name="K234" oID="61">
+					<Start>6703387.585659 23469473.193204</Start>
+					<Center>6702606.863355 23468848.315069</Center>
+					<End>6703600.092411 23468964.487532</End>
+				</Curve>
+				<Spiral staStart="17705.788402" length="167.000000" radiusStart="1000.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="408.656335" dirStart="307.412506" dirEnd="302.096731" name="C235" oID="62">
+					<Start>6703600.092411 23468964.487532</Start>
+					<PI>6703606.563642 23468909.161041</PI>
+					<End>6703610.231124 23468797.847420</End>
+				</Spiral>
+				<Line dir="302.096731" length="146.563281" staStart="17872.788402" name="S111" oID="63">
+					<Start>6703610.231124 23468797.847420</Start>
+					<End>6703615.057368 23468651.363623</End>
+				</Line>
+				<Spiral staStart="18019.351684" length="100.000000" radiusStart="INF" radiusEnd="2026.000000" rot="cw" spiType="clothoid" constant="450.111097" dirStart="302.096731" dirEnd="303.667856" name="C236" oID="64">
+					<Start>6703615.057368 23468651.363623</Start>
+					<PI>6703617.252733 23468584.730985</PI>
+					<End>6703619.172267 23468551.451030</End>
+				</Spiral>
+				<Curve rot="cw" length="217.698859" radius="2026.000000" chord="217.594143" staStart="18119.351684" name="K237" oID="65">
+					<Start>6703619.172267 23468551.451030</Start>
+					<Center>6705641.810608 23468668.113531</Center>
+					<End>6703643.349351 23468335.204228</End>
+				</Curve>
+				<Spiral staStart="18337.050543" length="100.000000" radiusStart="2026.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="450.111097" dirStart="310.508497" dirEnd="312.079622" name="C238" oID="66">
+					<Start>6703643.349351 23468335.204228</Start>
+					<PI>6703648.826952 23468302.322076</PI>
+					<End>6703661.401335 23468236.849846</End>
+				</Spiral>
+				<Line dir="312.079622" length="806.887582" staStart="18437.050543" name="S112" oID="67">
+					<Start>6703661.401335 23468236.849846</Start>
+					<End>6703813.588174 23467444.444182</End>
+				</Line>
+				<Spiral staStart="19243.938125" length="205.000000" radiusStart="INF" radiusEnd="951.000000" rot="ccw" spiType="biquadraticParabola" dirStart="312.079622" dirEnd="305.258436" name="Q240" oID="68">
+					<Start>6703813.588174 23467444.444182</Start>
+					<PI>6703840.952597 23467301.963240</PI>
+					<End>6703845.906877 23467242.120040</End>
+				</Spiral>
+				<Curve rot="ccw" length="411.633674" radius="951.000000" chord="408.427823" staStart="19448.938125" name="K241" oID="69">
+					<Start>6703845.906877 23467242.120040</Start>
+					<Center>6702898.149203 23467163.657372</Center>
+					<End>6703791.413172 23466837.343900</End>
+				</Curve>
+				<Spiral staStart="19860.571799" length="170.000000" radiusStart="951.000000" radiusEnd="INF" rot="ccw" spiType="biquadraticParabola" dirStart="277.702797" dirEnd="272.035824" name="Q242" oID="70">
+					<Start>6703791.413172 23466837.343900</Start>
+					<PI>6703774.349527 23466790.633175</PI>
+					<End>6703723.169924 23466681.711930</End>
+				</Spiral>
+				<Line dir="272.035824" length="160.598117" staStart="20030.571799" name="S113" oID="71">
+					<Start>6703723.169924 23466681.711930</Start>
+					<End>6703654.872354 23466536.359953</End>
+				</Line>
+				<Spiral staStart="20191.169915" length="180.000000" radiusStart="INF" radiusEnd="1000.000000" rot="cw" spiType="biquadraticParabola" dirStart="272.035824" dirEnd="277.741810" name="Q244" oID="72">
+					<Start>6703654.872354 23466536.359953</Start>
+					<PI>6703600.682626 23466421.032513</PI>
+					<End>6703582.644815 23466371.561016</End>
+				</Spiral>
+				<Curve rot="cw" length="135.615395" radius="1000.000000" chord="135.511495" staStart="20371.169915" name="K245" oID="73">
+					<Start>6703582.644815 23466371.561016</Start>
+					<Center>6704522.144053 23466029.010024</Center>
+					<End>6703544.958077 23466241.395449</End>
+				</Curve>
+				<Spiral staStart="20506.785310" length="180.000000" radiusStart="1000.000000" radiusEnd="INF" rot="cw" spiType="biquadraticParabola" dirStart="286.375355" dirEnd="292.081341" name="Q246" oID="74">
+					<Start>6703544.958077 23466241.395449</Start>
+					<PI>6703533.774433 23466189.939470</PI>
+					<End>6703517.965476 23466063.499674</End>
+				</Spiral>
+				<Spiral staStart="20686.785310" length="85.000000" radiusStart="INF" radiusEnd="1508.000000" rot="ccw" spiType="clothoid" constant="358.022346" dirStart="292.081341" dirEnd="290.287154" name="C247" oID="75">
+					<Start>6703517.965476 23466063.499675</Start>
+					<PI>6703510.934804 23466007.268473</PI>
+					<End>6703506.628440 23465979.262144</End>
+				</Spiral>
+				<Curve rot="ccw" length="131.920344" radius="1508.000000" chord="131.878283" staStart="20771.785310" name="K248" oID="76">
+					<Start>6703506.628440 23465979.262144</Start>
+					<Center>6702016.145513 23466208.444698</Center>
+					<End>6703480.905482 23465849.916828</End>
+				</Curve>
+				<Spiral staStart="20903.705654" length="85.000000" radiusStart="1508.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="358.022346" dirStart="284.717983" dirEnd="282.923796" name="C249" oID="77">
+					<Start>6703480.905482 23465849.916828</Start>
+					<PI>6703474.168706 23465822.393836</PI>
+					<End>6703459.149859 23465767.751246</End>
+				</Spiral>
+				<Line dir="282.923796" length="1526.726141" staStart="20988.705654" name="S114" oID="78">
+					<Start>6703459.149859 23465767.751246</Start>
+					<End>6703054.525523 23464295.619507</End>
+				</Line>
+				<Spiral staStart="22515.431795" length="135.000000" radiusStart="INF" radiusEnd="1472.000000" rot="cw" spiType="clothoid" constant="445.780215" dirStart="282.923796" dirEnd="285.843078" name="C251" oID="79">
+					<Start>6703054.525523 23464295.619507</Start>
+					<PI>6703030.670425 23464208.828269</PI>
+					<End>6703020.743771 23464164.927553</End>
+				</Spiral>
+				<Curve rot="cw" length="402.685760" radius="1472.000000" chord="401.431274" staStart="22650.431795" name="K252" oID="80">
+					<Start>6703020.743771 23464164.927553</Start>
+					<Center>6704456.497377 23463840.280693</Center>
+					<End>6702986.425377 23463764.965910</End>
+				</Curve>
+				<Spiral staStart="23053.117555" length="135.000000" radiusStart="1472.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="445.780215" dirStart="303.258684" dirEnd="306.177966" name="C253" oID="81">
+					<Start>6702986.425377 23463764.965910</Start>
+					<PI>6702988.728260 23463720.015848</PI>
+					<End>6702997.449413 23463630.429430</End>
+				</Spiral>
+				<Line dir="306.177966" length="164.075961" staStart="23188.117555" name="S115" oID="82">
+					<Start>6702997.449413 23463630.429430</Start>
+					<End>6703013.346900 23463467.125447</End>
+				</Line>
+				<Spiral staStart="23352.193516" length="148.000000" radiusStart="INF" radiusEnd="902.000000" rot="cw" spiType="biquadraticParabola" dirStart="306.177966" dirEnd="311.382896" name="Q255" oID="83">
+					<Start>6703013.346900 23463467.125447</Start>
+					<PI>6703023.499291 23463362.836893</PI>
+					<End>6703031.195655 23463320.252547</End>
+				</Spiral>
+				<Curve rot="cw" length="97.896623" radius="902.000000" chord="97.848582" staStart="23500.193516" name="K256" oID="84">
+					<Start>6703031.195655 23463320.252547</Start>
+					<Center>6703918.815469 23463480.674072</Center>
+					<End>6703053.795173 23463225.049570</End>
+				</Curve>
+				<Spiral staStart="23598.090139" length="142.000000" radiusStart="902.000000" radiusEnd="INF" rot="cw" spiType="biquadraticParabola" dirStart="318.292312" dirEnd="323.287587" name="Q257" oID="85">
+					<Start>6703053.795173 23463225.049570</Start>
+					<PI>6703065.559490 23463185.239720</PI>
+					<End>6703101.521482 23463091.353935</End>
+				</Spiral>
+				<Line dir="323.287587" length="621.932435" staStart="23740.090139" name="S116" oID="86">
+					<Start>6703101.521482 23463091.353935</Start>
+					<End>6703323.984848 23462510.569978</End>
+				</Line>
+				<Spiral staStart="24362.022574" length="182.000000" radiusStart="INF" radiusEnd="1200.000000" rot="cw" spiType="clothoid" constant="467.332858" dirStart="323.287587" dirEnd="328.115287" name="C259" oID="87">
+					<Start>6703323.984848 23462510.569978</Start>
+					<PI>6703367.398498 23462397.230187</PI>
+					<End>6703393.342683 23462342.354157</End>
+				</Spiral>
+				<Curve rot="cw" length="388.723895" radius="1200.000000" chord="387.026510" staStart="24544.022574" name="K260" oID="88">
+					<Start>6703393.342683 23462342.354157</Start>
+					<Center>6704478.208103 23462855.254751</Center>
+					<End>6703613.023501 23462023.716656</End>
+				</Curve>
+				<Spiral staStart="24932.746469" length="182.000000" radiusStart="1200.000000" radiusEnd="INF" rot="cw" spiType="clothoid" constant="467.332858" dirStart="348.737730" dirEnd="353.565430" name="C261" oID="89">
+					<Start>6703613.023501 23462023.716656</Start>
+					<PI>6703655.085409 23461979.952798</PI>
+					<End>6703745.576305 23461899.069851</End>
+				</Spiral>
+				<Line dir="353.565430" length="446.183917" staStart="25114.746469" name="S" oID="90">
+					<Start>6703745.576305 23461899.069851</Start>
+					<End>6704078.241830 23461601.725377</End>
+				</Line>
+				<Line dir="353.565430" length="25.999000" staStart="25560.930386" name="VKU1" oID="91">
+					<Start>6704078.241830 23461601.725377</Start>
+					<End>6704097.626148 23461584.399206</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="353.565430" length="33.701000" staStart="25586.929386" name="VKU1" oID="92">
+					<Start>6704097.626148 23461584.399206</Start>
+					<End>6704122.752919 23461561.940292</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+			</CoordGeom>
+			<StaEquation staBack="NaN" staAhead="-242.725000" staInternal="-242.725000" desc="170">
+      </StaEquation>
+			<StaEquation staBack="999.235442" staAhead="756.510442" staInternal="756.510442" desc="171">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6704923.603000"/>
+					<Property label="kmPostE" value="23483470.902000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1000.363973" staAhead="1756.874415" staInternal="1756.874415" desc="172">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6705305.500000"/>
+					<Property label="kmPostE" value="23482598.385000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="976.433733" staAhead="2733.308148" staInternal="2733.308148" desc="173">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6705364.765000"/>
+					<Property label="kmPostE" value="23481628.751000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1001.758211" staAhead="3735.066359" staInternal="3735.066359" desc="174">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6705555.910000"/>
+					<Property label="kmPostE" value="23480645.398000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="997.836452" staAhead="4732.902811" staInternal="4732.902811" desc="175">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6705559.235000"/>
+					<Property label="kmPostE" value="23479662.661000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="977.324425" staAhead="5710.227236" staInternal="5710.227236" desc="176">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6705004.933000"/>
+					<Property label="kmPostE" value="23478860.800000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="998.930177" staAhead="6709.157413" staInternal="6709.157413" desc="177">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6704393.910000"/>
+					<Property label="kmPostE" value="23478070.539000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1002.431841" staAhead="7711.589254" staInternal="7711.589254" desc="178">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703781.102000"/>
+					<Property label="kmPostE" value="23477277.232000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1000.797506" staAhead="8712.386760" staInternal="8712.386760" desc="179">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703239.331000"/>
+					<Property label="kmPostE" value="23476442.513000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1001.317546" staAhead="9713.704306" staInternal="9713.704306" desc="180">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6702839.934000"/>
+					<Property label="kmPostE" value="23475524.264000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1000.901778" staAhead="10714.606085" staInternal="10714.606085" desc="181">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6702164.545000"/>
+					<Property label="kmPostE" value="23474803.857000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1000.110858" staAhead="11714.716943" staInternal="11714.716943" desc="182">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6701500.530000"/>
+					<Property label="kmPostE" value="23474086.330000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1004.055786" staAhead="12718.772729" staInternal="12718.772729" desc="183">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6701295.928000"/>
+					<Property label="kmPostE" value="23473111.028000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1002.368772" staAhead="13721.141501" staInternal="13721.141501" desc="184">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6701264.099000"/>
+					<Property label="kmPostE" value="23472115.706000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1003.584707" staAhead="14724.726207" staInternal="14724.726207" desc="185">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6701714.971000"/>
+					<Property label="kmPostE" value="23471221.798000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1001.788684" staAhead="15726.514892" staInternal="15726.514892" desc="186">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6702408.171000"/>
+					<Property label="kmPostE" value="23470502.093000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="999.525020" staAhead="16726.039912" staInternal="16726.039912" desc="187">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703104.345000"/>
+					<Property label="kmPostE" value="23469784.901000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="999.665254" staAhead="17725.705166" staInternal="17725.705166" desc="188">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703605.852000"/>
+					<Property label="kmPostE" value="23468945.041000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="930.840753" staAhead="18656.545919" staInternal="18656.545919" desc="189">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703706.034000"/>
+					<Property label="kmPostE" value="23468021.915000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="998.892293" staAhead="19655.438212" staInternal="19655.438212" desc="190">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703844.130000"/>
+					<Property label="kmPostE" value="23467035.611000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="997.392227" staAhead="20652.830439" staInternal="20652.830439" desc="191">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703525.684000"/>
+					<Property label="kmPostE" value="23466096.751000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1000.450492" staAhead="21653.280931" staInternal="21653.280931" desc="192">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703286.314000"/>
+					<Property label="kmPostE" value="23465126.035000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1000.538100" staAhead="22653.819031" staInternal="22653.819031" desc="193">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703023.527000"/>
+					<Property label="kmPostE" value="23464160.834000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1000.703728" staAhead="23654.522759" staInternal="23654.522759" desc="194">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703074.645000"/>
+					<Property label="kmPostE" value="23463172.601000"/>
+				</Feature>
+			</StaEquation>
+			<StaEquation staBack="1001.301025" staAhead="24655.823784" staInternal="24655.823784" desc="195">
+				<Feature code="IM_kmPostCoords">
+					<Property label="kmPostN" value="6703448.620000"/>
+					<Property label="kmPostE" value="23462245.342000"/>
+				</Feature>
+			</StaEquation>
+			<Cant name="001" desc="001" gauge="1.524" rotationPoint="insideRail">
+				<CantStation station="284.055980" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="419.055980" appliedCant="0.120000" curvature="cw"/>
+				<CantStation station="504.623383" appliedCant="0.120000" curvature="cw"/>
+				<CantStation station="639.623383" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="744.355855" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="899.355855" appliedCant="0.120000" curvature="ccw"/>
+				<CantStation station="1517.706835" appliedCant="0.120000" curvature="ccw"/>
+				<CantStation station="1672.706835" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="2186.450448" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="2286.450448" appliedCant="0.092000" curvature="cw"/>
+				<CantStation station="2431.825797" appliedCant="0.092000" curvature="cw"/>
+				<CantStation station="2531.825797" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="3971.938612" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="4151.938612" appliedCant="0.140000" curvature="ccw"/>
+				<CantStation station="4992.023169" appliedCant="0.140000" curvature="ccw"/>
+				<CantStation station="5172.023169" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="8116.329722" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="8276.329722" appliedCant="0.110000" curvature="cw"/>
+				<CantStation station="8485.144958" appliedCant="0.110000" curvature="cw"/>
+				<CantStation station="8645.144958" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="9653.285964" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="9828.285964" appliedCant="0.145000" curvature="ccw"/>
+				<CantStation station="10256.746498" appliedCant="0.145000" curvature="ccw"/>
+				<CantStation station="10431.746498" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="11071.083788" appliedCant="0.000000" curvature="cw" transitionType="biquadraticParabola"/>
+				<CantStation station="11246.083788" appliedCant="0.155000" curvature="cw"/>
+				<CantStation station="11571.054793" appliedCant="0.155000" curvature="cw" transitionType="biquadraticParabola"/>
+				<CantStation station="11756.054793" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="11997.389177" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="12142.389177" appliedCant="0.160000" curvature="cw"/>
+				<CantStation station="12213.828622" appliedCant="0.160000" curvature="cw"/>
+				<CantStation station="12358.828622" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="13323.117054" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="13478.117054" appliedCant="0.144000" curvature="cw"/>
+				<CantStation station="13832.112332" appliedCant="0.144000" curvature="cw"/>
+				<CantStation station="13982.112332" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="14553.184767" appliedCant="0.000000" curvature="cw" transitionType="biquadraticParabola"/>
+				<CantStation station="14746.184767" appliedCant="0.150000" curvature="cw"/>
+				<CantStation station="14851.786277" appliedCant="0.150000" curvature="cw" transitionType="biquadraticParabola"/>
+				<CantStation station="15036.786277" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="16006.601181" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="16056.601181" appliedCant="0.040000" curvature="ccw"/>
+				<CantStation station="16190.098773" appliedCant="0.040000" curvature="ccw"/>
+				<CantStation station="16240.098773" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="16985.248345" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="17147.248345" appliedCant="0.145000" curvature="ccw"/>
+				<CantStation station="17705.788402" appliedCant="0.145000" curvature="ccw"/>
+				<CantStation station="17872.788402" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="18019.351684" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="18119.351684" appliedCant="0.075000" curvature="cw"/>
+				<CantStation station="18337.050543" appliedCant="0.075000" curvature="cw"/>
+				<CantStation station="18437.050543" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="19243.938125" appliedCant="0.000000" curvature="ccw" transitionType="biquadraticParabola"/>
+				<CantStation station="19448.938125" appliedCant="0.150000" curvature="ccw"/>
+				<CantStation station="19860.571799" appliedCant="0.150000" curvature="ccw" transitionType="biquadraticParabola"/>
+				<CantStation station="20030.571799" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="20191.169915" appliedCant="0.000000" curvature="cw" transitionType="biquadraticParabola"/>
+				<CantStation station="20371.169915" appliedCant="0.150000" curvature="cw"/>
+				<CantStation station="20506.785310" appliedCant="0.150000" curvature="cw" transitionType="biquadraticParabola"/>
+				<CantStation station="20686.785310" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="20771.785310" appliedCant="0.073000" curvature="ccw"/>
+				<CantStation station="20903.705654" appliedCant="0.073000" curvature="ccw"/>
+				<CantStation station="20988.705654" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="22515.431795" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="22650.431795" appliedCant="0.115000" curvature="cw"/>
+				<CantStation station="23053.117555" appliedCant="0.115000" curvature="cw"/>
+				<CantStation station="23188.117555" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="23352.193516" appliedCant="0.000000" curvature="cw" transitionType="biquadraticParabola"/>
+				<CantStation station="23500.193516" appliedCant="0.135000" curvature="cw"/>
+				<CantStation station="23598.090139" appliedCant="0.135000" curvature="cw" transitionType="biquadraticParabola"/>
+				<CantStation station="23740.090139" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="24362.022574" appliedCant="0.000000" curvature="cw"/>
+				<CantStation station="24544.022574" appliedCant="0.050000" curvature="cw"/>
+				<CantStation station="24932.746469" appliedCant="0.050000" curvature="cw"/>
+				<CantStation station="25114.746469" appliedCant="0.000000" curvature="ccw"/>
+			</Cant>
+			<Profile>
+				<ProfAlign name="001_profAlign">
+					<PVI desc="001_profAlign/2">0.000000 25.496586</PVI>
+					<CircCurve desc="001_profAlign/3" length="239.711897" radius="-20000.000000">264.775000 25.280000</CircCurve>
+					<CircCurve desc="001_profAlign/6" length="285.720798" radius="25000.000000">639.275000 20.485000</CircCurve>
+					<CircCurve desc="001_profAlign/9" length="263.369287" radius="-25000.000000">977.510442 20.020000</CircCurve>
+					<CircCurve desc="001_profAlign/12" length="229.283949" radius="25000.000000">1464.510442 14.220000</CircCurve>
+					<CircCurve desc="001_profAlign/15" length="65.757633" radius="-12000.000000">1846.874415 13.173000</CircCurve>
+					<CircCurve desc="001_profAlign/18" length="98.615986" radius="12000.000000">1979.874415 12.080000</CircCurve>
+					<CircCurve desc="001_profAlign/21" length="17.841723" radius="12000.000000">2266.874415 12.080000</CircCurve>
+					<CircCurve desc="001_profAlign/24" length="132.333380" radius="12000.000000">2683.874415 12.700000</CircCurve>
+					<CircCurve desc="001_profAlign/27" length="169.863668" radius="-25000.000000">3505.308148 22.980000</CircCurve>
+					<CircCurve desc="001_profAlign/30" length="35.244450" radius="25000.000000">3986.066359 25.730000</CircCurve>
+					<CircCurve desc="001_profAlign/33" length="190.011525" radius="-25000.000000">4317.066359 28.090000</CircCurve>
+					<CircCurve desc="001_profAlign/36" length="47.805337" radius="-20000.000000">4657.066359 27.930000</CircCurve>
+					<CircCurve desc="001_profAlign/39" length="60.980518" radius="20000.000000">4782.902811 27.570000</CircCurve>
+					<CircCurve desc="001_profAlign/42" length="187.828162" radius="-17000.000000">5154.902811 27.640000</CircCurve>
+					<CircCurve desc="001_profAlign/45" length="224.277348" radius="20000.000000">5398.902811 24.990000</CircCurve>
+					<CircCurve desc="001_profAlign/48" length="93.788284" radius="-18000.000000">5710.227236 25.100000</CircCurve>
+					<CircCurve desc="001_profAlign/51" length="69.618950" radius="17000.000000">5850.227236 24.420000</CircCurve>
+					<CircCurve desc="001_profAlign/54" length="20.588332" radius="25000.000000">6375.227236 24.020000</CircCurve>
+					<CircCurve desc="001_profAlign/57" length="75.429672" radius="25000.000000">7835.589254 24.110000</CircCurve>
+					<CircCurve desc="001_profAlign/60" length="71.649212" radius="-50000.000000">8241.589254 25.360000</CircCurve>
+					<CircCurve desc="001_profAlign/63" length="217.899747" radius="-15000.000000">9025.386760 26.650000</CircCurve>
+					<CircCurve desc="001_profAlign/66" length="55.293078" radius="20000.000000">9622.386760 18.960000</CircCurve>
+					<CircCurve desc="001_profAlign/69" length="198.629986" radius="22000.000000">9938.704306 15.760000</CircCurve>
+					<CircCurve desc="001_profAlign/72" length="87.464120" radius="-20000.000000">10223.704306 15.450000</CircCurve>
+					<CircCurve desc="001_profAlign/75" length="77.844878" radius="-15000.000000">10734.606085 12.660000</CircCurve>
+					<CircCurve desc="001_profAlign/78" length="312.745935" radius="20000.000000">11149.606085 8.240000</CircCurve>
+					<CircCurve desc="001_profAlign/81" length="244.188458" radius="-25000.000000">11534.606085 10.160000</CircCurve>
+					<CircCurve desc="001_profAlign/84" length="28.490500" radius="-20000.000000">12015.716943 7.860000</CircCurve>
+					<CircCurve desc="001_profAlign/87" length="81.778722" radius="28000.000000">12210.716943 6.650000</CircCurve>
+					<CircCurve desc="001_profAlign/90" length="102.443508" radius="25000.000000">12551.716943 5.530000</CircCurve>
+					<CircCurve desc="001_profAlign/93" length="259.256450" radius="22000.000000">12969.772729 5.870000</CircCurve>
+					<CircCurve desc="001_profAlign/96" length="380.076105" radius="-20000.000000">13608.772729 13.920000</CircCurve>
+					<CircCurve desc="001_profAlign/99" length="439.658383" radius="24000.000000">14041.141501 11.150000</CircCurve>
+					<CircCurve desc="001_profAlign/102" length="211.081068" radius="-25000.000000">14501.141501 16.630000</CircCurve>
+					<CircCurve desc="001_profAlign/105" length="51.299734" radius="20000.000000">15659.726207 20.650000</CircCurve>
+					<CircCurve desc="001_profAlign/108" length="212.143361" radius="-17000.000000">15926.514892 22.260000</CircCurve>
+					<CircCurve desc="001_profAlign/111" length="224.252851" radius="15000.000000">16196.514892 20.520000</CircCurve>
+					<CircCurve desc="001_profAlign/114" length="26.432403" radius="25000.000000">16611.514892 24.050000</CircCurve>
+					<CircCurve desc="001_profAlign/117" length="103.841783" radius="-25000.000000">17196.039912 29.640000</CircCurve>
+					<CircCurve desc="001_profAlign/120" length="179.818614" radius="-25000.000000">18005.705166 34.020000</CircCurve>
+					<CircCurve desc="001_profAlign/123" length="105.381902" radius="22000.000000">18420.705166 33.280000</CircCurve>
+					<CircCurve desc="001_profAlign/126" length="126.375400" radius="-20000.000000">18776.545919 34.350000</CircCurve>
+					<CircCurve desc="001_profAlign/129" length="46.181721" radius="-20000.000000">19241.545919 32.810000</CircCurve>
+					<CircCurve desc="001_profAlign/132" length="157.100468" radius="18000.000000">19547.545919 31.090000</CircCurve>
+					<CircCurve desc="001_profAlign/135" length="73.531205" radius="-20000.000000">19840.438212 32.000000</CircCurve>
+					<CircCurve desc="001_profAlign/138" length="203.508117" radius="16000.000000">20630.438212 31.550000</CircCurve>
+					<CircCurve desc="001_profAlign/141" length="380.182419" radius="-18000.000000">20972.830439 35.710000</CircCurve>
+					<CircCurve desc="001_profAlign/144" length="31.012382" radius="20000.000000">21332.830439 32.480000</CircCurve>
+					<CircCurve desc="001_profAlign/147" length="53.001000" radius="-25000.000000">21619.830439 30.350000</CircCurve>
+					<CircCurve desc="001_profAlign/150" length="173.776404" radius="18000.000000">21913.280931 27.550000</CircCurve>
+					<CircCurve desc="001_profAlign/153" length="153.117383" radius="-15000.000000">22268.280931 27.590000</CircCurve>
+					<CircCurve desc="001_profAlign/156" length="149.079358" radius="15000.000000">22478.280931 25.470000</CircCurve>
+					<CircCurve desc="001_profAlign/159" length="266.214438" radius="-22000.000000">22733.819031 25.430000</CircCurve>
+					<CircCurve desc="001_profAlign/162" length="227.100411" radius="11000.000000">23176.819031 20.000000</CircCurve>
+					<CircCurve desc="001_profAlign/165" length="232.108162" radius="-11000.000000">23536.819031 23.020000</CircCurve>
+					<CircCurve desc="001_profAlign/168" length="259.342842" radius="11000.000000">24024.522759 16.820000</CircCurve>
+					<CircCurve desc="001_profAlign/171" length="402.921204" radius="-20000.000000">24656.823784 23.690000</CircCurve>
+					<CircCurve desc="001_profAlign/174" length="117.384354" radius="15000.000000">25185.823784 18.780000</CircCurve>
+					<PVI desc="001_profAlign/175">25620.630386 18.146922</PVI>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/3"/>
+						<Property label="PVIKmStation" value="170+507.500"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/6"/>
+						<Property label="PVIKmStation" value="170+882.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/9"/>
+						<Property label="PVIKmStation" value="171+221.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/12"/>
+						<Property label="PVIKmStation" value="171+708.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/15"/>
+						<Property label="PVIKmStation" value="172+90.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/18"/>
+						<Property label="PVIKmStation" value="172+223.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/21"/>
+						<Property label="PVIKmStation" value="172+510.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/24"/>
+						<Property label="PVIKmStation" value="172+927.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/27"/>
+						<Property label="PVIKmStation" value="173+772.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/30"/>
+						<Property label="PVIKmStation" value="174+251.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/33"/>
+						<Property label="PVIKmStation" value="174+582.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/36"/>
+						<Property label="PVIKmStation" value="174+922.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/39"/>
+						<Property label="PVIKmStation" value="175+50.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/42"/>
+						<Property label="PVIKmStation" value="175+422.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/45"/>
+						<Property label="PVIKmStation" value="175+666.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/48"/>
+						<Property label="PVIKmStation" value="176+0.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/51"/>
+						<Property label="PVIKmStation" value="176+140.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/54"/>
+						<Property label="PVIKmStation" value="176+665.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/57"/>
+						<Property label="PVIKmStation" value="178+124.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/60"/>
+						<Property label="PVIKmStation" value="178+530.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/63"/>
+						<Property label="PVIKmStation" value="179+313.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/66"/>
+						<Property label="PVIKmStation" value="179+910.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/69"/>
+						<Property label="PVIKmStation" value="180+225.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/72"/>
+						<Property label="PVIKmStation" value="180+510.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/75"/>
+						<Property label="PVIKmStation" value="181+20.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/78"/>
+						<Property label="PVIKmStation" value="181+435.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/81"/>
+						<Property label="PVIKmStation" value="181+820.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/84"/>
+						<Property label="PVIKmStation" value="182+301.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/87"/>
+						<Property label="PVIKmStation" value="182+496.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/90"/>
+						<Property label="PVIKmStation" value="182+837.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/93"/>
+						<Property label="PVIKmStation" value="183+251.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/96"/>
+						<Property label="PVIKmStation" value="183+890.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/99"/>
+						<Property label="PVIKmStation" value="184+320.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/102"/>
+						<Property label="PVIKmStation" value="184+780.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/105"/>
+						<Property label="PVIKmStation" value="185+935.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/108"/>
+						<Property label="PVIKmStation" value="186+200.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/111"/>
+						<Property label="PVIKmStation" value="186+470.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/114"/>
+						<Property label="PVIKmStation" value="186+885.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/117"/>
+						<Property label="PVIKmStation" value="187+470.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/120"/>
+						<Property label="PVIKmStation" value="188+280.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/123"/>
+						<Property label="PVIKmStation" value="188+695.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/126"/>
+						<Property label="PVIKmStation" value="189+120.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/129"/>
+						<Property label="PVIKmStation" value="189+585.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/132"/>
+						<Property label="PVIKmStation" value="189+891.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/135"/>
+						<Property label="PVIKmStation" value="190+185.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/138"/>
+						<Property label="PVIKmStation" value="190+975.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/141"/>
+						<Property label="PVIKmStation" value="191+320.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/144"/>
+						<Property label="PVIKmStation" value="191+680.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/147"/>
+						<Property label="PVIKmStation" value="191+967.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/150"/>
+						<Property label="PVIKmStation" value="192+260.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/153"/>
+						<Property label="PVIKmStation" value="192+615.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/156"/>
+						<Property label="PVIKmStation" value="192+825.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/159"/>
+						<Property label="PVIKmStation" value="193+80.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/162"/>
+						<Property label="PVIKmStation" value="193+523.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/165"/>
+						<Property label="PVIKmStation" value="193+883.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/168"/>
+						<Property label="PVIKmStation" value="194+370.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/171"/>
+						<Property label="PVIKmStation" value="195+1.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="001_profAlign/174"/>
+						<Property label="PVIKmStation" value="195+530.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="001_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="1"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="001_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="-0.000818"/>
+					<Property label="ProfAlignGroupEndingGradient" value="-0.001456"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="111"/>
+				<Property label="terrainCodingDesc" value="Pituusmittausraide"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="TP1" desc="TP1" oID="2" state="proposed" staStart="1656.767057" length="78.196085">
+			<CoordGeom>
+				<Curve rot="cw" length="33.196085" radius="299.990224" chord="33.179150" staStart="1656.767057" name="VPA4" oID="93">
+					<Start>6705308.847887 23482698.450840</Start>
+					<Center>6705607.984685 23482675.838661</Center>
+					<End>6705308.180389 23482665.278405</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="302.241492" length="45.000000" staStart="1689.940852" name="SSP1" oID="94">
+					<Start>6705308.180389 23482665.278405</Start>
+					<End>6705309.764479 23482620.306295</End>
+				</Line>
+			</CoordGeom>
+			<Cant name="TP1" desc="TP1" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="TP1_profAlign">
+					<PVI desc="TP1_profAlign/214">1656.767057 13.693020</PVI>
+					<PVI desc="TP1_profAlign/222">1734.963141 13.478933</PVI>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="TP1_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="5"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="TP1_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="-0.012804"/>
+					<Property label="ProfAlignGroupEndingGradient" value="-0.002741"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="TP2" desc="TP2" oID="3" state="proposed" staStart="705.387479" length="71.356085">
+			<CoordGeom>
+				<Line dir="356.759782" length="38.160000" staStart="705.387479" name="SSP2" oID="95">
+					<Start>6704881.740505 23483500.261464</Start>
+					<End>6704911.431488 23483476.289999</End>
+				</Line>
+				<Curve rot="cw" length="33.196085" radius="299.990224" chord="33.179150" staStart="743.489443" name="VPA3" oID="96">
+					<Start>6704911.431488 23483476.289999</Start>
+					<Center>6705099.880255 23483709.702075</Center>
+					<End>6704938.360143 23483456.906925</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="TP2" desc="TP2" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="TP2_profAlign">
+					<PVI desc="TP2_profAlign/225">705.387479 20.393353</PVI>
+					<PVI desc="TP2_profAlign/230">776.743564 20.295585</PVI>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="TP2_profAlign/226"/>
+						<Property label="PVIKmStation" value="171+221.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="TP2_profAlign/229"/>
+						<Property label="PVIKmStation" value="171+708.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="TP2_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="6"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="TP2_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="-0.001372"/>
+					<Property label="ProfAlignGroupEndingGradient" value="-0.002741"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="PO002" desc="PO002" oID="4" state="proposed" staStart="656.773383" length="1131.383956">
+			<CoordGeom>
+				<Line dir="360.271295" length="1.018260" staStart="656.773383" name="VPA1" oID="97">
+					<Start>6704838.015300 23483522.732340</Start>
+					<End>6704838.841633 23483522.137337</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Curve rot="cw" length="49.948655" radius="900.000000" chord="49.942245" staStart="657.791643" name="VPA1" oID="98">
+					<Start>6704838.841633 23483522.137337</Start>
+					<Center>6705364.740711 23484252.500370</Center>
+					<End>6704880.164583 23483494.090207</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+				<Line dir="363.804439" length="8.720260" staStart="707.714661" name="VPA1" oID="99">
+					<Start>6704880.164583 23483494.090207</Start>
+					<End>6704887.512955 23483489.395062</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="363.804439" length="27.110000" staStart="716.421495" name="S" oID="100">
+					<Start>6704887.512955 23483489.395062</Start>
+					<End>6704910.357954 23483474.798552</End>
+				</Line>
+				<Line dir="363.804439" length="16.615000" staStart="743.489755" name="VPA3" oID="101">
+					<Start>6704910.357954 23483474.798552</Start>
+					<End>6704924.359049 23483465.852738</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="363.804439" length="16.615000" staStart="760.074889" name="VPA3" oID="102">
+					<Start>6704924.359049 23483465.852738</Start>
+					<End>6704938.360143 23483456.906925</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="363.804439" length="0.432860" staStart="776.646528" name="S502" oID="103">
+					<Start>6704938.360143 23483456.906925</Start>
+					<End>6704938.724904 23483456.673865</End>
+				</Line>
+				<Spiral staStart="777.078018" length="35.000000" radiusStart="INF" radiusEnd="780.000000" rot="ccw" spiType="clothoid" constant="165.227116" dirStart="363.804439" dirEnd="362.376126" name="C503" oID="104">
+					<Start>6704938.724904 23483456.673865</Start>
+					<PI>6704958.387910 23483444.110448</PI>
+					<End>6704968.076221 23483437.609622</End>
+				</Spiral>
+				<Curve rot="ccw" length="805.594874" radius="780.000000" chord="770.263786" staStart="811.926891" name="K504" oID="105">
+					<Start>6704968.076221 23483437.609622</Start>
+					<Center>6704533.470312 23482789.907759</Center>
+					<End>6705312.374560 23482748.577725</End>
+				</Curve>
+				<Spiral staStart="1606.715208" length="35.000000" radiusStart="780.000000" radiusEnd="INF" rot="ccw" spiType="clothoid" constant="165.227116" dirStart="296.625148" dirEnd="295.196835" name="C505" oID="106">
+					<Start>6705312.374560 23482748.577725</Start>
+					<PI>6705311.756346 23482736.926889</PI>
+					<End>6705309.997518 23482713.659323</End>
+				</Spiral>
+				<Line dir="295.196835" length="15.251871" staStart="1641.557155" name="S" oID="107">
+					<Start>6705309.997518 23482713.659323</Start>
+					<End>6705308.847887 23482698.450840</End>
+				</Line>
+				<Line dir="295.196835" length="16.615000" staStart="1656.767057" name="VPA4" oID="108">
+					<Start>6705308.847887 23482698.450840</Start>
+					<End>6705307.595508 23482681.883107</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="295.196835" length="16.615000" staStart="1673.351121" name="VPA4" oID="109">
+					<Start>6705307.595508 23482681.883107</Start>
+					<End>6705306.343129 23482665.315375</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="295.196835" length="27.160000" staStart="1689.940539" name="S" oID="110">
+					<Start>6705306.343129 23482665.315375</Start>
+					<End>6705304.295907 23482638.232641</End>
+				</Line>
+				<Line dir="295.196835" length="8.720260" staStart="1717.058723" name="VPA2" oID="111">
+					<Start>6705304.295907 23482638.232641</Start>
+					<End>6705303.638605 23482629.537188</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="cw" length="49.948655" radius="900.000000" chord="49.942245" staStart="1725.765557" name="VPA2" oID="112">
+					<Start>6705303.638605 23482629.537188</Start>
+					<Center>6706201.078243 23482561.698440</Center>
+					<End>6705301.257328 23482579.651746</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+				<Line dir="298.729979" length="1.018260" staStart="1775.688575" name="VPA2" oID="113">
+					<Start>6705301.257328 23482579.651746</Start>
+					<End>6705301.237016 23482578.633688</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-900-1:18"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+			</CoordGeom>
+			<Cant name="PO002" desc="PO002" gauge="1.524" rotationPoint="insideRail">
+				<CantStation station="120.460036" appliedCant="0.000000" curvature="ccw"/>
+				<CantStation station="155.460036" appliedCant="0.030000" curvature="ccw"/>
+				<CantStation station="961.054909" appliedCant="0.030000" curvature="ccw"/>
+				<CantStation station="996.054909" appliedCant="0.000000" curvature="ccw"/>
+			</Cant>
+			<Profile>
+				<ProfAlign name="PO002_profAlign">
+					<PVI desc="PO002_profAlign/178">656.773383 20.775262</PVI>
+					<CircCurve desc="PO002_profAlign/179" length="125.363092" radius="25000.000000">719.484274 20.374730</CircCurve>
+					<CircCurve desc="PO002_profAlign/182" length="318.896691" radius="-30000.000000">979.604292 20.020000</CircCurve>
+					<CircCurve desc="PO002_profAlign/185" length="222.328933" radius="24000.000000">1469.002470 14.233700</CircCurve>
+					<PVI desc="PO002_profAlign/186">1788.157339 13.364265</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="PO002_profAlign/182"/>
+						<Property label="RealLengthStation" value="322.830909"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="PO002_profAlign/185"/>
+						<Property label="RealLengthStation" value="812.229087"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PO002_profAlign/182"/>
+						<Property label="PVIKmStation" value="171+221.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PO002_profAlign/185"/>
+						<Property label="PVIKmStation" value="171+703.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="PO002_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="2"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="PO002_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="-0.012804"/>
+					<Property label="ProfAlignGroupEndingGradient" value="-0.002741"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="PIK002" desc="PIK002" oID="5" state="proposed" staStart="12291.185332" length="627.937922">
+			<CoordGeom>
+				<Line dir="294.365034" length="96.947938" staStart="12291.185332" name="SP13" oID="114">
+					<Start>6701324.771163 23473537.865228</Start>
+					<End>6701316.201130 23473441.296821</End>
+				</Line>
+				<Curve rot="ccw" length="6.228414" radius="5000.000000" chord="6.228413" staStart="12388.016201" name="KP12" oID="115">
+					<Start>6701316.201130 23473441.296821</Start>
+					<Center>6696335.775096 23473883.288365</Center>
+					<End>6701315.646684 23473435.093135</End>
+				</Curve>
+				<Line dir="294.285731" length="29.976009" staStart="12394.244613" name="S" oID="116">
+					<Start>6701315.646684 23473435.093135</Start>
+					<End>6701312.959664 23473405.237799</End>
+				</Line>
+				<Line dir="294.285731" length="17.223000" staStart="12424.220622" name="VPI3" oID="117">
+					<Start>6701312.959664 23473405.237799</Start>
+					<End>6701311.415810 23473388.084134</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KRV54-200-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="4"/>
+					</Feature>
+				</Line>
+				<Line dir="294.285731" length="17.223000" staStart="12441.443622" name="VPI3" oID="118">
+					<Start>6701311.415810 23473388.084134</Start>
+					<End>6701309.871957 23473370.930468</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KRV54-200-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="294.285731" length="353.593271" staStart="12458.666622" name="S" oID="119">
+					<Start>6701309.871957 23473370.930468</Start>
+					<End>6701278.176194 23473018.760651</End>
+				</Line>
+				<Curve rot="ccw" length="6.406290" radius="5000.000000" chord="6.406289" staStart="12812.259893" name="K302" oID="120">
+					<Start>6701278.176194 23473018.760651</Start>
+					<Center>6696298.304605 23473466.955882</Center>
+					<End>6701277.597852 23473012.380521</End>
+				</Curve>
+				<Line dir="294.204164" length="6.000000" staStart="12818.666181" name="S" oID="121">
+					<Start>6701277.597852 23473012.380521</Start>
+					<End>6701277.052362 23473006.405369</End>
+				</Line>
+				<Line dir="294.204164" length="16.615000" staStart="12824.666176" name="VPI6" oID="122">
+					<Start>6701277.052362 23473006.405369</Start>
+					<End>6701275.541808 23472989.859178</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="2"/>
+					</Feature>
+				</Line>
+				<Line dir="294.204164" length="16.615000" staStart="12841.281163" name="VPI6" oID="123">
+					<Start>6701275.541808 23472989.859178</Start>
+					<End>6701274.031254 23472973.312986</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="294.204164" length="7.330000" staStart="12857.896149" name="S" oID="124">
+					<Start>6701274.031254 23472973.312986</Start>
+					<End>6701273.364847 23472966.013342</End>
+				</Line>
+				<Line dir="294.204164" length="16.615000" staStart="12865.226143" name="VPI4" oID="125">
+					<Start>6701273.364847 23472966.013342</Start>
+					<End>6701271.854293 23472949.467151</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="294.204164" length="16.615000" staStart="12881.844254" name="VPI4" oID="126">
+					<Start>6701271.854293 23472949.467151</Start>
+					<End>6701270.343739 23472932.920959</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="294.204164" length="20.550000" staStart="12898.462567" name="SP21" oID="127">
+					<Start>6701270.343739 23472932.920959</Start>
+					<End>6701268.475434 23472912.456064</End>
+				</Line>
+			</CoordGeom>
+			<Cant name="PIK002" desc="PIK002" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="PIK002_profAlign">
+					<PVI desc="PIK002_profAlign/189">12291.185332 5.785937</PVI>
+					<CircCurve desc="PIK002_profAlign/190" length="10.571404" radius="-2000.000000">12404.834014 6.013000</CircCurve>
+					<CircCurve desc="PIK002_profAlign/193" length="102.474928" radius="25000.000000">12551.834014 5.530000</CircCurve>
+					<CircCurve desc="PIK002_profAlign/196" length="78.872313" radius="22000.000000">12879.691695 5.796645</CircCurve>
+					<PVI desc="PIK002_profAlign/197">12919.123254 5.970101</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="PIK002_profAlign/190"/>
+						<Property label="RealLengthStation" value="113.648681"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="PIK002_profAlign/193"/>
+						<Property label="RealLengthStation" value="260.648681"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PIK002_profAlign/190"/>
+						<Property label="PVIKmStation" value="182+690.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PIK002_profAlign/193"/>
+						<Property label="PVIKmStation" value="182+837.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PIK002_profAlign/196"/>
+						<Property label="PVIKmStation" value="183+251.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="PIK002_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="3"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="PIK002_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="0.002000"/>
+					<Property label="ProfAlignGroupEndingGradient" value="0.012598"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="PIK003" desc="PIK003" oID="6" state="proposed" staStart="12371.728622" length="487.126569">
+			<CoordGeom>
+				<Curve rot="ccw" length="33.196085" radius="299.990224" chord="33.179150" staStart="12371.728622" name="VPI1" oID="128">
+					<Start>6701323.541245 23473456.989613</Start>
+					<Center>6701024.758686 23473483.880450</Center>
+					<End>6701318.744215 23473424.159070</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="287.241074" length="1.200000" staStart="12404.857001" name="VPI1" oID="129">
+					<Start>6701318.744215 23473424.159070</Start>
+					<End>6701318.505322 23473422.983090</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="left"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Line>
+				<Line dir="287.241074" length="18.388772" staStart="12406.049661" name="S" oID="130">
+					<Start>6701318.505322 23473422.983090</Start>
+					<End>6701314.844526 23473404.962393</End>
+				</Line>
+				<Line dir="287.241074" length="17.223000" staStart="12424.325963" name="VPI3" oID="131">
+					<Start>6701314.844526 23473404.962393</Start>
+					<End>6701311.415810 23473388.084134</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KRV54-200-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Line>
+				<Line dir="287.241074" length="17.223000" staStart="12441.443622" name="VPI3" oID="132">
+					<Start>6701311.415810 23473388.084134</Start>
+					<End>6701307.987094 23473371.205874</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="KRV54-200-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="5"/>
+					</Feature>
+				</Line>
+				<Line dir="287.241074" length="29.384882" staStart="12458.561282" name="S" oID="133">
+					<Start>6701307.987094 23473371.205874</Start>
+					<End>6701302.137218 23473342.409169</End>
+				</Line>
+				<Curve rot="cw" length="33.204683" radius="300.000000" chord="33.187736" staStart="12487.766438" name="K402" oID="134">
+					<Start>6701302.137218 23473342.409169</Start>
+					<Center>6701596.132327 23473282.685843</Center>
+					<End>6701297.339358 23473309.570071</End>
+				</Curve>
+				<Line dir="294.287326" length="240.739829" staStart="12520.903413" name="S" oID="135">
+					<Start>6701297.339358 23473309.570071</Start>
+					<End>6701275.765677 23473069.798843</End>
+				</Line>
+				<Curve rot="cw" length="32.805273" radius="300.000000" chord="32.788930" staStart="12761.643242" name="K404" oID="136">
+					<Start>6701275.765677 23473069.798843</Start>
+					<Center>6701574.558646 23473042.914615</Center>
+					<End>6701274.616365 23473037.030061</End>
+				</Curve>
+				<Line dir="301.248821" length="30.564961" staStart="12794.383130" name="S" oID="137">
+					<Start>6701274.616365 23473037.030061</Start>
+					<End>6701275.215902 23473006.470981</End>
+				</Line>
+				<Curve rot="ccw" length="33.196085" radius="299.990224" chord="33.179150" staStart="12824.765447" name="VPI6" oID="138">
+					<Start>6701275.215902 23473006.470981</Start>
+					<Center>6700975.283395 23473000.586619</Center>
+					<End>6701274.031254 23472973.312986</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="PIK003" desc="PIK003" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="PIK003_profAlign">
+					<PVI desc="PIK003_profAlign/200">12371.728622 6.121224</PVI>
+					<CircCurve desc="PIK003_profAlign/201" length="37.355241" radius="10000.000000">12561.236574 5.501000</CircCurve>
+					<CircCurve desc="PIK003_profAlign/204" length="15.742345" radius="5000.000000">12769.419034 5.595000</CircCurve>
+					<CircCurve desc="PIK003_profAlign/207" length="13.931668" radius="-5000.000000">12809.570248 5.739000</CircCurve>
+					<CircCurve desc="PIK003_profAlign/210" length="17.751110" radius="22000.000000">12849.978507 5.771748</CircCurve>
+					<PVI desc="PIK003_profAlign/211">12858.855192 5.786131</PVI>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="PIK003_profAlign/201"/>
+						<Property label="RealLengthStation" value="189.507952"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="PIK003_profAlign/204"/>
+						<Property label="RealLengthStation" value="397.690411"/>
+					</Feature>
+					<!-- Jos linja ei ole pituusmittausraide, niin IM_EXT_RealLengthStation laajennoskella voidaan ilmaista todellinen pituus raidetta pitkin. Taitepisteiden määrityksessä käytetään taipisteen desc-arvoa -->
+					<Feature code="IM_RealLengthStation">
+						<Property label="VerticalIntersectionDesc" value="PIK003_profAlign/207"/>
+						<Property label="RealLengthStation" value="437.841626"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PIK003_profAlign/201"/>
+						<Property label="PVIKmStation" value="182+845.874"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PIK003_profAlign/204"/>
+						<Property label="PVIKmStation" value="183+50.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PIK003_profAlign/207"/>
+						<Property label="PVIKmStation" value="183+90.000"/>
+					</Feature>
+					<!-- IM_EXT_PVIHorizontalStation:KM  -->
+					<Feature code="IM_PVIHorizontalStation">
+						<Property label="VerticalIntersectionDesc" value="PIK003_profAlign/210"/>
+						<Property label="PVIKmStation" value="183+251.000"/>
+					</Feature>
+				</ProfAlign>
+				<Feature code="IM_ProfileGroup">
+					<Property label="ProfAlignName" value="PIK003_profAlign"/>
+					<Property label="ProfAlignGroupNumber" value="4"/>
+					<Property label="ProfAlignTrackSerialNumberInGroup" value="1"/>
+				</Feature>
+				<!-- IM_EXT_ProfileGroupData:GG  -->
+				<Feature code="IM_ProfileGroupData">
+					<Property label="ProfAlignName" value="PIK003_profAlign"/>
+					<!-- Pystygeometrian nimi (ProfAlign), johon linja kuuluu -->
+					<Property label="ProfAlignGroupStartingGradient" value="-0.003284"/>
+					<Property label="ProfAlignGroupEndingGradient" value="0.012598"/>
+				</Feature>
+			</Profile>
+			<Feature source="inframodel" code="IM_coding">
+				<Property label="terrainCoding" value="121"/>
+				<Property label="terrainCodingDesc" value="Keskilinja"/>
+			</Feature>
+		</Alignment>
+		<Alignment name="004002" desc="004002" oID="7" state="proposed" staStart="12865.226143" length="86.944233">
+			<CoordGeom>
+				<Curve rot="cw" length="33.196085" radius="299.990224" chord="33.179150" staStart="12865.226143" name="VPI4" oID="139">
+					<Start>6701273.364847 23472966.013342</Start>
+					<Center>6701572.112706 23472938.739709</Center>
+					<End>6701272.180199 23472932.855347</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300P-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="1"/>
+					</Feature>
+				</Curve>
+				<Line dir="301.248821" length="3.691866" staStart="12898.361308" name="S" oID="140">
+					<Start>6701272.180199 23472932.855347</Start>
+					<End>6701272.252616 23472929.164191</End>
+				</Line>
+				<Curve rot="cw" length="6.018030" radius="700.000000" chord="6.018011" staStart="12902.031097" name="K306" oID="141">
+					<Start>6701272.252616 23472929.164191</Start>
+					<Center>6701972.117938 23472942.894817</Center>
+					<End>6701272.396523 23472923.147901</End>
+				</Curve>
+				<Curve rot="ccw" length="5.950301" radius="700.000000" chord="5.950283" staStart="12908.009455" name="K307" oID="142">
+					<Start>6701272.396523 23472923.147901</Start>
+					<Center>6700572.675107 23472903.400986</Center>
+					<End>6701272.539098 23472917.199326</End>
+				</Curve>
+				<Line dir="301.254981" length="3.691866" staStart="12913.920499" name="S" oID="143">
+					<Start>6701272.539098 23472917.199326</Start>
+					<End>6701272.611872 23472913.508177</End>
+				</Line>
+				<Line dir="301.254981" length="1.200000" staStart="12917.589785" name="VPI2" oID="144">
+					<Start>6701272.611872 23472913.508177</Start>
+					<End>6701272.635526 23472912.308410</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="3"/>
+					</Feature>
+				</Line>
+				<Curve rot="ccw" length="33.196085" radius="299.990224" chord="33.179150" staStart="12918.782445" name="VPI2" oID="145">
+					<Start>6701272.635526 23472912.308410</Start>
+					<Center>6700972.703590 23472906.395029</Center>
+					<End>6701271.454087 23472879.150301</End>
+					<Feature code="IM_switch">
+						<Property label="switchType" value="YV60-300-1:9"/>
+						<Property label="switchHand" value="right"/>
+						<Property label="switchJoint" value="0"/>
+					</Feature>
+				</Curve>
+			</CoordGeom>
+			<Cant name="004002" desc="004002" gauge="1.524" rotationPoint="insideRail">
+      </Cant>
+			<Profile>
+				<ProfAlign name="004002_profAlign">
+					<PVI desc="004002_profAlign/189">12865.226143 5.799275</PVI>
+					<CircCurve desc="004002_profAlign/195" length="86.684680" radius="22000.000000">12908.695454 5.883946</CircCurve>
+					<PVI desc="004002_profAlign/195">12952.170376 6.139394</PVI>
+				</ProfAlign>
+			</Profile>
+		</Alignment>
+	</Alignments>
+</LandXML>
