@@ -1,5 +1,7 @@
 #include "Alignment.h"
 
+#include <numbers>
+
 Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
 {
 	USES_CONVERSION;
@@ -42,7 +44,7 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 	//auto site = file.getSingle<typename Schema::IfcSite>();
 	//file.relatePlacements(site, horizontal_alignment);
 
-	auto start = lxalignment->getStart();
+	//auto start = lxalignment->getStart();
 	auto coord_geom = lxalignment->getCoordGeom();
 
 	auto iter = coord_geom->GeomList().iterator();
@@ -74,8 +76,8 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 			auto start = line->getStart();
 			auto x = start->at(0);
 			auto y = start->at(1);
-			auto p = new Ifc4x3_add2::IfcCartesianPoint({ x,y });
-			auto dir = line->getDir();
+			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(x,y);
+         auto dir = line->getDir() * std::numbers::pi / 180.; // Convert degrees to radians (hard coded conversion)
 			auto start_radius = 0.;
 			auto end_radius = 0.;
 			auto length = line->getLength();
@@ -102,8 +104,8 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 			auto start = spiral->getStart();
 			auto x = start->at(0);
 			auto y = start->at(1);
-			auto p = new Ifc4x3_add2::IfcCartesianPoint({ x,y });
-			auto dir = spiral->getDirStart();
+			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(x, y);
+			auto dir = spiral->getDirStart() * std::numbers::pi / 180.; // Convert degrees to radians (hard coded conversion)
 			auto start_radius = spiral->getRadiusStart();
 			auto end_radius = spiral->getRadiusEnd();
 			auto length = spiral->getLength();
@@ -198,8 +200,8 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 			auto start = curve->getStart();
 			auto x = start->at(0);
 			auto y = start->at(1);
-			auto p = new Ifc4x3_add2::IfcCartesianPoint({ x,y });
-			auto dir = curve->getDirStart();
+			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(x, y);
+			auto dir = curve->getDirStart() * std::numbers::pi / 180.; // Convert degrees to radians (hard coded conversion)
 			auto start_radius = curve->getRadius();
 			auto end_radius = start_radius;
 			auto length = curve->getLength();
