@@ -2,6 +2,21 @@
 
 #include <numbers>
 
+// land xml directions are in degrees with 0 = North
+// ifc needs radians and 0 = ease
+double direction(double lxdir)
+{
+   //double dir = 2.5 * std::numbers::pi - lxdir * std::numbers::pi / 180;
+   //if (2. * std::numbers::pi < dir)
+//	  dir -= 2. * std::numbers::pi;
+
+   double dir = 2.5 * 180. - lxdir;
+   if (360. < dir)
+	  dir -= 360.;
+
+   return dir;
+}
+
 Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
 {
 	USES_CONVERSION;
@@ -74,10 +89,13 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 			  desc = W2A(line->getDesc().c_str());
 
 			auto start = line->getStart();
-			auto x = start->at(0);
-			auto y = start->at(1);
-			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(x,y);
-         auto dir = line->getDir() * std::numbers::pi / 180.; // Convert degrees to radians (hard coded conversion)
+			auto sx = start->at(0);
+			auto sy = start->at(1);
+			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(sx,sy);
+			auto end = line->getEnd();
+			auto ex = end->at(0);
+			auto ey = end->at(1);
+			auto dir = atan2(ey - sy, ex - sx) * 180. / std::numbers::pi;
 			auto start_radius = 0.;
 			auto end_radius = 0.;
 			auto length = line->getLength();
@@ -101,13 +119,18 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 			if (spiral->hasValue_Desc())
 			   desc = W2A(spiral->getDesc().c_str());
 
+			double sign = spiral->getRot() == LX::EnumClockwise::k_cw ? 1. : -1.;
 			auto start = spiral->getStart();
-			auto x = start->at(0);
-			auto y = start->at(1);
-			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(x, y);
-			auto dir = spiral->getDirStart() * std::numbers::pi / 180.; // Convert degrees to radians (hard coded conversion)
-			auto start_radius = spiral->getRadiusStart();
-			auto end_radius = spiral->getRadiusEnd();
+			auto sx = start->at(0);
+			auto sy = start->at(1);
+			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(sx, sy);
+			auto pi = spiral->getPI();
+			auto pix = pi->at(0);
+			auto piy = pi->at(1);
+			auto dir = atan2(piy - sy, pix - sx);
+			dir *= 180. / std::numbers::pi;
+			auto start_radius = sign*spiral->getRadiusStart();
+			auto end_radius = sign*spiral->getRadiusEnd();
 			auto length = spiral->getLength();
 			auto predefined_type = Ifc4x3_add2::IfcAlignmentHorizontalSegmentTypeEnum::IfcAlignmentHorizontalSegmentType_CLOTHOID;
 
@@ -197,12 +220,27 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 			if (curve->hasValue_Desc())
 			   desc = W2A(curve->getDesc().c_str());
 
+			double sign = curve->getRot() == LX::EnumClockwise::k_cw ? 1. : -1.;
 			auto start = curve->getStart();
-			auto x = start->at(0);
-			auto y = start->at(1);
-			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(x, y);
-			auto dir = curve->getDirStart() * std::numbers::pi / 180.; // Convert degrees to radians (hard coded conversion)
-			auto start_radius = curve->getRadius();
+			auto sx = start->at(0);
+			auto sy = start->at(1);
+			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(sx, sy);
+
+			auto center = curve->getCenter();
+			auto cx = center->at(0);
+			auto cy = center->at(1);
+
+			auto end = curve->getEnd();
+			auto ex = end->at(0);
+			auto ey = end->at(1);
+
+			auto radius = sqrt((sx - cx) * (sx - cx) + (sy - cy) * (sy - cy));
+			auto dir = atan2(sy - cy, sx - cx);
+
+			dir += sign*std::numbers::pi / 2;
+			dir *= 180. / std::numbers::pi;
+
+			auto start_radius = sign*curve->getRadius();
 			auto end_radius = start_radius;
 			auto length = curve->getLength();
 			auto predefined_type = Ifc4x3_add2::IfcAlignmentHorizontalSegmentTypeEnum::IfcAlignmentHorizontalSegmentType_CIRCULARARC;
@@ -223,7 +261,6 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 		{
 			std::wcout << _T("   ") << _T("Irregular Line ") << irregularLine->getName().c_str() << std::endl;
 		}
-
 	}
 
 

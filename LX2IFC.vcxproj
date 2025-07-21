@@ -132,10 +132,12 @@
   <ItemGroup>
     <ClCompile Include="Alignment.cpp" />
     <ClCompile Include="LX2IFC.cpp" />
+    <ClCompile Include="Units.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Alignment.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Units.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

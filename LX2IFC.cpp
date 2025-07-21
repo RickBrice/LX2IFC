@@ -5,6 +5,7 @@
 
 #include "Header.h"
 #include "Alignment.h"
+#include "Units.h"
 
 #include <string>
 #include <cstdlib>
@@ -47,8 +48,19 @@ int main(int argc, char** argv)
 	std::string input_file(argv[1]);
 	input_file += ".xml";
 
+	EventSink event_sink;
+
+	auto LxDoc = LX::createDocumentObject();
+	LxDoc->loadXml(A2W(input_file.c_str()), &event_sink);
+	auto landXML = LxDoc->rootObject();
+	auto* pProject = landXML->getProject();
+
 	IfcHierarchyHelper<Ifc4x3_add2> file;
-	auto project = file.addProject();
+	auto unit_assignment = Units(landXML->getUnits(), file);
+	Ifc4x3_add2::IfcRepresentationContext::list::ptr rep_contexts(new Ifc4x3_add2::IfcRepresentationContext::list);
+	auto* project = new Ifc4x3_add2::IfcProject(IfcParse::IfcGlobalId(), nullptr, std::string(W2A(pProject->getName().c_str())), boost::none, boost::none, boost::none, boost::none, rep_contexts, unit_assignment);
+
+	//auto project = file.addProject();
 	auto site = file.addSite(project);
 
 	auto geometric_representation_context = file.getRepresentationContext(std::string("Model")); // creates the representation context if it doesn't already exist
@@ -56,14 +68,8 @@ int main(int argc, char** argv)
 	auto axis_model_representation_subcontext = new Ifc4x3_add2::IfcGeometricRepresentationSubContext(std::string("Axis"), std::string("Model"), geometric_representation_context, boost::none, Ifc4x3_add2::IfcGeometricProjectionEnum::IfcGeometricProjection_MODEL_VIEW, boost::none);
 	file.addEntity(axis_model_representation_subcontext);
 
-	EventSink event_sink;
 
-	auto LxDoc = LX::createDocumentObject();
-	LxDoc->loadXml(A2W(input_file.c_str()), &event_sink);
-	auto landXML = LxDoc->rootObject();
 
-	auto* pProject = landXML->getProject();
-	project->setName(std::string(W2A(pProject->getName().c_str())));
 
 
 	// IFC 4.1.5.1 alignment is referenced in spatial structure of an IfcSpatialElement. In this case IfcSite is the highest level IfcSpatialElement
