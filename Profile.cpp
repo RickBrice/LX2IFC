@@ -1,0 +1,408 @@
+#include "Profile.h"
+
+
+template <class T>
+std::pair<double, double> get_pvi(T* pObj)
+{
+   return { pObj->at(0),pObj->at(1) };
+}
+
+template <class T>
+boost::optional<std::string> get_name(T* pObj)
+{
+   boost::optional<std::string> name;
+   if (pObj->hasValue_Desc())
+   {
+	  USES_CONVERSION;
+	  name = std::string(W2A(pObj->getDesc().c_str()));
+   }
+   return name;
+}
+
+
+void Profile(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
+{
+   ProfileBuilder builder(file);
+
+   auto& profile_collection = lxalignment->Profile();
+   auto profileIter = profile_collection.iterator();
+   while (!profileIter->atEnd())
+   {
+	  auto lxprofile = profileIter->current();
+	  LX::String strProfileName = lxprofile->hasValue_Name() ? lxprofile->getName() : LX::String(_T("<Unnamed>"));
+	  std::wcout << _T("   ") << strProfileName << std::endl;
+	  profileIter->next();
+
+	  auto& profile_alignment_collection = lxprofile->ProfAlign();
+	  auto profile_alignment_iter = profile_alignment_collection.iterator();
+	  while (!profile_alignment_iter->atEnd())
+	  {
+		 auto profile_alignment = profile_alignment_iter->current();
+
+		 auto name = get_name(profile_alignment);
+
+		 auto vertical_alignment = new Ifc4x3_add2::IfcAlignmentVertical(IfcParse::IfcGlobalId(), nullptr, name, boost::none, boost::none, nullptr, nullptr);
+		 file.addEntity(vertical_alignment);
+		 file.addRelatedObject<Ifc4x3_add2::IfcRelNests>(alignment, vertical_alignment);
+
+		 builder.Build(profile_alignment,vertical_alignment);
+
+		 profile_alignment_iter->next();
+	  }
+   }
+}
+
+
+ProfileBuilder::ProfileBuilder(IfcHierarchyHelper<Ifc4x3_add2>& file) : m_file(file)
+{
+}
+
+void ProfileBuilder::Build(LX::ProfAlign* pProfAlign, Ifc4x3_add2::IfcAlignmentVertical* vertical_alignment)
+{
+   m_VerticalAlignment = vertical_alignment;
+
+   auto pIter = pProfAlign->VertGeomList().iterator();
+   LX::Object* pObj = pIter->current();
+   LX::PVI* pPVI = dynamic_cast<LX::PVI*>(pObj);
+   m_StartStation = pPVI->at(0);
+
+   pIter->next();
+   LX::Object* pNextObj = pIter->current();
+   auto prevEnd = StartGradient(pPVI, pNextObj);
+   pObj = pNextObj;
+
+   while (!pIter->atEnd())
+   {
+	  pIter->next();
+	  pNextObj = (pIter->atEnd() ? nullptr : pIter->current());
+
+	  LX::Feature* pFeature = dynamic_cast<LX::Feature*>(pNextObj);
+	  if (pFeature)
+		 break;
+
+	  prevEnd = ProcessProfileElement(prevEnd, pObj, pNextObj);
+
+	  pObj = pNextObj;
+   }
+}
+
+ProfileBuilder::EndPoint ProfileBuilder::ProcessProfileElement(EndPoint prevEnd,LX::Object* pObj, LX::Object* pNextObj)
+{
+   if (pNextObj == nullptr)
+   {
+	  auto pPVI = dynamic_cast<LX::PVI*>(pObj);
+	  EndGradient(prevEnd,pPVI);
+   }
+   else
+   {
+	  LX::PVI* pPVI = dynamic_cast<LX::PVI*>(pObj);
+	  LX::ParaCurve* pParaCurve = dynamic_cast<LX::ParaCurve*>(pObj);
+	  LX::UnsymParaCurve* pUnsymParaCurve = dynamic_cast<LX::UnsymParaCurve*>(pObj);
+	  LX::CircCurve* pCircCurve = dynamic_cast<LX::CircCurve*>(pObj);
+
+	  if (pPVI)
+	  {
+		 prevEnd = PVI(prevEnd, pPVI);
+	  }
+	  else if (pParaCurve)
+
+	  {
+		 prevEnd = ParaCurve(prevEnd, pParaCurve, pNextObj);
+	  }
+	  else if (pUnsymParaCurve)
+	  {
+		 prevEnd = UnsymParaCurve(prevEnd, pUnsymParaCurve, pNextObj);
+	  }
+	  else if (pCircCurve)
+	  {
+		 prevEnd = CircCurve(prevEnd, pCircCurve, pNextObj);
+	  }
+	  else 
+		 assert(false);
+   }
+
+   return prevEnd;
+}
+
+ProfileBuilder::EndPoint ProfileBuilder::StartGradient(LX::PVI* pPVI, LX::Object* pNextObj)
+{
+   auto [pvi_station, pvi_elevation] = get_pvi(pPVI);
+
+   double half_curve_length = 0;
+
+   double next_station, next_elevation;
+   LX::PVI* pNextPVI = dynamic_cast<LX::PVI*>(pNextObj);
+   LX::ParaCurve* pNextParaCurve = dynamic_cast<LX::ParaCurve*>(pNextObj);
+   LX::UnsymParaCurve* pNextUnsymParaCurve = dynamic_cast<LX::UnsymParaCurve*>(pNextObj);
+   LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
+   if (pNextPVI)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextPVI);
+   }
+   else if (pNextParaCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextParaCurve);
+	  half_curve_length = pNextParaCurve->getLength() / 2;
+   }
+   else if (pNextUnsymParaCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextUnsymParaCurve);
+	  half_curve_length = pNextUnsymParaCurve->getLengthIn();
+   }
+   else if (pNextCircCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextCircCurve);
+	  half_curve_length = pNextCircCurve->getLength() / 2;
+   }
+   else
+   {
+	  assert(false);
+   }
+
+   double gradient = (next_elevation - pvi_elevation) / (next_station - pvi_station);
+
+   double length = next_station - half_curve_length - pvi_station;
+
+   double start_dist_along = pvi_station - m_StartStation;
+   auto name = get_name(pPVI);
+   AddGradient(start_dist_along, pvi_elevation, gradient, length, name);
+
+   double end_station = pvi_station + length;
+   double end_elevation = pvi_elevation + gradient * length;
+   return { end_station, end_elevation, gradient };
+}
+
+ProfileBuilder::EndPoint ProfileBuilder::PVI(EndPoint prevEnd, LX::PVI* pPVI)
+{
+   auto [pvi_station, pvi_elevation] = get_pvi(pPVI);
+    
+   auto [prev_segment_station, prev_segment_elevation, prev_segment_gradient] = prevEnd;
+
+   double length = pvi_station - prev_segment_station;
+   if (0. < length)
+   {
+	  double gradient = (pvi_elevation - prev_segment_elevation) / length;
+
+	  double start_dist_along = prev_segment_station - m_StartStation;
+	  auto name = get_name(pPVI);
+	  AddGradient(start_dist_along, pvi_elevation, gradient, length, name);
+
+	  double end_station = pvi_station + length;
+	  double end_elevation = pvi_elevation + gradient * length;
+	  return { end_station, end_elevation, gradient };
+   }
+   else
+   {
+	  return prevEnd;
+   }
+}
+
+ProfileBuilder::EndPoint ProfileBuilder::ParaCurve(EndPoint prevEnd,LX::ParaCurve* pParaCurve, LX::Object* pNextObj)
+{
+   auto [pvi_station, pvi_elevation] = get_pvi(pParaCurve);
+   double length = pParaCurve->getLength();
+
+   double next_station, next_elevation;
+   LX::PVI* pNextPVI = dynamic_cast<LX::PVI*>(pNextObj);
+   LX::ParaCurve* pNextParaCurve = dynamic_cast<LX::ParaCurve*>(pNextObj);
+   LX::UnsymParaCurve* pNextUnsymParaCurve = dynamic_cast<LX::UnsymParaCurve*>(pNextObj);
+   LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
+   if (pNextPVI)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextPVI);
+   }
+   else if (pNextParaCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextParaCurve);
+   }
+   else if (pNextUnsymParaCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextUnsymParaCurve);
+   }
+   else if (pNextCircCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextCircCurve);
+   }
+   else
+   {
+	  assert(false);
+   }
+
+   double segment_start_station = pvi_station - length / 2;
+   auto [prev_segment_station, prev_segment_elevation, prev_segment_gradient] = prevEnd;
+   if (prev_segment_station < segment_start_station)
+   {
+	  // add gradient segment that fills the gap between the end of the previous and the start of current segment
+	  AddGradient(prev_segment_station - m_StartStation, prev_segment_elevation, prev_segment_gradient, segment_start_station - prev_segment_station, boost::none);
+   }
+
+   double start_gradient = (pvi_elevation - prev_segment_elevation) / (pvi_station - prev_segment_station);
+   double elevation = pvi_elevation - start_gradient * length / 2;
+   double end_gradient = (next_elevation - pvi_elevation) / (next_station - pvi_station);
+
+   double start_dist_along = segment_start_station - m_StartStation;
+   auto name = get_name(pParaCurve);
+   AddParaCurve(start_dist_along, elevation, start_gradient, end_gradient, length, name);
+
+   double end_station = segment_start_station + length;
+   double end_elevation = pvi_elevation + end_gradient * length / 2;
+   return { end_station, end_elevation, end_gradient };
+}
+
+ProfileBuilder::EndPoint ProfileBuilder::UnsymParaCurve(EndPoint prevEnd, LX::UnsymParaCurve* pUnsymParaCurve, LX::Object* pNextObj)
+{
+   auto [pvi_station, pvi_elevation] = get_pvi(pUnsymParaCurve);
+   double length_in = pUnsymParaCurve->getLengthIn();
+   double length_out = pUnsymParaCurve->getLengthOut();
+
+
+   double next_station, next_elevation;
+   LX::PVI* pNextPVI = dynamic_cast<LX::PVI*>(pNextObj);
+   LX::ParaCurve* pNextParaCurve = dynamic_cast<LX::ParaCurve*>(pNextObj);
+   LX::UnsymParaCurve* pNextUnsymParaCurve = dynamic_cast<LX::UnsymParaCurve*>(pNextObj);
+   LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
+   if (pNextPVI)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextPVI);
+   }
+   else if (pNextParaCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextParaCurve);
+   }
+   else if (pNextUnsymParaCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextUnsymParaCurve);
+   }
+   else if (pNextCircCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextCircCurve);
+   }
+   else
+   {
+	  assert(false);
+   }
+
+
+   double segment_start_station = pvi_station - length_in;
+   auto [prev_segment_station, prev_segment_elevation, prev_segment_gradient] = prevEnd;
+   if (prev_segment_station < segment_start_station)
+   {
+	  // add gradient segment that fills the gap between the end of the previous and the start of current segment
+	  AddGradient(prev_segment_station - m_StartStation, prev_segment_elevation, prev_segment_gradient, segment_start_station - prev_segment_station, boost::none);
+   }
+
+   double g1 = (pvi_elevation - prev_segment_elevation) / (pvi_station - prev_segment_station); // entry grade to composite curve
+   double g2 = (next_elevation - pvi_elevation) / (next_station - pvi_station); // exit grade to composite curve
+   double h = length_in * length_out * (g2 - g1) / (2 * (length_in + length_out)); // vertical distance from curve to PVI
+
+   double pvi1_station = pvi_elevation - length_in / 2; // station of PVI of left curve
+   double pvi1_elevation = pvi_elevation - g1 * length_in / 2; // elevation of PVI of left curve
+
+   double transition_station = pvi_station; // station of transition point between left and right curves
+   double transition_elevation = pvi_elevation + h; // elevation of transition point between left and right curves
+
+   // left vertical curve
+   double start_dist_along = segment_start_station - m_StartStation;
+   double elevation = pvi_elevation - g1 * length_in;
+   double start_gradient = g1;
+   double end_gradient = (transition_elevation - pvi1_elevation) / (transition_station - pvi1_station);
+   auto name = get_name(pUnsymParaCurve);
+   AddParaCurve(start_dist_along, elevation, start_gradient, end_gradient, length_in,name);
+
+   
+   // right vertical curve
+   start_dist_along = pvi_station - m_StartStation; // also = left curve start_dist_along + length_in
+   elevation = transition_elevation;
+   start_gradient = end_gradient; // start gradient of second curve if end gradient of first curve
+   end_gradient = g2;
+   AddParaCurve(start_dist_along, elevation, start_gradient, end_gradient, length_out,name);
+
+   double end_station = pvi_station + length_out;
+   double end_elevation = pvi_elevation + end_gradient * length_out;
+   return { end_station, end_elevation, end_gradient };
+}
+
+ProfileBuilder::EndPoint ProfileBuilder::CircCurve(EndPoint prevEnd,LX::CircCurve* pCircCurve, LX::Object* pNextObj)
+{
+   auto [pvi_station,pvi_elevation] = get_pvi(pCircCurve);
+   double length = pCircCurve->getLength();
+   double radius = pCircCurve->getRadius();
+
+   double next_station, next_elevation;
+   LX::PVI* pNextPVI = dynamic_cast<LX::PVI*>(pNextObj);
+   LX::ParaCurve* pNextParaCurve = dynamic_cast<LX::ParaCurve*>(pNextObj);
+   LX::UnsymParaCurve* pNextUnsymParaCurve = dynamic_cast<LX::UnsymParaCurve*>(pNextObj);
+   LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
+   if (pNextPVI)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextPVI);
+   }
+   else if (pNextParaCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextParaCurve);
+   }
+   else if (pNextUnsymParaCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextUnsymParaCurve);
+   }
+   else if (pNextCircCurve)
+   {
+	  std::tie(next_station, next_elevation) = get_pvi(pNextCircCurve);
+   }
+   else
+   {
+	  assert(false);
+   }
+
+   double segment_start_station = pvi_station - length / 2;
+   auto [prev_segment_station, prev_segment_elevation, prev_segment_gradient] = prevEnd;
+   if (prev_segment_station < segment_start_station)
+   {
+	  // add gradient segment that fills the gap between the end of the previous and the start of current segment
+	  AddGradient(prev_segment_station - m_StartStation, prev_segment_elevation, prev_segment_gradient, segment_start_station - prev_segment_station, boost::none);
+   }
+
+   double start_gradient = (pvi_elevation - prev_segment_elevation) / (pvi_station - prev_segment_station);
+   double elevation = pvi_elevation - start_gradient * length / 2;
+   double end_gradient = (next_elevation - pvi_elevation) / (next_station - pvi_station);
+
+   double start_dist_along = segment_start_station - m_StartStation;
+   auto name = get_name(pCircCurve);
+   AddCircCurve(start_dist_along, elevation, start_gradient, end_gradient, length, radius,name);
+
+   double end_station = pvi_station + length / 2;
+   double end_elevation = pvi_elevation + end_gradient * length / 2;
+   return { end_station, end_elevation,end_gradient };
+}
+
+void ProfileBuilder::EndGradient(EndPoint prevEnd,LX::PVI* pPVI)
+{
+   PVI(prevEnd, pPVI);
+}
+
+void ProfileBuilder::AddGradient(double start_dist_along, double elevation, double grade, double length,boost::optional<std::string> name)
+{
+   auto design_parameters = new Ifc4x3_add2::IfcAlignmentVerticalSegment(boost::none, boost::none, start_dist_along, length, elevation, grade, grade, boost::none, Ifc4x3_add2::IfcAlignmentVerticalSegmentTypeEnum::IfcAlignmentVerticalSegmentType_CONSTANTGRADIENT);
+   auto alignment_segment = new Ifc4x3_add2::IfcAlignmentSegment(IfcParse::IfcGlobalId(), nullptr, name, boost::none, boost::none, nullptr, nullptr, design_parameters);
+   m_file.addEntity(design_parameters);
+   m_file.addEntity(alignment_segment);
+   m_file.addRelatedObject<Ifc4x3_add2::IfcRelNests>(m_VerticalAlignment,alignment_segment);
+}
+
+void ProfileBuilder::AddParaCurve(double start_dist_along, double elevation, double start_grade, double end_grade, double length, boost::optional<std::string> name)
+{
+   auto design_parameters = new Ifc4x3_add2::IfcAlignmentVerticalSegment(boost::none, boost::none, start_dist_along, length, elevation, start_grade, end_grade, boost::none, Ifc4x3_add2::IfcAlignmentVerticalSegmentTypeEnum::IfcAlignmentVerticalSegmentType_PARABOLICARC);
+   auto alignment_segment = new Ifc4x3_add2::IfcAlignmentSegment(IfcParse::IfcGlobalId(), nullptr, name, boost::none, boost::none, nullptr, nullptr, design_parameters);
+   m_file.addEntity(design_parameters);
+   m_file.addEntity(alignment_segment);
+   m_file.addRelatedObject<Ifc4x3_add2::IfcRelNests>(m_VerticalAlignment, alignment_segment);
+}
+
+void ProfileBuilder::AddCircCurve(double start_dist_along, double elevation, double start_grade, double end_grade, double length,double radius, boost::optional<std::string> name)
+{
+   auto design_parameters = new Ifc4x3_add2::IfcAlignmentVerticalSegment(boost::none, boost::none, start_dist_along, length, elevation, start_grade, end_grade, radius, Ifc4x3_add2::IfcAlignmentVerticalSegmentTypeEnum::IfcAlignmentVerticalSegmentType_CIRCULARARC);
+   auto alignment_segment = new Ifc4x3_add2::IfcAlignmentSegment(IfcParse::IfcGlobalId(), nullptr, name, boost::none, boost::none, nullptr, nullptr, design_parameters);
+   m_file.addEntity(design_parameters);
+   m_file.addEntity(alignment_segment);
+   m_file.addRelatedObject<Ifc4x3_add2::IfcRelNests>(m_VerticalAlignment, alignment_segment);
+}

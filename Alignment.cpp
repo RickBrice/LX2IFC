@@ -1,21 +1,7 @@
 #include "Alignment.h"
-
+#include "Profile.h"
+#include "Cant.h"
 #include <numbers>
-
-// land xml directions are in degrees with 0 = North
-// ifc needs radians and 0 = ease
-double direction(double lxdir)
-{
-   //double dir = 2.5 * std::numbers::pi - lxdir * std::numbers::pi / 180;
-   //if (2. * std::numbers::pi < dir)
-//	  dir -= 2. * std::numbers::pi;
-
-   double dir = 2.5 * 180. - lxdir;
-   if (360. < dir)
-	  dir -= 360.;
-
-   return dir;
-}
 
 Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
 {
@@ -43,13 +29,6 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 	// IfcProject <-> IfcRelAggregates <-> IfcAlignment
 	auto project = file.getSingle<Ifc4x3_add2::IfcProject>();
 	file.addRelatedObject<Ifc4x3_add2::IfcRelAggregates>(project, alignment);
-
-	// IFC 4.1.5.1 alignment is referenced in spatial structure of an IfcSpatialElement. In this case IfcSite is the highest level IfcSpatialElement
-	// https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/concepts/Object_Connectivity/Alignment_Spatial_Reference/content.html
-	// IfcSite <-> IfcRelReferencedInSpatialStructure <-> IfcAlignment
-	// This means IfcAlignment is not part of the IfcSite (it is not an aggregate component) but instead IfcAlignment is used within
-	// the IfcSite by reference. This implies an IfcAlignment can traverse many IfcSite instances within an IfcProject
-	//file.addRelatedObject<Ifc4x3_add2::IfcRelReferencedInSpatialStructure>(site, alignment);
 
 
 	auto horizontal_alignment = new Ifc4x3_add2::IfcAlignmentHorizontal(IfcParse::IfcGlobalId(), nullptr, boost::none, boost::none, boost::none, nullptr, nullptr/*representation*/);
@@ -183,16 +162,17 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 				std::wcout << _T("*** Unknown spiral - revSinusoid ***") << std::endl;
 				break;
 			case LX::EnumSpiralType::k_sineHalfWave:
-				std::wcout << _T("*** Unknown spiral - sineHalfWave ***") << std::endl;
+			   // LandXML Spiral Document (1.1 Schema) - Sine Half-Wavelength is an approximate of a Cosine Spiral
+				predefined_type = Ifc4x3_add2::IfcAlignmentHorizontalSegmentTypeEnum::IfcAlignmentHorizontalSegmentType_COSINECURVE;
 				break;
 			case LX::EnumSpiralType::k_biquadraticParabola:
-				std::wcout << _T("*** Unknown spiral - biquadraticParabola ***") << std::endl;
-				break;
+			   predefined_type = Ifc4x3_add2::IfcAlignmentHorizontalSegmentTypeEnum::IfcAlignmentHorizontalSegmentType_HELMERTCURVE;
+			   break;
 			case LX::EnumSpiralType::k_cubicParabola:
-				std::wcout << _T("*** Unknown spiral - cubicParabola ***") << std::endl;
+				predefined_type = Ifc4x3_add2::IfcAlignmentHorizontalSegmentTypeEnum::IfcAlignmentHorizontalSegmentType_CUBIC;
 				break;
 			case LX::EnumSpiralType::k_japaneseCubic:
-				std::wcout << _T("*** Unknown spiral - japeneseCubic ***") << std::endl;
+				predefined_type = Ifc4x3_add2::IfcAlignmentHorizontalSegmentTypeEnum::IfcAlignmentHorizontalSegmentType_VIENNESEBEND;
 				break;
 			case LX::EnumSpiralType::k_radioid:
 				std::wcout << _T("*** Unknown spiral - radioid ***") << std::endl;
@@ -263,51 +243,9 @@ Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHel
 		}
 	}
 
+	Profile(lxalignment, alignment, file);
+	Cant(lxalignment, alignment, file);
 
-	auto& profile_collection = lxalignment->Profile();
-	auto profileIter = profile_collection.iterator();
-	while (!profileIter->atEnd())
-	{
-		auto profile = profileIter->current();
-		LX::String strProfileName = profile->hasValue_Name() ? profile->getName() : LX::String(_T("<Unnamed>"));
-		std::wcout << _T("   ") << strProfileName << std::endl;
-		profileIter->next();
-
-		auto& profile_alignment_collection = profile->ProfAlign();
-		auto profile_alignment_iter = profile_alignment_collection.iterator();
-		while (!profile_alignment_iter->atEnd())
-		{
-			auto profile_alignment = profile_alignment_iter->current();
-			auto& vert_geom = profile_alignment->VertGeomList();
-			auto iter = vert_geom.iterator();
-			while (!iter->atEnd())
-			{
-				auto obj = iter->current();
-				auto pvi = dynamic_cast<LX::PVI*>(obj);
-				auto para_curve = dynamic_cast<LX::ParaCurve*>(obj);
-				auto unsym_para_curve = dynamic_cast<LX::UnsymParaCurve*>(obj);
-				auto circ_curve = dynamic_cast<LX::CircCurve*>(obj);
-				if (pvi)
-				{
-					std::wcout << _T("        ") << _T("PVI ") << std::endl;
-				}
-				else if (para_curve)
-				{
-					std::wcout << _T("        ") << _T("ParaCurve ") << std::endl;
-				}
-				else if (unsym_para_curve)
-				{
-					std::wcout << _T("        ") << _T("UnsymParaCurve ") << std::endl;
-				}
-				else if (circ_curve)
-				{
-					std::wcout << _T("        ") << _T("CircCurve ") << std::endl;
-				}
-				iter->next();
-			}
-			profile_alignment_iter->next();
-		}
-	}
 
 	return alignment;
 }
