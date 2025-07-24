@@ -1,8 +1,9 @@
+#include "LX2IFC.h"
 #include "Profile.h"
 
 
 template <class T>
-std::pair<double, double> get_pvi(T* pObj)
+std::pair<double, double> get_station_elevation(T* pObj)
 {
    return { pObj->at(0),pObj->at(1) };
 }
@@ -20,7 +21,7 @@ boost::optional<std::string> get_name(T* pObj)
 }
 
 
-void Profile(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
+void LX2IFC::Profile(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
 {
    ProfileBuilder builder(file);
 
@@ -126,7 +127,7 @@ ProfileBuilder::EndPoint ProfileBuilder::ProcessProfileElement(EndPoint prevEnd,
 
 ProfileBuilder::EndPoint ProfileBuilder::StartGradient(LX::PVI* pPVI, LX::Object* pNextObj)
 {
-   auto [pvi_station, pvi_elevation] = get_pvi(pPVI);
+   auto [pvi_station, pvi_elevation] = get_station_elevation(pPVI);
 
    double half_curve_length = 0;
 
@@ -137,21 +138,21 @@ ProfileBuilder::EndPoint ProfileBuilder::StartGradient(LX::PVI* pPVI, LX::Object
    LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
    if (pNextPVI)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextPVI);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextPVI);
    }
    else if (pNextParaCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextParaCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextParaCurve);
 	  half_curve_length = pNextParaCurve->getLength() / 2;
    }
    else if (pNextUnsymParaCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextUnsymParaCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextUnsymParaCurve);
 	  half_curve_length = pNextUnsymParaCurve->getLengthIn();
    }
    else if (pNextCircCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextCircCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextCircCurve);
 	  half_curve_length = pNextCircCurve->getLength() / 2;
    }
    else
@@ -174,7 +175,7 @@ ProfileBuilder::EndPoint ProfileBuilder::StartGradient(LX::PVI* pPVI, LX::Object
 
 ProfileBuilder::EndPoint ProfileBuilder::PVI(EndPoint prevEnd, LX::PVI* pPVI)
 {
-   auto [pvi_station, pvi_elevation] = get_pvi(pPVI);
+   auto [pvi_station, pvi_elevation] = get_station_elevation(pPVI);
     
    auto [prev_segment_station, prev_segment_elevation, prev_segment_gradient] = prevEnd;
 
@@ -199,7 +200,7 @@ ProfileBuilder::EndPoint ProfileBuilder::PVI(EndPoint prevEnd, LX::PVI* pPVI)
 
 ProfileBuilder::EndPoint ProfileBuilder::ParaCurve(EndPoint prevEnd,LX::ParaCurve* pParaCurve, LX::Object* pNextObj)
 {
-   auto [pvi_station, pvi_elevation] = get_pvi(pParaCurve);
+   auto [pvi_station, pvi_elevation] = get_station_elevation(pParaCurve);
    double length = pParaCurve->getLength();
 
    double next_station, next_elevation;
@@ -209,19 +210,19 @@ ProfileBuilder::EndPoint ProfileBuilder::ParaCurve(EndPoint prevEnd,LX::ParaCurv
    LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
    if (pNextPVI)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextPVI);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextPVI);
    }
    else if (pNextParaCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextParaCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextParaCurve);
    }
    else if (pNextUnsymParaCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextUnsymParaCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextUnsymParaCurve);
    }
    else if (pNextCircCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextCircCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextCircCurve);
    }
    else
    {
@@ -251,7 +252,7 @@ ProfileBuilder::EndPoint ProfileBuilder::ParaCurve(EndPoint prevEnd,LX::ParaCurv
 
 ProfileBuilder::EndPoint ProfileBuilder::UnsymParaCurve(EndPoint prevEnd, LX::UnsymParaCurve* pUnsymParaCurve, LX::Object* pNextObj)
 {
-   auto [pvi_station, pvi_elevation] = get_pvi(pUnsymParaCurve);
+   auto [pvi_station, pvi_elevation] = get_station_elevation(pUnsymParaCurve);
    double length_in = pUnsymParaCurve->getLengthIn();
    double length_out = pUnsymParaCurve->getLengthOut();
 
@@ -263,19 +264,19 @@ ProfileBuilder::EndPoint ProfileBuilder::UnsymParaCurve(EndPoint prevEnd, LX::Un
    LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
    if (pNextPVI)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextPVI);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextPVI);
    }
    else if (pNextParaCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextParaCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextParaCurve);
    }
    else if (pNextUnsymParaCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextUnsymParaCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextUnsymParaCurve);
    }
    else if (pNextCircCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextCircCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextCircCurve);
    }
    else
    {
@@ -324,7 +325,7 @@ ProfileBuilder::EndPoint ProfileBuilder::UnsymParaCurve(EndPoint prevEnd, LX::Un
 
 ProfileBuilder::EndPoint ProfileBuilder::CircCurve(EndPoint prevEnd,LX::CircCurve* pCircCurve, LX::Object* pNextObj)
 {
-   auto [pvi_station,pvi_elevation] = get_pvi(pCircCurve);
+   auto [pvi_station,pvi_elevation] = get_station_elevation(pCircCurve);
    double length = pCircCurve->getLength();
    double radius = pCircCurve->getRadius();
 
@@ -335,19 +336,19 @@ ProfileBuilder::EndPoint ProfileBuilder::CircCurve(EndPoint prevEnd,LX::CircCurv
    LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
    if (pNextPVI)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextPVI);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextPVI);
    }
    else if (pNextParaCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextParaCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextParaCurve);
    }
    else if (pNextUnsymParaCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextUnsymParaCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextUnsymParaCurve);
    }
    else if (pNextCircCurve)
    {
-	  std::tie(next_station, next_elevation) = get_pvi(pNextCircCurve);
+	  std::tie(next_station, next_elevation) = get_station_elevation(pNextCircCurve);
    }
    else
    {

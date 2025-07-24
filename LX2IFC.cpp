@@ -3,7 +3,7 @@
 
 
 
-#include "Header.h"
+#include "LX2IFC.h"
 #include "Alignment.h"
 #include "Units.h"
 
@@ -12,13 +12,119 @@
 
 #include <fstream>
 
+//WORKING HERE
+//Need to do the following
+//* Keep track of unit system at the LX2IFC class level
+//* Need to call CantValue function to convert the input cant from LX, which is millimeter or inch, into the IFC file units
+//* Need to keep LX unit information at the LX2IFC class level
+//* Need to have functions to convert values from LX to IFC. For example, Direction is measured CCW for north and Angle is CCW from E.
+//  Also, direction and angle can have different units of measure (say degrees and gradian) but there is only one angular unit in IFC.
+//  There are various different "length" types in LX (width, height, etc) each of which can have different units of measure, but there is only one in IFC
+//* Check the Finnish Rail XML files... the units for direction/angle say grad, but it seems like the are actually degrees.
 
-std::wstring convertToWString(const char* charStr) {
-	size_t len = 0;
-	mbstowcs_s(&len, nullptr, 0, charStr, _TRUNCATE); // Get required length
-	std::wstring wstr(len, L'\0');
-	mbstowcs_s(&len, &wstr[0], len, charStr, _TRUNCATE);
-	return wstr;
+#include <numbers>
+double DataConverter::convertCant(double c) const
+{
+	if (m_bSIUnits)
+		return c / 1000.; // cant is in millimeters, so convert to meters
+	else
+		return c / 12.; // cant is in inches, so convert to feet
+}
+
+double DataConverter::convertPlaneAngleToRadian(double d)
+{
+	double factor = 1.;
+	switch (m_directionUnit)
+	{
+	case LX::EnumAngularType::k_null:
+		break;
+
+	case LX::EnumAngularType::k_radians:
+		break;
+
+	case LX::EnumAngularType::k_grads:
+		factor = std::numbers::pi / 200.;
+		break;
+
+	case LX::EnumAngularType::k_decimal_degrees:
+		factor = std::numbers::pi / 180.;
+		break;
+
+	case LX::EnumAngularType::k_decimal_dd_mm_ss:
+		break;
+	}
+
+	d *= factor; // convert to radians
+
+	return d;
+}
+
+
+double DataConverter::convertRadianToPlaneAngle(double d)
+{
+	double factor = 1.;
+	switch (m_directionUnit)
+	{
+	case LX::EnumAngularType::k_null:
+		break;
+
+	case LX::EnumAngularType::k_radians:
+		break;
+
+	case LX::EnumAngularType::k_grads:
+		factor = std::numbers::pi / 200.;
+		break;
+
+	case LX::EnumAngularType::k_decimal_degrees:
+		factor = std::numbers::pi / 180.;
+		break;
+
+	case LX::EnumAngularType::k_decimal_dd_mm_ss:
+		break;
+	}
+
+	d /= factor; // convert from radians
+
+	return d;
+}
+
+double DataConverter::convertDirectionToPlaneAngle(double d)
+{
+	double offset = 0.;
+	double max;
+	switch (m_directionUnit)
+	{
+	case LX::EnumAngularType::k_null:
+		break;
+
+	case LX::EnumAngularType::k_radians:
+		offset = std::numbers::pi / 2;
+		max = 2 * std::numbers::pi;
+		break;
+
+	case LX::EnumAngularType::k_grads:
+		offset = 100.;
+		max = 400;
+		break;
+
+	case LX::EnumAngularType::k_decimal_degrees:
+		offset = 90.;
+		max = 360.;
+		break;
+
+	case LX::EnumAngularType::k_decimal_dd_mm_ss:
+		break;
+	}
+
+	d += offset; // changes from North=0 to East=0
+
+	// normalize the angle if needed
+	if (max <= d)
+		d -= max;
+	else if (d < 0)
+		d += max;
+
+	return d;
 }
 
 class EventSink : public LX::IParserEventSink
@@ -36,16 +142,15 @@ public:
 	}
 };
 
-int main(int argc, char** argv)
+LX2IFC::LX2IFC()
+{
+}
+
+void LX2IFC::Convert(std::string filename)
 {
    USES_CONVERSION;
 
-	if (argc != 2) {
-		std::cout << "usage: LX2IFC filename" << std::endl;
-		return 1;
-	}
-
-	std::string input_file(argv[1]);
+	std::string input_file(filename);
 	input_file += ".xml";
 
 	EventSink event_sink;
@@ -105,7 +210,7 @@ int main(int argc, char** argv)
 	auto rel_referenced_in_spatial_structure = new Ifc4x3_add2::IfcRelReferencedInSpatialStructure(IfcParse::IfcGlobalId(), nullptr, boost::none, boost::none, list_alignments_referenced_in_site, site);
 	file.addEntity(rel_referenced_in_spatial_structure);
 
-	std::string output_file(argv[1]);
+	std::string output_file(filename);
 	output_file += ".ifc";
 	std::ofstream ofs(output_file);
 	ofs << file;

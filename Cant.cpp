@@ -1,3 +1,4 @@
+#include "LX2IFC.h"
 #include "Cant.h"
 
 //
@@ -20,9 +21,9 @@ boost::optional<std::string> get_name(T* pObj)
 }
 
 
-void Cant(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
+void LX2IFC::Cant(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
 {
-   CantBuilder builder(alignment,file);
+   CantBuilder builder(m_DataConverter,alignment,file);
 
    LX::Cant* cant = lxalignment->getCant();
    if (cant)
@@ -32,7 +33,8 @@ void Cant(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcH
 }
 
 
-CantBuilder::CantBuilder(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file) : m_Alignment(alignment), m_file(file)
+CantBuilder::CantBuilder(const DataConverter& dataConverter, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file) :
+	m_DataConverter(dataConverter), m_Alignment(alignment), m_file(file), m_StartStation(0.0), m_CantAlignment(nullptr)
 {
 }
 
@@ -73,6 +75,9 @@ void CantBuilder::ProcessCant(LX::CantStation* pCantStation, LX::CantStation* pN
    double length = next_station - station;
    double start_cant = pCantStation->getAppliedCant();
    double end_cant = pNextCantStation->getAppliedCant();
+
+   start_cant = m_DataConverter.convertCant(start_cant);
+   end_cant = m_DataConverter.convertCant(end_cant);
 
    double start_cant_left, start_cant_right;
    double end_cant_left, end_cant_right;

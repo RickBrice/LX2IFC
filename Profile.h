@@ -2,7 +2,6 @@
 
 #include "Header.h"
 
-void Profile(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file);
 
 class ProfileBuilder
 {
