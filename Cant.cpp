@@ -85,18 +85,19 @@ void CantBuilder::ProcessCant(LX::CantStation* pCantStation, LX::CantStation* pN
    {
 	  if (pCantStation->getCurvature() == LX::EnumClockwise::k_ccw)
 	  {
-		 // curve is to the left
-		 start_cant_left = 0;
-		 start_cant_right = start_cant;
-		 end_cant_left = 0;
-		 end_cant_right = end_cant;
-	  }
-	  else
-	  {
+		 // curve is to the left - right side rail elevates
 		 start_cant_left = start_cant;
 		 start_cant_right = 0;
 		 end_cant_left = end_cant;
 		 end_cant_right = 0;
+	  }
+	  else
+	  {
+		 // curve is to the right, left side rail elevates
+		 start_cant_left = 0;
+		 start_cant_right = start_cant;
+		 end_cant_left = 0;
+		 end_cant_right = end_cant;
 	  }
    }
 

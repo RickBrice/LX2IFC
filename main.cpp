@@ -13,6 +13,13 @@ int main(int argc, char** argv)
 		return 1;
 	}
 
+
+
 	LX2IFC converter;
+
+	// Hard coding this for now, because the FTIA files use CW as positive angle from North
+	// instead of CCW as indicated in the LandXML documention
+	converter.m_DataConverter.m_DirectionAngleOverride = DataConverter::DirectionAngleOverride::CW;
+
 	converter.Convert(argv[1]);
 }

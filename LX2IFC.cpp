@@ -91,7 +91,6 @@ double DataConverter::convertRadianToPlaneAngle(double d)
 double DataConverter::convertDirectionToPlaneAngle(double d)
 {
 	double offset = 0.;
-	double max;
 	switch (m_directionUnit)
 	{
 	case LX::EnumAngularType::k_null:
@@ -99,30 +98,24 @@ double DataConverter::convertDirectionToPlaneAngle(double d)
 
 	case LX::EnumAngularType::k_radians:
 		offset = std::numbers::pi / 2;
-		max = 2 * std::numbers::pi;
 		break;
 
 	case LX::EnumAngularType::k_grads:
 		offset = 100.;
-		max = 400;
 		break;
 
 	case LX::EnumAngularType::k_decimal_degrees:
 		offset = 90.;
-		max = 360.;
 		break;
 
 	case LX::EnumAngularType::k_decimal_dd_mm_ss:
 		break;
 	}
 
-	d += offset; // changes from North=0 to East=0
-
-	// normalize the angle if needed
-	if (max <= d)
-		d -= max;
-	else if (d < 0)
-		d += max;
+	if (m_DirectionAngleOverride == DirectionAngleOverride::None || m_DirectionAngleOverride == DirectionAngleOverride::CCW)
+	   d += offset; // changes from North=0 to East=0
+	else
+	   d = (4 * offset - d) + offset;
 
 	return d;
 }

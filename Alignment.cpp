@@ -110,7 +110,7 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 			if (spiral->hasValue_Desc())
 			   desc = W2A(spiral->getDesc().c_str());
 
-			double sign = spiral->getRot() == LX::EnumClockwise::k_cw ? 1. : -1.;
+			double sign = spiral->getRot() == LX::EnumClockwise::k_cw ? -1. : 1.;
 			auto start = spiral->getStart();
 			auto [sx, sy] = get_coordinates(start);
 			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(sx, sy);
@@ -135,13 +135,6 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 
 			if (fabs(end_radius) == DBL_MAX)
 				end_radius = 0.;
-
-			if (spiral->getRot() == LX::EnumClockwise::k_cw)
-			{
-				// Negative radius implies CW
-				start_radius *= -1.;
-				end_radius *= -1.;
-			}
 
 			switch (spiral->getSpiType())
 			{
@@ -224,7 +217,7 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 			if (curve->hasValue_Desc())
 			   desc = W2A(curve->getDesc().c_str());
 
-			double sign = curve->getRot() == LX::EnumClockwise::k_cw ? 1. : -1.;
+			double sign = curve->getRot() == LX::EnumClockwise::k_cw ? -1. : 1.;
 			auto start = curve->getStart();
 			auto [sx, sy] = get_coordinates(start);
 			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(sx, sy);
@@ -236,21 +229,17 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 			auto [ex, ey] = get_coordinates(end);
 
 			auto radius = sqrt((sx - cx) * (sx - cx) + (sy - cy) * (sy - cy));
-			auto dir = atan2(sy - cy, sx - cx);
+			if (curve->hasValue_Radius())
+			{
+			   radius = curve->getRadius();
+			}
 
-			dir += sign*std::numbers::pi / 2;
+			auto dir = atan2(sy - cy, sx - cx); // direction of radial line
+			dir += sign*std::numbers::pi / 2; // rotate by 90 to get direction of tangent line
 			dir = m_DataConverter.convertRadianToPlaneAngle(dir);
 
 			auto start_radius = sign*curve->getRadius();
 			auto end_radius = start_radius;
-
-			if (curve->getRot() == LX::EnumClockwise::k_cw)
-			{
-				// Negative radius implies CW
-				start_radius *= -1.;
-				end_radius *= -1.;
-			}
-
 
 			auto length = curve->getLength();
 			auto predefined_type = Ifc4x3_add2::IfcAlignmentHorizontalSegmentTypeEnum::IfcAlignmentHorizontalSegmentType_CIRCULARARC;

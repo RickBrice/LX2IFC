@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LandXML xmlns="http://www.landxml.org/schema/LandXML-1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.landxml.org/schema/LandXML-1.1 http://www.landxml.org/schema/LandXML-1.1/LandXML-1.1.xsd" date="0001-01-01" time="00:00:00.0000000+03:00" version="1.1">
+  <Units>
+    <Imperial areaUnit="squareFoot" linearUnit="foot" volumeUnit="cubicFeet" temperatureUnit="fahrenheit" pressureUnit="inchHG" />
+  </Units>
+  <Project name="Tutorial 1: Single-Span Bridge Layout" desc="" />
+  <Application name="Geomath">
+    <Author createdBy="LEAP Software, Inc." />
+  </Application>
+  <Alignments>
+    <Alignment name="EAST.HRZ" length="1204.1813029912009" staStart="999.99999999999989">
+      <CoordGeom>
+        <Line dir="0.6747409422235412" length="5.0667999999998594">
+          <Start>2726 4093</Start>
+          <End>2729.16520486695 4096.95650608368</End>
+        </Line>
+        <Spiral length="99.999999999999986" radiusEnd="572.95779513082323" radiusStart="5.8979433558474924E+300" rot="cw" spiType="clothoid">
+          <Start>2729.16520486695 4096.95650608368</Start>
+          <PI>2770.82815233895 4149.03519042369</PI>
+          <End>2789.31691666228 4176.80009623689</End>
+        </Spiral>
+        <Curve rot="cw" dirEnd="6.1611283462128483" dirStart="0.58747447962383692" length="406.5315697767723" radius="572.95779513082323">
+          <Start>2789.31691666228 4176.80009623689</Start>
+          <End>2881.11458947629 4564.12805378632</End>
+          <Center>2312.41943283127 4494.36808095328</Center>
+          <PI>2906.95649756257 4353.46154458908</PI>
+        </Curve>
+        <Spiral length="99.999999999999986" radiusEnd="5.8979433558474924E+300" radiusStart="572.95779513082323" rot="cw" spiType="clothoid">
+          <Start>2881.11458947629 4564.12805378632</Start>
+          <PI>2877.05312245013 4597.23764761994</PI>
+          <End>2863.19443870538 4662.47486622479</End>
+        </Spiral>
+        <Line dir="6.0738618836131337" length="94.08623886822636">
+          <Start>2863.19443870538 4662.47486622479</Start>
+          <End>2843.64349331445 4754.50736526013</End>
+        </Line>
+        <Curve rot="ccw" dirEnd="0.65569562624153477" dirStart="6.0738618836131328" length="330.41293834942974" radius="381.9718634205488">
+          <Start>2843.64349331445 4754.50736526013</Start>
+          <End>2914.51750962694 5066.77276329591</End>
+          <Center>3217.27757173705 4833.88040782659</Center>
+          <PI>2806.99998438221 4926.99998047776</PI>
+        </Curve>
+        <Line dir="0.65569562624153488" length="168.08375599677294">
+          <Start>2914.51750962694 5066.77276329591</Start>
+          <End>3016.99998438221 5199.99998047776</End>
+        </Line>
+      </CoordGeom>
+      <Profile>
+        <ProfAlign name="EAST.VRT">
+          <PVI>1000 510</PVI>
+          <UnsymParaCurve lengthIn="249.99999999999997" lengthOut="249.99999999999997">1450 530</UnsymParaCurve>
+          <UnsymParaCurve lengthIn="199.99999999999997" lengthOut="199.99999999999997">2000 500</UnsymParaCurve>
+          <PVI>2204 500</PVI>
+        </ProfAlign>
+      </Profile>
+      <CrossSects name="EAST.TEM">
+        <CrossSect sta="999.99999999999989">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 12</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 32</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+        <CrossSect sta="2204">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 12</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 32</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+      </CrossSects>
+    </Alignment>
+    <Alignment name="NORTH.HRZ" length="874.99951420382456" staStart="499.99999999999994">
+      <CoordGeom>
+        <Line dir="5.9300132002923425" length="282.51181037702469">
+          <Start>3151 4022</Start>
+          <End>3053.2859823803 4287.07526056409</End>
+        </Line>
+        <Curve rot="cw" dirEnd="5.075021877991194" dirStart="5.9300132002923434" length="489.87394288165359" radius="572.95779513082323">
+          <Start>3053.2859823803 4287.07526056409</Start>
+          <End>2718.94038570973 4624.59908895131</End>
+          <Center>2515.69098189574 4088.90298587566</Center>
+          <PI>2963 4532</PI>
+        </Curve>
+        <Line dir="5.075021877991194" length="102.61376094514623">
+          <Start>2718.94038570973 4624.59908895131</Start>
+          <End>2623 4661</End>
+        </Line>
+      </CoordGeom>
+      <Profile>
+        <ProfAlign name="NORTH.VRT">
+          <PVI>500 510</PVI>
+          <UnsymParaCurve lengthIn="299.99999999999994" lengthOut="299.99999999999994">950 500</UnsymParaCurve>
+          <PVI>1375 500</PVI>
+        </ProfAlign>
+      </Profile>
+      <CrossSects name="NORTH.TEM">
+        <CrossSect sta="499.99999999999994">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 12</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 32</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+        <CrossSect sta="1375">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 12</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 32</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+      </CrossSects>
+    </Alignment>
+  </Alignments>
+  <Roadways>
+    <Roadway name="EAST" alignmentRefs="EAST.HRZ" gradeModelRefs="" staStart="999.99999999999989" staEnd="2204" />
+    <Roadway name="NORTH" alignmentRefs="NORTH.HRZ" gradeModelRefs="" staStart="499.99999999999994" staEnd="1374.9995142038245" />
+  </Roadways>
+</LandXML>

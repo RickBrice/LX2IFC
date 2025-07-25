@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LandXML xmlns="http://www.landxml.org/schema/LandXML-1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.landxml.org/schema/LandXML-1.1 http://www.landxml.org/schema/LandXML-1.1/LandXML-1.1.xsd" date="0001-01-01" time="00:00:00.0000000+03:00" version="1.1">
+  <Units>
+    <Imperial areaUnit="squareFoot" linearUnit="foot" volumeUnit="cubicFeet" temperatureUnit="fahrenheit" pressureUnit="inchHG" />
+  </Units>
+  <Project name="SR80" desc="State Road 80&#xD;&#xA;Application Name: GEOPAK&#xD;&#xA;Application Decription: Export COGO Chain to LANDXML.&#xD;&#xA;Application Manufacturer: Bentley Systems, Inc.&#xD;&#xA;Application Version: 08.05.00.64&#xD;&#xA;Application Manufacturer URL: http://www.bentley.com&#xD;&#xA;Author Created By: &#xD;&#xA;Author Created By email: &#xD;&#xA;Author Company: &#xD;&#xA;Author Company URL: " />
+  <Application name="Geomath">
+    <Author createdBy="LEAP Software, Inc." />
+  </Application>
+  <Alignments>
+    <Alignment name="SR7" length="1699.1487092188841" staStart="3280.8398950131232">
+      <CoordGeom>
+        <Line dir="1.5337762100560202" length="841.86499662959568">
+          <Start>852964.752598425 916609.390328084</Start>
+          <End>853806.040777559 916640.549150262</End>
+        </Line>
+        <Line dir="1.539637582009771" length="857.28371258928848">
+          <Start>853806.040777559 916640.549150262</Start>
+          <End>854662.908369422 916667.256712598</End>
+        </Line>
+      </CoordGeom>
+      <Profile>
+        <ProfAlign name="PRF01">
+          <PVI>4075 565.978</PVI>
+          <PVI>4100.22 568.5</PVI>
+          <UnsymParaCurve lengthIn="34.3696965" lengthOut="34.3696965">5162.73191 574.75119</UnsymParaCurve>
+          <UnsymParaCurve lengthIn="29.545040999999998" lengthOut="29.545040999999998">5226.646648 559.95866</UnsymParaCurve>
+          <PVI>6260 573.3</PVI>
+          <PVI>6269.23 576.992</PVI>
+        </ProfAlign>
+      </Profile>
+      <CrossSects name="XS02">
+        <CrossSect sta="4100">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 15</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.33</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">-8.33333333 5.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 15</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">9.999 20</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.33000000000001</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">2 9.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+        <CrossSect sta="4150">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 15</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.33</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">-8.333333 5.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 13.2345</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">9.999 20</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.32999999999999</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">2 9.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+        <CrossSect sta="4200">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 15</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.33</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">8.333333 5.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 11.469</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">9.999 20</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.32999999999999</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">2 9.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+        <CrossSect sta="4350">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 15</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.33</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">8.3333330225 5.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 6.1725</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">9.999 20</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.32999999999999</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">2 9.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+        <CrossSect sta="4400">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 15</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.33</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">8.33333303 5.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 6.38780487804878</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">9.999 20</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.32999999999999</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">2 9.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+        <CrossSect sta="6400">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">2 15</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">8.33333333 5.67</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-2 15</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">9.999 20</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">5 3.33000000000001</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+      </CrossSects>
+    </Alignment>
+    <Alignment name="RAMP" length="2113.6022107712492" staStart="0">
+      <CoordGeom>
+        <Line dir="3.0284762000333605" length="656.89698072792669">
+          <Start>853821.482791995 917309.279133858</Start>
+          <End>853895.630288802 916656.580281395</End>
+        </Line>
+        <Spiral length="98.425196620325551" radiusEnd="262.46719160104982" radiusStart="5.8979433558474924E+300" rot="cw" spiType="clothoid">
+          <Start>853895.630288802 916656.580281395</Start>
+          <PI>853903.050441892 916591.262831511</PI>
+          <End>853912.79792465 916559.820537544</End>
+        </Spiral>
+        <Curve rot="cw" dirEnd="0.54370562726890759" dirStart="2.8409762004719994" length="602.95815569634942" radius="262.46719160104982">
+          <Start>853912.79792465 916559.820537544</Start>
+          <End>854388.113340334 916501.762340049</End>
+          <Center>854163.494547554 916637.53945372</Center>
+          <PI>854085.830130427 916001.673412285</PI>
+        </Curve>
+        <Spiral length="98.425196850393689" radiusEnd="5.8979433558474924E+300" radiusStart="262.46719160104982" rot="cw" spiType="clothoid">
+          <Start>854388.113340334 916501.762340049</Start>
+          <PI>854405.1433243 916529.936271457</PI>
+          <End>854428.066506651 916591.544968084</End>
+        </Spiral>
+        <Line dir="0.35620562726935134" length="656.89668087625375">
+          <Start>854428.066506651 916591.544968084</Start>
+          <End>854657.139888038 917207.206104819</End>
+        </Line>
+      </CoordGeom>
+      <Profile>
+        <ProfAlign name="Layout">
+          <PVI>0 633.53654823</PVI>
+          <PVI>623.99743447 646.83242638</PVI>
+          <PVI>1321.00949296 651.43051248</PVI>
+          <PVI>1787.23118976 662.95461854</PVI>
+        </ProfAlign>
+      </Profile>
+      <CrossSects name="XS01">
+        <CrossSect sta="0">
+          <DesignCrossSectSurf side="left">
+            <CrossSectPnt dataFormat="Slope Distance">1.9999999999998 14</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">6.00000000000212 0</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">6.00000000000212 3</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">11.9259962049331 10.54</CrossSectPnt>
+          </DesignCrossSectSurf>
+          <DesignCrossSectSurf side="right">
+            <CrossSectPnt dataFormat="Slope Distance">-1.99999999999981 14</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">-1.99999999999981 0</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">-6.00000000000212 3</CrossSectPnt>
+            <CrossSectPnt dataFormat="Slope Distance">-11.9259962049331 10.54</CrossSectPnt>
+          </DesignCrossSectSurf>
+        </CrossSect>
+      </CrossSects>
+    </Alignment>
+  </Alignments>
+  <Roadways>
+    <Roadway name="RAMP RDWY" alignmentRefs="RAMP" gradeModelRefs="" staStart="0" staEnd="1787.23118976" />
+    <Roadway name="SR7 RDWY" alignmentRefs="SR7" gradeModelRefs="" staStart="4100" staEnd="4979.9886042320068" />
+  </Roadways>
+</LandXML>
