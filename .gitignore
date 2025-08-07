@@ -45,3 +45,4 @@
 *.ifc
 /LX2IFC.vcxproj.filters
 /LX2IFC.vcxproj.user
+/LX2IFC/x64/Release
