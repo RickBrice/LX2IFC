@@ -9,7 +9,7 @@ int main(int argc, char** argv)
    USES_CONVERSION;
 
 	if (argc != 2) {
-		std::cout << "usage: LX2IFC filename" << std::endl;
+		std::cout << "usage: LX2IFC filename_without_extension" << std::endl;
 		return 1;
 	}
 
@@ -18,8 +18,9 @@ int main(int argc, char** argv)
 	LX2IFC converter;
 
 	// Hard coding this for now, because the FTIA files use CW as positive angle from North
-	// instead of CCW as indicated in the LandXML documention
-	converter.m_DataConverter.m_DirectionAngleOverride = DataConverter::DirectionAngleOverride::CW;
+	// instead of CCW as indicated in the LandXML documentation
+	converter.m_DataConverter.m_Directions = DataConverter::Directions::CCW_FromNorth;
+	converter.m_DataConverter.m_Points = DataConverter::Points::NE;
 
 	converter.Convert(argv[1]);
 }

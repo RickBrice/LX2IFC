@@ -118,15 +118,16 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>HAS_SCHEMA_4x3_add2;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>\LandXMLSDK-1.2-08182008\3rdParty\xerces-c-src_2_7_0\src;\LandXMLSDK-1.2-08182008\SDK\build\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\LandXMLSDK-1.2-08182008\3rdParty\xerces-c-src_2_7_0\src;F:\LandXMLSDK-1.2-08182008\SDK\build\inc;$(IFCOPENSHELL_DIR)\src;$(BOOSTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>\LandXMLSDK-1.2-08182008\SDK\LandXmlSdkDll1.2_Win$(PlatformArchitecture)_$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>LandXmlSdkDll1.2.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:\LandXMLSDK-1.2-08182008\SDK\LandXmlSdkDll1.2_Win$(PlatformArchitecture)_$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>LandXmlSdkDll1.2.lib;bcrypt.lib;$(IFCOPENSHELL_DIR)\_build-vs2022-$(Platform)\$(Configuration)\IfcParse.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

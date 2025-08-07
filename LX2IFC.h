@@ -5,11 +5,35 @@
 class DataConverter
 {
 public:
-   enum class DirectionAngleOverride {
-      CW,
-      CCW,
-      None
+   enum class Directions {
+      CCW_FromNorth, // per LandXML schema
+      CW_FromNorth
    };
+
+   enum class Points
+   {
+      NE, // points are North then East, per LandXML schema
+      EN  // points are East then North
+   };
+
+   template <class T>
+   std::pair<double, double> get_coordinates(T* p)
+   {
+      double X, Y;
+      if (m_Points == Points::NE)
+      {
+         // data is in North than East format
+         Y = p->at(0);
+         X = p->at(1);
+      }
+      else
+      {
+         // data is in East then North format
+         X = p->at(0);
+         Y = p->at(1);
+      }
+      return { X, Y };
+   }
 
    double convertCant(double c) const;
    double convertDirectionToPlaneAngle(double d);
@@ -24,7 +48,8 @@ public:
    LX::EnumAngularType::Type m_directionUnit;
    LX::EnumAngularType::Type m_angleUnit;
 
-   DirectionAngleOverride m_DirectionAngleOverride = DirectionAngleOverride::None;
+   Directions m_Directions = Directions::CCW_FromNorth;
+   Points m_Points = Points::NE;
 };
 
 class LX2IFC

@@ -1,14 +1,6 @@
 #include "LX2IFC.h"
 #include <numbers>
 
-template <class T>
-std::pair<double, double> get_coordinates(T* p)
-{
-	double N = p->at(0);
-	double E = p->at(1);
-	return { E,N };
-}
-
 Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
 {
 	USES_CONVERSION;
@@ -74,17 +66,17 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 			  desc = W2A(line->getDesc().c_str());
 
 			auto start = line->getStart();
-			auto [sx, sy] = get_coordinates(start);
+			auto [sx, sy] = m_DataConverter.get_coordinates(start);
 			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(sx,sy);
 			double dir;
-			if (line->hasValue_Dir())
-			{
-				dir = m_DataConverter.convertDirectionToPlaneAngle(line->getDir());
-			}
-			else
+			//if (line->hasValue_Dir())
+			//{
+			//	dir = m_DataConverter.convertDirectionToPlaneAngle(line->getDir());
+			//}
+			//else
 			{
 				auto end = line->getEnd();
-				auto [ex, ey] = get_coordinates(end);
+				auto [ex, ey] = m_DataConverter.get_coordinates(end);
 				dir = m_DataConverter.convertRadianToPlaneAngle(atan2(ey - sy, ex - sx));
 			}
 			auto start_radius = 0.;
@@ -112,17 +104,17 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 
 			double sign = spiral->getRot() == LX::EnumClockwise::k_cw ? -1. : 1.;
 			auto start = spiral->getStart();
-			auto [sx, sy] = get_coordinates(start);
+			auto [sx, sy] = m_DataConverter.get_coordinates(start);
 			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(sx, sy);
 			double dir;
-			if (spiral->hasValue_DirStart())
-			{
-				dir = m_DataConverter.convertDirectionToPlaneAngle(spiral->getDirStart());
-			}
-			else
+			//if (spiral->hasValue_DirStart())
+			//{
+			//	dir = m_DataConverter.convertDirectionToPlaneAngle(spiral->getDirStart());
+			//}
+			//else
 			{
 				auto pi = spiral->getPI();
-				auto [pix, piy] = get_coordinates(pi);
+				auto [pix, piy] = m_DataConverter.get_coordinates(pi);
 				dir = m_DataConverter.convertRadianToPlaneAngle(atan2(piy - sy, pix - sx));
 			}
 			auto start_radius = sign*spiral->getRadiusStart();
@@ -219,14 +211,14 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 
 			double sign = curve->getRot() == LX::EnumClockwise::k_cw ? -1. : 1.;
 			auto start = curve->getStart();
-			auto [sx, sy] = get_coordinates(start);
+			auto [sx, sy] = m_DataConverter.get_coordinates(start);
 			auto p = file.addDoublet<Ifc4x3_add2::IfcCartesianPoint>(sx, sy);
 
 			auto center = curve->getCenter();
-			auto [cx, cy] = get_coordinates(center);
+			auto [cx, cy] = m_DataConverter.get_coordinates(center);
 
 			auto end = curve->getEnd();
-			auto [ex, ey] = get_coordinates(end);
+			auto [ex, ey] = m_DataConverter.get_coordinates(end);
 
 			auto radius = sqrt((sx - cx) * (sx - cx) + (sy - cy) * (sy - cy));
 			if (curve->hasValue_Radius())

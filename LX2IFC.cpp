@@ -112,7 +112,7 @@ double DataConverter::convertDirectionToPlaneAngle(double d)
 		break;
 	}
 
-	if (m_DirectionAngleOverride == DirectionAngleOverride::None || m_DirectionAngleOverride == DirectionAngleOverride::CCW)
+	if (m_Directions == Directions::CCW_FromNorth)
 	   d += offset; // changes from North=0 to East=0
 	else
 	   d = (4 * offset - d) + offset;
