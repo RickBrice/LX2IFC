@@ -22,6 +22,26 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 	auto alignment = new Ifc4x3_add2::IfcAlignment(IfcParse::IfcGlobalId(), nullptr, name, boost::none, boost::none, local_placement, nullptr, boost::none);
 	file.addEntity(alignment);
 
+	if (lxalignment->hasValue_StaStart())
+	{
+	   auto start_station = lxalignment->getStaStart();
+	   StationReferent(alignment, file, start_station, boost::none);
+	   
+	   auto iter = lxalignment->StaEquation().iterator();
+	   while (!iter->atEnd())
+	   {
+		  auto eq = iter->current();
+		  auto station = eq->getStaAhead();
+		  if (eq->hasValue_StaBack())
+		  {
+			 // this gets mapped to IncomingStation
+		  }
+		  auto internal_station = eq->getStaInternal(); // this is the station without breaks - may need to skip this and compute it from the IfcOpenShell side
+		  // this value is needed for the linear placement
+		  iter->next();
+	   }
+	}
+
 	// IFC 4.1.4.1.1 "Every IfcAlignment must be related to IfcProject using the IfcRelAggregates relationship"
 	// https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/concepts/Object_Composition/Aggregation/Alignment_Aggregation_To_Project/content.html
 	// IfcProject <-> IfcRelAggregates <-> IfcAlignment

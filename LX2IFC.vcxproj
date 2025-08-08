@@ -136,6 +136,7 @@
     <ClCompile Include="LX2IFC.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="Stationing.cpp" />
     <ClCompile Include="Units.cpp" />
   </ItemGroup>
   <ItemGroup>
