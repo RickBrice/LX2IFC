@@ -7,7 +7,16 @@ void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyH
    Ifc4x3_add2::IfcLinearPlacement* referent_placement = nullptr;
 
    // Create referent
-   auto start_station_referent = new Ifc4x3_add2::IfcReferent(IfcParse::IfcGlobalId(), nullptr, std::string("Start of alignment station"), boost::none, boost::none, referent_placement, nullptr, Ifc4x3_add2::IfcReferentTypeEnum::IfcReferentType_STATION);
+   std::ostringstream oss;
+   if(incoming.has_value())
+   {
+      oss << "Station Equation (" << *alignment->Name() << ")" << std::endl;
+   }
+   else
+   {
+      oss << "Start of alignment " << *alignment->Name() << std::endl;
+   }
+   auto start_station_referent = new Ifc4x3_add2::IfcReferent(IfcParse::IfcGlobalId(), nullptr, oss.str(), boost::none, boost::none, referent_placement, nullptr, Ifc4x3_add2::IfcReferentTypeEnum::IfcReferentType_STATION);
 
    // Define properties for Pset_Stationing
    typename aggregate_of<Ifc4x3_add2::IfcProperty>::ptr pset_station_properties(new aggregate_of<Ifc4x3_add2::IfcProperty>());
@@ -15,7 +24,8 @@ void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyH
 
    if (incoming.has_value())
    {
-      pset_station_properties->push(new Ifc4x3_add2::IfcPropertySingleValue(std::string("Incoming_Station"), boost::none, new Ifc4x3_add2::IfcLengthMeasure(*incoming), nullptr));
+      auto value = *incoming;
+      pset_station_properties->push(new Ifc4x3_add2::IfcPropertySingleValue(std::string("Incoming_Station"), boost::none, new Ifc4x3_add2::IfcLengthMeasure(value), nullptr));
    }
 
    // Create Pset and assign properties
@@ -29,6 +39,27 @@ void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyH
    auto rel_defines_by_properties = new Ifc4x3_add2::IfcRelDefinesByProperties(IfcParse::IfcGlobalId(), nullptr, std::string("Relates start station properties to referent"), boost::none, referents, property_set);
    file.addEntity(rel_defines_by_properties);
 
-   // WORKING HERE - This is where we need to figure out if the alignment has any IfcRelNests, create them, etc
-   // and put the referent in the right place
+   // search every alignment nest for one that contains an IfcReferent.
+   Ifc4x3_add2::IfcRelNests* referent_nest = nullptr;
+   auto nests = alignment->IsNestedBy();
+   for (auto n : *nests)
+   {
+      auto related_objects = n->RelatedObjects();
+      for (auto object : *related_objects)
+      {
+         if (object->as<Ifc4x3_add2::IfcReferent>())
+         {
+            // found the referent nest
+            referent_nest = n;
+            referent_nest->RelatedObjects()->push(start_station_referent);
+            break;
+         }
+      }
+   }
+   if(referent_nest == nullptr)
+   {
+      // referent nest not found, create a new one
+      referent_nest = new Ifc4x3_add2::IfcRelNests(IfcParse::IfcGlobalId(), nullptr, std::string("Referent Nest"), boost::none, alignment, referents);
+      file.addEntity(referent_nest);
+   }
 }
