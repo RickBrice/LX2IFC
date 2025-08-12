@@ -261,7 +261,7 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 	if (lxalignment->hasValue_StaStart())
 	{
 		auto start_station = lxalignment->getStaStart();
-		StationReferent(alignment, file, start_station, boost::none);
+		StationReferent(alignment, file, start_station, boost::none, boost::none);
 	}
 
 	auto eq_iter = lxalignment->StaEquation().iterator();
@@ -269,7 +269,7 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 	{
 		auto eq = (LX::StaEquation*)eq_iter->current();
 		auto station = eq->getStaAhead();
-      boost::optional<double> incoming;
+        boost::optional<double> incoming;
 		if (eq->hasValue_StaBack() && !std::isnan(eq->getStaBack()))
 		{
 			incoming = eq->getStaBack();
@@ -280,7 +280,12 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 		}
 		//auto internal_station = eq->getStaInternal(); // this is the station without breaks - may need to skip this and compute it from the IfcOpenShell side
 		//// this value is needed for the linear placement
-      StationReferent(alignment, file, station, incoming);
+		boost::optional<std::string> desc;
+		if (eq->hasValue_Desc())
+		{
+		   desc = std::string(W2A(eq->getDesc().c_str()));
+		}
+        StationReferent(alignment, file, station, incoming, desc);
 		eq_iter->next();
 	}
 

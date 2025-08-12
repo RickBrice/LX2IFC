@@ -1,5 +1,6 @@
 import ifcopenshell
 import ifcopenshell.api.alignment
+import ifcopenshell.util.element
 import ifcpatch
 from logging import Logger
 
@@ -29,11 +30,13 @@ class Patcher(ifcpatch.BasePatcher):
 
             nests = alignment.IsNestedBy
             first_referent = nests[1].RelatedObjects[0]
-            start_station = first_referent.IsDefinedBy[0].RelatingPropertyDefinition.HasProperties[0].NominalValue.wrapped_data # get station from first_referent
+            start_station = ifcopenshell.util.element.get_pset(first_referent,"Pset_Stationing","Station")
+            #start_station = first_referent.IsDefinedBy[0].RelatingPropertyDefinition.HasProperties[0].NominalValue.wrapped_data # get station from first_referent
             for referent in nests[1].RelatedObjects:
                 if referent.ObjectPlacement == None:
                     # Need to get Station property from Pset_Stationing + Station property from the first referent... the DistanceAlong is the different in these values
-                    station = referent.IsDefinedBy[0].RelatingPropertyDefinition.HasProperties[0].NominalValue.wrapped_data # get station from current referent
+                    station = ifcopenshell.util.element.get_pset(referent,"Pset_Stationing","Station")
+                    #station = referent.IsDefinedBy[0].RelatingPropertyDefinition.HasProperties[0].NominalValue.wrapped_data # get station from current referent
                     object_placement = patched_file.createIfcLinearPlacement(
                         RelativePlacement=patched_file.createIfcAxis2PlacementLinear(
                             Location=patched_file.createIfcPointByDistanceExpression(

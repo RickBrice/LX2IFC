@@ -1,22 +1,13 @@
 #include "LX2IFC.h"
 
-void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file, double station, boost::optional<double> incoming)
+void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file, double station, boost::optional<double> incoming,boost::optional<std::string> desc)
 {
    // Note that referent placement is required, but it can't be created without the geometric representation of the alignment
    // This LX2IFC converter is only creating business logic. The IfcOpenShell API/IfcPatch recipes will need to fix this
    Ifc4x3_add2::IfcLinearPlacement* referent_placement = nullptr;
 
    // Create referent
-   std::ostringstream oss;
-   if(incoming.has_value())
-   {
-      oss << "Station Equation (" << *alignment->Name() << ")" << std::endl;
-   }
-   else
-   {
-      oss << "Start of alignment " << *alignment->Name() << std::endl;
-   }
-   auto start_station_referent = new Ifc4x3_add2::IfcReferent(IfcParse::IfcGlobalId(), nullptr, oss.str(), boost::none, boost::none, referent_placement, nullptr, Ifc4x3_add2::IfcReferentTypeEnum::IfcReferentType_STATION);
+   auto referent = new Ifc4x3_add2::IfcReferent(IfcParse::IfcGlobalId(), nullptr, boost::none, boost::none, boost::none, referent_placement, nullptr, Ifc4x3_add2::IfcReferentTypeEnum::IfcReferentType_STATION);
 
    // Define properties for Pset_Stationing
    typename aggregate_of<Ifc4x3_add2::IfcProperty>::ptr pset_station_properties(new aggregate_of<Ifc4x3_add2::IfcProperty>());
@@ -25,7 +16,7 @@ void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyH
    if (incoming.has_value())
    {
       auto value = *incoming;
-      pset_station_properties->push(new Ifc4x3_add2::IfcPropertySingleValue(std::string("Incoming_Station"), boost::none, new Ifc4x3_add2::IfcLengthMeasure(value), nullptr));
+      pset_station_properties->push(new Ifc4x3_add2::IfcPropertySingleValue(std::string("IncomingStation"), boost::none, new Ifc4x3_add2::IfcLengthMeasure(value), nullptr));
    }
 
    // Create Pset and assign properties
@@ -34,7 +25,7 @@ void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyH
 
    // Assign the property set to the referent
    typename aggregate_of<Ifc4x3_add2::IfcObjectDefinition>::ptr referents(new aggregate_of<Ifc4x3_add2::IfcObjectDefinition>());
-   referents->push(start_station_referent);
+   referents->push(referent);
 
    auto rel_defines_by_properties = new Ifc4x3_add2::IfcRelDefinesByProperties(IfcParse::IfcGlobalId(), nullptr, std::string("Relates start station properties to referent"), boost::none, referents, property_set);
    file.addEntity(rel_defines_by_properties);
@@ -50,8 +41,21 @@ void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyH
          if (object->as<Ifc4x3_add2::IfcReferent>())
          {
             // found the referent nest
+
+            std::ostringstream oss;
+            oss << "Station Equation (" << *alignment->Name() << ")";
+            if (desc.has_value())
+            {
+               oss << " (" << *desc << ")";
+            }
+            oss << std::endl;
+
+            referent->setName(oss.str());
+
             referent_nest = n;
-            referent_nest->RelatedObjects()->push(start_station_referent);
+            auto related_objects = referent_nest->RelatedObjects();
+            related_objects->push(referent);
+            referent_nest->setRelatedObjects(related_objects);
             break;
          }
       }
@@ -59,6 +63,15 @@ void LX2IFC::StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyH
    if(referent_nest == nullptr)
    {
       // referent nest not found, create a new one
+      std::ostringstream oss;
+      oss << "Start of alignment " << *alignment->Name();
+      if (desc.has_value())
+      {
+         oss << " (" << *desc << ")";
+      }
+      oss << std::endl;
+      referent->setName(oss.str());
+
       referent_nest = new Ifc4x3_add2::IfcRelNests(IfcParse::IfcGlobalId(), nullptr, std::string("Referent Nest"), boost::none, alignment, referents);
       file.addEntity(referent_nest);
    }
