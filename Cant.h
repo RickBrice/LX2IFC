@@ -7,7 +7,7 @@
 class CantBuilder
 {
 public:
-   CantBuilder(const DataConverter& dataConverter,Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file);
+   CantBuilder(double start_station,const DataConverter& dataConverter,Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file);
    void Build(LX::Cant* pCant);
 
 private:

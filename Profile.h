@@ -6,7 +6,7 @@
 class ProfileBuilder
 {
 public:
-   ProfileBuilder(IfcHierarchyHelper<Ifc4x3_add2>& file);
+   ProfileBuilder(double start_station,IfcHierarchyHelper<Ifc4x3_add2>& file);
    void Build(LX::ProfAlign* pProfAlign, Ifc4x3_add2::IfcAlignmentVertical* vertical_alignment);
 
 private:

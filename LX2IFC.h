@@ -63,7 +63,7 @@ public:
 private:
    Ifc4x3_add2::IfcUnitAssignment* Units(LX::Units* lxUnits, IfcHierarchyHelper<Ifc4x3_add2>& file);
    Ifc4x3_add2::IfcAlignment* Alignment(LX::Alignment* lxalignment, IfcHierarchyHelper<Ifc4x3_add2>& file);
-   void Profile(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file);
-   void Cant(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file);
+   void Profile(double start_station,LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file);
+   void Cant(double start_station,LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file);
    void StationReferent(Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file, double station, boost::optional<double> incoming,boost::optional<std::string> desc);
 };

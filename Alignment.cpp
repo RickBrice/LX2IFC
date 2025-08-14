@@ -254,15 +254,17 @@ Ifc4x3_add2::IfcAlignment* LX2IFC::Alignment(LX::Alignment* lxalignment, IfcHier
 		}
 	}
 
-	Profile(lxalignment, alignment, file);
-	Cant(lxalignment, alignment, file);
-
-
+	double start_station = 0.0;
 	if (lxalignment->hasValue_StaStart())
 	{
-		auto start_station = lxalignment->getStaStart();
-		StationReferent(alignment, file, start_station, boost::none, boost::none);
+	   start_station = lxalignment->getStaStart();
 	}
+
+	Profile(start_station,lxalignment, alignment, file);
+	Cant(start_station, lxalignment, alignment, file);
+
+
+    StationReferent(alignment, file, start_station, boost::none, boost::none);
 
 	auto eq_iter = lxalignment->StaEquation().iterator();
 	while (!eq_iter->atEnd())

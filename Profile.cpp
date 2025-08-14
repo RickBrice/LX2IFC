@@ -1,9 +1,7 @@
 #include "LX2IFC.h"
 #include "Profile.h"
 
-
-template <class T>
-std::pair<double, double> get_station_elevation(T* pObj)
+std::pair<double, double> get_station_elevation(LX::DoubleCollection* pObj)
 {
    return { pObj->at(0),pObj->at(1) };
 }
@@ -21,9 +19,9 @@ boost::optional<std::string> get_name(T* pObj)
 }
 
 
-void LX2IFC::Profile(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
+void LX2IFC::Profile(double start_station,LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alignment, IfcHierarchyHelper<Ifc4x3_add2>& file)
 {
-   ProfileBuilder builder(file);
+   ProfileBuilder builder(start_station,file);
 
    auto& profile_collection = lxalignment->Profile();
    auto profileIter = profile_collection.iterator();
@@ -54,7 +52,7 @@ void LX2IFC::Profile(LX::Alignment* lxalignment, Ifc4x3_add2::IfcAlignment* alig
 }
 
 
-ProfileBuilder::ProfileBuilder(IfcHierarchyHelper<Ifc4x3_add2>& file) : m_file(file)
+ProfileBuilder::ProfileBuilder(double start_station,IfcHierarchyHelper<Ifc4x3_add2>& file) : m_StartStation(start_station),m_file(file)
 {
 }
 
@@ -64,8 +62,7 @@ void ProfileBuilder::Build(LX::ProfAlign* pProfAlign, Ifc4x3_add2::IfcAlignmentV
 
    auto pIter = pProfAlign->VertGeomList().iterator();
    LX::Object* pObj = pIter->current();
-   LX::PVI* pPVI = dynamic_cast<LX::PVI*>(pObj);
-   m_StartStation = pPVI->at(0);
+   LX::PVI* pPVI = dynamic_cast<LX::PVI*>(pObj); // first is always a PVI
 
    pIter->next();
    LX::Object* pNextObj = pIter->current();
@@ -153,6 +150,18 @@ ProfileBuilder::EndPoint ProfileBuilder::StartGradient(LX::PVI* pPVI, LX::Object
    else if (pNextCircCurve)
    {
 	  std::tie(next_station, next_elevation) = get_station_elevation(pNextCircCurve);
+	  //double g1 = (next_elevation - pvi_elevation) / (next_station - pvi_station);
+	  //double theta1 = atan(g1);
+
+	  //double l = pNextCircCurve->getLength();
+	  //double r = pNextCircCurve->getRadius();
+	  //double delta = l / r;
+
+	  //double radius = pNextCircCurve->getRadius();
+	  //double T = fabs(radius * tan(delta / 2));
+
+	  //half_curve_length = T * cos(theta1);
+
 	  half_curve_length = pNextCircCurve->getLength() / 2;
    }
    else
@@ -257,7 +266,8 @@ ProfileBuilder::EndPoint ProfileBuilder::UnsymParaCurve(EndPoint prevEnd, LX::Un
    double length_out = pUnsymParaCurve->getLengthOut();
 
 
-   double next_station, next_elevation;
+   double next_station = 0.;
+   double next_elevation = 0.;
    LX::PVI* pNextPVI = dynamic_cast<LX::PVI*>(pNextObj);
    LX::ParaCurve* pNextParaCurve = dynamic_cast<LX::ParaCurve*>(pNextObj);
    LX::UnsymParaCurve* pNextUnsymParaCurve = dynamic_cast<LX::UnsymParaCurve*>(pNextObj);
@@ -329,39 +339,43 @@ ProfileBuilder::EndPoint ProfileBuilder::CircCurve(EndPoint prevEnd,LX::CircCurv
    double length = pCircCurve->getLength();
    double radius = pCircCurve->getRadius();
 
-   double next_station, next_elevation;
-   LX::PVI* pNextPVI = dynamic_cast<LX::PVI*>(pNextObj);
-   LX::ParaCurve* pNextParaCurve = dynamic_cast<LX::ParaCurve*>(pNextObj);
-   LX::UnsymParaCurve* pNextUnsymParaCurve = dynamic_cast<LX::UnsymParaCurve*>(pNextObj);
-   LX::CircCurve* pNextCircCurve = dynamic_cast<LX::CircCurve*>(pNextObj);
-   if (pNextPVI)
-   {
-	  std::tie(next_station, next_elevation) = get_station_elevation(pNextPVI);
-   }
-   else if (pNextParaCurve)
-   {
-	  std::tie(next_station, next_elevation) = get_station_elevation(pNextParaCurve);
-   }
-   else if (pNextUnsymParaCurve)
-   {
-	  std::tie(next_station, next_elevation) = get_station_elevation(pNextUnsymParaCurve);
-   }
-   else if (pNextCircCurve)
-   {
-	  std::tie(next_station, next_elevation) = get_station_elevation(pNextCircCurve);
-   }
-   else
-   {
-	  assert(false);
-   }
+   double delta = length / radius;
 
    double segment_start_station = pvi_station - length / 2;
    auto [prev_segment_station, prev_segment_elevation, prev_segment_gradient] = prevEnd;
+   //double g1 = prev_segment_gradient;
+   //double theta1 = atan(g1);
+
+   double next_station, next_elevation;
+   std::tie(next_station, next_elevation) = get_station_elevation(dynamic_cast<LX::DoubleCollection*>(pNextObj));
+   ////double g2 = (next_elevation - pvi_elevation) / (next_station - pvi_station);
+   ////double theta2 = atan(g2);
+   //double g2 = g1 + delta;
+   //double theta2 = atan(g2);
+
+   ////double delta = theta2 - theta1;
+   //double T = fabs(radius * tan(delta / 2));
+
+   //double L1 = T * cos(theta1);
+   //double L2 = T * cos(theta2);
+
+   ////double length = fabs(radius * delta);
+
+
+   //double segment_start_station = pvi_station - L1;
    if (prev_segment_station < segment_start_station)
    {
 	  // add gradient segment that fills the gap between the end of the previous and the start of current segment
 	  AddGradient(prev_segment_station - m_StartStation, prev_segment_elevation, prev_segment_gradient, segment_start_station - prev_segment_station, boost::none);
    }
+
+   //double start_dist_along = segment_start_station - m_StartStation;
+   //auto name = get_name(pCircCurve);
+   //AddCircCurve(start_dist_along, prev_segment_elevation, g1, g2, L1+L2, radius,name);
+
+   //double end_station = pvi_station + L2;
+   //double end_elevation = pvi_elevation + g2 * L2;
+   //return { end_station, end_elevation, g2 };
 
    double start_gradient = (pvi_elevation - prev_segment_elevation) / (pvi_station - prev_segment_station);
    double elevation = pvi_elevation - start_gradient * length / 2;
@@ -369,7 +383,7 @@ ProfileBuilder::EndPoint ProfileBuilder::CircCurve(EndPoint prevEnd,LX::CircCurv
 
    double start_dist_along = segment_start_station - m_StartStation;
    auto name = get_name(pCircCurve);
-   AddCircCurve(start_dist_along, elevation, start_gradient, end_gradient, length, radius,name);
+   AddCircCurve(start_dist_along, elevation, start_gradient, end_gradient, length, radius, name);
 
    double end_station = pvi_station + length / 2;
    double end_elevation = pvi_elevation + end_gradient * length / 2;
