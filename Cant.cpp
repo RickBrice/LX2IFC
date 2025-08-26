@@ -161,8 +161,8 @@ void CantBuilder::ProcessCant(LX::CantStation* pCantStation, LX::CantStation* pN
 		 predefined_type = Ifc4x3_add2::IfcAlignmentCantSegmentTypeEnum::IfcAlignmentCantSegmentType_HELMERTCURVE;
 		 break;
 	  case LX::EnumSpiralType::k_cubicParabola:
-		 std::wcout << _T("*** Unknown cant - cubicParabola ***") << std::endl;
-		 break;
+		  predefined_type = Ifc4x3_add2::IfcAlignmentCantSegmentTypeEnum::IfcAlignmentCantSegmentType_BLOSSCURVE;
+		  break;
 	  case LX::EnumSpiralType::k_japaneseCubic:
 		 predefined_type = Ifc4x3_add2::IfcAlignmentCantSegmentTypeEnum::IfcAlignmentCantSegmentType_VIENNESEBEND;
 		 break;
