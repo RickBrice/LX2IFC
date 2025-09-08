@@ -188,11 +188,23 @@ void LX2IFC::Convert(std::string filename)
 		if (alignments->hasValue_Name())
 			std::wcout << alignments->getName().c_str() << std::endl;
 
+
 		if (alignmentIter)
 		{
 			while (!alignmentIter->atEnd())
 			{
 				auto alignment = alignmentIter->current();
+
+				std::string name = "Unknown";
+				if (alignment->hasValue_Name())
+				   name = W2A(alignment->getName().c_str());
+
+				if (name != "708")
+				{
+				   alignmentIter->next();
+				   continue;
+				}
+
 				list_alignments_referenced_in_site->push(Alignment(alignment, file));
 				alignmentIter->next();
 			}
