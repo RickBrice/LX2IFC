@@ -58,30 +58,28 @@ Ifc4x3_add2::IfcUnitAssignment* LX2IFC::Units(LX::Units* lxUnits, IfcHierarchyHe
 
       m_DataConverter.m_directionUnit = (pMetric->hasValue_DirectionUnit() ? pMetric->getDirectionUnit() : LX::EnumAngularType::k_radians);
       m_DataConverter.m_angleUnit = (pMetric->hasValue_AngularUnit() ? pMetric->getAngularUnit() : LX::EnumAngularType::k_radians);
+
+      m_DataConverter.m_directionUnit = LX::EnumAngularType::k_decimal_degrees; // Force radians for direction
+      m_DataConverter.m_angleUnit = LX::EnumAngularType::k_decimal_degrees; // Force radians for angles
       if (pMetric->hasValue_AngularUnit())
       {
-         switch (pMetric->getAngularUnit())
+         //switch (pMetric->getAngularUnit())
+         switch (m_DataConverter.m_angleUnit)
          {
          case LX::EnumAngularType::k_null:
             break;
 
          case LX::EnumAngularType::k_radians:
-            break;
+         {
+            auto* unit1 = new Ifc4x3_add2::IfcSIUnit(Ifc4x3_add2::IfcUnitEnum::IfcUnit_PLANEANGLEUNIT, boost::none, Ifc4x3_add2::IfcSIUnitName::IfcSIUnitName_RADIAN);
+            units->push(unit1);
+         }
+         break;
+         break;
 
          case LX::EnumAngularType::k_grads:
          {
-            //m_DataConverter.m_directionUnit = LX::EnumAngularType::k_decimal_degrees;
-            //auto dimexp = new Ifc4x3_add2::IfcDimensionalExponents(0, 0, 0, 0, 0, 0, 0);
-            //auto unit2a = new Ifc4x3_add2::IfcSIUnit(Ifc4x3_add2::IfcUnitEnum::IfcUnit_PLANEANGLEUNIT,
-            //   boost::none,
-            //   Ifc4x3_add2::IfcSIUnitName::IfcSIUnitName_RADIAN);
-            //auto unit2b = new Ifc4x3_add2::IfcMeasureWithUnit(
-            //   new Ifc4x3_add2::IfcPlaneAngleMeasure(std::numbers::pi / 180.), unit2a);
-            //auto unit2 = new Ifc4x3_add2::IfcConversionBasedUnit(dimexp,
-            //   Ifc4x3_add2::IfcUnitEnum::IfcUnit_PLANEANGLEUNIT,
-            //   "Degrees",
-            //   unit2b);
-            //units->push(unit2);
+
             auto dimexp = new Ifc4x3_add2::IfcDimensionalExponents(0, 0, 0, 0, 0, 0, 0);
             auto unit2a = new Ifc4x3_add2::IfcSIUnit(Ifc4x3_add2::IfcUnitEnum::IfcUnit_PLANEANGLEUNIT,
                boost::none,

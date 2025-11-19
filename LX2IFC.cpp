@@ -199,7 +199,7 @@ void LX2IFC::Convert(std::string filename)
 				if (alignment->hasValue_Name())
 				   name = W2A(alignment->getName().c_str());
 
-				if (name != "708")
+				if (name != "804")
 				{
 				   alignmentIter->next();
 				   continue;
