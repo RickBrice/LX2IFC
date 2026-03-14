@@ -6,8 +6,8 @@ rem python -m ifcpatch -i 3C03_Geom_Kupittaa-Turku_patch_3.ifc -o 3C03_Geom_Kupi
 
 rem ..\x64\Release\LX2IFC.exe 3C03_Geom_TurkuAsema
 rem python -m ifcpatch -i 3C03_Geom_TurkuAsema.ifc -o 3C03_Geom_TurkuAsema_patch_1.ifc -r AddGeometricRepresentationToAlignment
-rem python -m ifcpatch -i 3C03_Geom_TurkuAsema_patch_1.ifc -o 3C03_Geom_TurkuAsemarem _patch_2.ifc -r AddZeroLengthSegmentToAlignment
-rem python -m ifcpatch -i 3C03_Geom_TurkuAsema_patch_2.ifc -o 3C03_Geom_TurkuAsemarem _patch_3.ifc -r PatchStationReferentPosition
+rem python -m ifcpatch -i 3C03_Geom_TurkuAsema_patch_1.ifc -o 3C03_Geom_TurkuAsema_patch_2.ifc -r AddZeroLengthSegmentToAlignment
+rem python -m ifcpatch -i 3C03_Geom_TurkuAsema_patch_2.ifc -o 3C03_Geom_TurkuAsema_patch_3.ifc -r PatchStationReferentPosition
 rem python -m ifcpatch -i 3C03_Geom_TurkuAsema_patch_3.ifc -o 3C03_Geom_TurkuAsema_patch_4.ifc -r AddLinearPlacementFallbackPosition
 
 ..\x64\Release\LX2IFC.exe 3C03_Geom_TurkuTavara

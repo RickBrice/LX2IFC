@@ -5,7 +5,7 @@
 #include <atlconv.h>
 
 #undef max
-
+#define IFOPSH_WITH_ROCKSDB
 #pragma warning(disable:4250)
 #define HAS_SCHEMA_4x3_add2
 #include <ifcparse/Ifc4x3_add2.h>

@@ -199,7 +199,7 @@ void LX2IFC::Convert(std::string filename)
 				if (alignment->hasValue_Name())
 				   name = W2A(alignment->getName().c_str());
 
-				if (name != "804")
+				if (name != "803")
 				{
 				   alignmentIter->next();
 				   continue;
@@ -217,6 +217,7 @@ void LX2IFC::Convert(std::string filename)
 
 	std::string output_file(filename);
 	output_file += ".ifc";
+	std::cout << output_file << std::endl;
 	std::ofstream ofs(output_file);
 	ofs << file;
 }

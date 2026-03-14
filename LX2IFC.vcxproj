@@ -102,13 +102,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\LandXMLSDK-1.2-08182008\3rdParty\xerces-c-src_2_7_0\src;F:\LandXMLSDK-1.2-08182008\SDK\build\inc;$(IFCOPENSHELL_DIR)\src;$(BOOSTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\LandXMLSDK-1.2-08182008\3rdParty\xerces-c-src_2_7_0\src;D:\LandXMLSDK-1.2-08182008\SDK\build\inc;$(IFCOPENSHELL_DIR)\src;$(BOOSTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\LandXMLSDK-1.2-08182008\SDK\LandXmlSdkDll1.2_Win$(PlatformArchitecture)_$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\LandXMLSDK-1.2-08182008\SDK\LandXmlSdkDll1.2_Win$(PlatformArchitecture)_$(Configuration)</AdditionalLibraryDirectories>
       <AdditionalDependencies>LandXmlSdkDll1.2.lib;bcrypt.lib;$(IFCOPENSHELL_DIR)\_build-vs2022-$(Platform)\$(Configuration)\IfcParse.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -120,14 +120,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\LandXMLSDK-1.2-08182008\3rdParty\xerces-c-src_2_7_0\src;F:\LandXMLSDK-1.2-08182008\SDK\build\inc;$(IFCOPENSHELL_DIR)\src;$(BOOSTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\LandXMLSDK-1.2-08182008\3rdParty\xerces-c-src_2_7_0\src;D:\LandXMLSDK-1.2-08182008\SDK\build\inc;$(IFCOPENSHELL_DIR)\src;$(BOOSTDIR);$(IFCOPENSHELL_DIR)\_deps-vs2022-$(Platform)-installed\rocksdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\LandXMLSDK-1.2-08182008\SDK\LandXmlSdkDll1.2_Win$(PlatformArchitecture)_$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>LandXmlSdkDll1.2.lib;bcrypt.lib;$(IFCOPENSHELL_DIR)\_build-vs2022-$(Platform)\$(Configuration)\IfcParse.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\LandXMLSDK-1.2-08182008\SDK\LandXmlSdkDll1.2_Win$(PlatformArchitecture)_$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>LandXmlSdkDll1.2.lib;bcrypt.lib;$(IFCOPENSHELL_DIR)\_build-vs2022-$(Platform)\$(Configuration)\IfcParse.lib;$(IFCOPENSHELL_DIR)\_deps-vs2022-$(Platform)-installed\rocksdb\lib\rocksdb.lib;$(IFCOPENSHELL_DIR)\_deps-vs2022-$(Platform)-installed\zstd\lib\zstd_static.lib;rpcrt4.lib;shlwapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
