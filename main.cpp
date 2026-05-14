@@ -4,6 +4,14 @@
 
 #include "LX2IFC.h"
 
+// * Add implementation for `<Chain > ` and `<IrregularLine > ` horizontal element types to the LX2IFC program. 
+// `<Chain > ` could be decomposed into a sequence of `LINE` segments if approximate fidelity is acceptable
+
+// Fix `<CircCurve > ` start station calculation in LX2IFC — 
+// currently uses $s_{ PVI } - L / 2$ as an approximation; 
+// the exact tangent length is $T = R\tan(\Delta / 2)$ where $\Delta = L / R$.
+// Commented - out code in Profile.cpp already outlines the correct approach - this is a claude generated assesment.
+
 int main(int argc, char** argv)
 {
    USES_CONVERSION;
